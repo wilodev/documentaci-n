@@ -12,6 +12,13 @@ define({ "api": [
       }
     ],
     "description": "<p>Obtiene todos los eventos del sistema</p>",
+    "examples": [
+      {
+        "title": "Ejemplo como se realiza la petición",
+        "content": "curl -i http://ionic.urbanroosters.com/api/events",
+        "type": "curl"
+      }
+    ],
     "success": {
       "fields": {
         "Success 200": [
@@ -214,6 +221,13 @@ define({ "api": [
       }
     ],
     "description": "<p>Obtiene todos los datos de un evento como son fases y batallas</p>",
+    "examples": [
+      {
+        "title": "Obtiene todos los datos de un evento de un juez en concreto",
+        "content": "curl -i http://ionic.urbanroosters.com/api/events/019f7830-bb26-412d-ae6b-fe5bc4780357/0f62308e-8245-4e2f-8e01-b0c0920be35a",
+        "type": "curl"
+      }
+    ],
     "parameter": {
       "fields": {
         "url": [
@@ -603,6 +617,13 @@ define({ "api": [
       }
     ],
     "description": "<p>Obtiene los eventos a los que un juez esta asignado</p>",
+    "examples": [
+      {
+        "title": "Obtiene todos los eventos de un juez",
+        "content": "curl -i http://ionic.urbanroosters.com/api/events/019f7830-bb26-412d-ae6b-fe5bc4780357",
+        "type": "curl"
+      }
+    ],
     "parameter": {
       "fields": {
         "url": [
