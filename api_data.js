@@ -931,7 +931,14 @@ define({ "api": [
             "description": "<p>El valor de <code>true</code> al inciar una batalla</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n    \"participants\":[\n        {\n            \"ss_data_score_id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n            \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n            \"order\": \"1\",\n            \"time\": \"1212018372.3366\",\n            \"started\": true,\n        },\n        {\n            \"ss_data_score_id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab810\",\n            \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606421\",\n            \"order\": \"2\",\n            \"time\": \"1212018372.3367\",\n            \"started\": true,\n        }\n    ]\n}",
+          "type": "body"
+        }
+      ]
     },
     "success": {
       "fields": {
