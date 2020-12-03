@@ -1,7 +1,7 @@
 {
-  "name": "Api documentation",
+  "name": "Documentación API APP Jueces",
   "version": "1.0.0",
-  "description": "Documentation for the REST api access provided at App Judges",
+  "description": "Documentacón para el API Rest de la App de Jueces ",
   "title": "Api Documentación",
   "url": "https://ionic.urbanroosters.com/api",
   "sampleUrl": "https://ionic.urbanroosters.com/api",
@@ -11,7 +11,7 @@
   },
   "footer": {
     "title": "Contribución",
-    "content": "<h2>Powered by Infinyti</h2>\n"
+    "content": "<h4>Desarrolladores:</h4>\n<p>Marlon Molina[@marlon-molina](https://github.com/Marlon-Molina)</p>\n<p>Miguel Valencia @mvalencia</p>\n<p>Wilson Pérez  [@wilodev](https://github.com/wilodev)</p>\n<h3>Powered by Infinyti</h3>\n"
   },
   "template": {
     "withCompare": true,
@@ -28,7 +28,7 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2020-12-02T22:06:11.099Z",
+    "time": "2020-12-03T16:00:45.144Z",
     "url": "https://apidocjs.com",
     "version": "0.25.0"
   }
