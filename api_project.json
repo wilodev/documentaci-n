@@ -11,7 +11,7 @@
   },
   "footer": {
     "title": "Contribución",
-    "content": "<h4>Desarrolladores:</h4>\n<p>Marlon Molina[@marlon-molina](https://github.com/Marlon-Molina)</p>\n<p>Miguel Valencia @mvalencia</p>\n<p>Wilson Pérez  [@wilodev](https://github.com/wilodev)</p>\n<h3>Powered by Infinyti</h3>\n"
+    "content": "<h4>Desarrolladores:</h4>\n<p>Marlon Molina [@marlon-molina](https://github.com/Marlon-Molina)</p>\n<p>Miguel Valencia @mvalencia</p>\n<p>Wilson Pérez  [@wilodev](https://github.com/wilodev)</p>\n<h3>Powered by Infinyti</h3>\n"
   },
   "template": {
     "withCompare": true,
@@ -28,7 +28,7 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2020-12-03T16:42:29.325Z",
+    "time": "2020-12-03T17:01:42.506Z",
     "url": "https://apidocjs.com",
     "version": "0.25.0"
   }

@@ -827,7 +827,7 @@
     ]
   },
   {
-    "type": "get",
+    "type": "post",
     "url": "/events/set-order-freestylers/:eventID/:phaseID/:judgeID/:battleID",
     "title": "4.-Agregar Orden a batalla",
     "version": "1.0.0",
