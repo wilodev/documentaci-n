@@ -3329,8 +3329,15 @@
             "group": "participant",
             "type": "String",
             "optional": false,
+            "field": "ss_data_scores_id",
+            "description": "<p>El <code>uuid</code> ss_data_scores</p>"
+          },
+          {
+            "group": "participant",
+            "type": "String",
+            "optional": false,
             "field": "ss_data_score_rounds_id",
-            "description": "<p>El <code>uuid</code> round</p>"
+            "description": "<p>El <code>uuid</code> ss_data_score_rounds</p>"
           },
           {
             "group": "participant",
@@ -3351,7 +3358,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n    \"participants\":[\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n            \"ss_data_scores_id\": \"\",\n            \"ss_data_score_rounds_id\": \"fda7cdcb-8ee7-48a4-8855-776237749c78\",\n            \"won\": false,\n            \"lost\": true\n        },\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606421\",\n            \"ss_data_scores_id\": \"\",\n            \"ss_data_score_rounds_id\": \"fda7cdcb-8ee7-48a4-8855-776237749c54\",\n            \"won\": true,\n            \"lost\": false\n        }\n    ]\n}",
+          "content": "{\n    \"participants\":[\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n            \"ss_data_scores_id\": \"2c51902-d524-4dc9-95db-4846f0606410\",\n            \"ss_data_score_rounds_id\": \"fda7cdcb-8ee7-48a4-8855-776237749c78\",\n            \"won\": false,\n            \"lost\": true\n        },\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606421\",\n            \"ss_data_scores_id\": \"2c51902-d524-4dc9-95db-4846f0606411\",\n            \"ss_data_score_rounds_id\": \"fda7cdcb-8ee7-48a4-8855-776237749c54\",\n            \"won\": true,\n            \"lost\": false\n        }\n    ]\n}",
           "type": "json"
         }
       ]
@@ -4024,28 +4031,28 @@
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "fd_battles_id",
             "description": "<p>El <code>uuid</code> de la batalla de la fase y del evento</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "participants_id",
             "description": "<p>El <code>uuid</code> del MC/participante</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "judges_id",
             "description": "<p>El <code>uuid</code> del Juez que realiza la votación</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "Number",
             "optional": false,
             "field": "total_battle",
             "description": "<p>El valor del total de la batalla para un MC/Participante</p>"
@@ -4108,14 +4115,14 @@
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "time_started",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar una batalla</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "time_finished",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar una batalla</p>"
@@ -4152,42 +4159,42 @@
           },
           {
             "group": "score_rounds",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "fd_battles_id",
             "description": "<p>El <code>uuid</code> de la batalla de la fase y del evento</p>"
           },
           {
             "group": "score_rounds",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "participants_id",
             "description": "<p>El <code>uuid</code> del MC/participante</p>"
           },
           {
             "group": "score_rounds",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "judges_id",
             "description": "<p>El <code>uuid</code> del Juez que realiza la votación</p>"
           },
           {
             "group": "score_rounds",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_data_scores_id",
             "description": "<p>El <code>uuid</code> del ss_data_scores padre (Tabla relacionada)</p>"
           },
           {
             "group": "score_rounds",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_round_structures_id",
             "description": "<p>El <code>uuid</code> del ss_round_structures (Es la estructura del round)</p>"
           },
           {
             "group": "score_rounds",
-            "type": "Boolean",
+            "type": "Number",
             "optional": false,
             "field": "total_round",
             "description": "<p>El valor del total del round para un round</p>"
@@ -4229,14 +4236,14 @@
           },
           {
             "group": "score_rounds",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "time_started",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar una batalla</p>"
           },
           {
             "group": "score_rounds",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "time_finished",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar una batalla</p>"
@@ -4273,63 +4280,63 @@
           },
           {
             "group": "score_styles",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "fd_battles_id",
             "description": "<p>El <code>uuid</code> de la batalla de la fase y del evento</p>"
           },
           {
             "group": "score_styles",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "participants_id",
             "description": "<p>El <code>uuid</code> del MC/participante</p>"
           },
           {
             "group": "score_styles",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "judges_id",
             "description": "<p>El <code>uuid</code> del Juez que realiza la votación</p>"
           },
           {
             "group": "score_styles",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_data_scores_id",
             "description": "<p>El <code>uuid</code> del ss_data_scores (Tabla relacionada)</p>"
           },
           {
             "group": "score_styles",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_data_score_rounds_id",
             "description": "<p>El <code>uuid</code> del ss_data_score_rounds (Tabla relacionada)</p>"
           },
           {
             "group": "score_styles",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_styles_id",
             "description": "<p>El <code>uuid</code> del ss_styles (Tabla relacionada)</p>"
           },
           {
             "group": "score_styles",
-            "type": "Boolean",
+            "type": "Number",
             "optional": false,
             "field": "total_pattern",
             "description": "<p>El valor del total de los patrones para un style</p>"
           },
           {
             "group": "score_styles",
-            "type": "Boolean",
+            "type": "Number",
             "optional": false,
             "field": "total_performances",
             "description": "<p>El valor del total de los performances para un style</p>"
           },
           {
             "group": "score_styles",
-            "type": "Boolean",
+            "type": "Number",
             "optional": false,
             "field": "total",
             "description": "<p>El valor de la suma de los dos campos anteriores para obtener el total de un style</p>"
@@ -4350,14 +4357,14 @@
           },
           {
             "group": "score_styles",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "time_started",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar una batalla</p>"
           },
           {
             "group": "score_styles",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "time_finished",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar una batalla</p>"
@@ -4401,63 +4408,63 @@
           },
           {
             "group": "score_patterns",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "fd_battles_id",
             "description": "<p>El <code>uuid</code> de la batalla de la fase y del evento</p>"
           },
           {
             "group": "score_patterns",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "participants_id",
             "description": "<p>El <code>uuid</code> del MC/participante</p>"
           },
           {
             "group": "score_patterns",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "judges_id",
             "description": "<p>El <code>uuid</code> del Juez que realiza la votación</p>"
           },
           {
             "group": "score_patterns",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_data_scores_id",
             "description": "<p>El <code>uuid</code> del ss_data_scores (Tabla relacionada)</p>"
           },
           {
             "group": "score_patterns",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_data_score_rounds_id",
             "description": "<p>El <code>uuid</code> del ss_data_score_rounds (Tabla relacionada)</p>"
           },
           {
             "group": "score_patterns",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_styles_id",
             "description": "<p>El <code>uuid</code> del ss_styles (Tabla relacionada)</p>"
           },
           {
             "group": "score_patterns",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_data_score_styles_id",
             "description": "<p>El <code>uuid</code> del ss_data_score_styles (Tabla relacionada)</p>"
           },
           {
             "group": "score_patterns",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_patterns_styles_id",
             "description": "<p>El <code>uuid</code> del ss_patterns_styles (Tabla relacionada)</p>"
           },
           {
             "group": "score_patterns",
-            "type": "Boolean",
+            "type": "Number",
             "optional": false,
             "field": "value",
             "description": "<p>El valor del patron al dar tab en la app</p>"
@@ -4471,7 +4478,7 @@
           },
           {
             "group": "score_patterns",
-            "type": "Boolean",
+            "type": "Number",
             "optional": false,
             "field": "total",
             "description": "<p>El valor de la suma de los dos campos anteriores para obtener el total de un patron</p>"
@@ -4492,14 +4499,14 @@
           },
           {
             "group": "score_patterns",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "time_pattern",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al realizar un tab en un patron</p>"
           },
           {
             "group": "score_patterns",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "time_extra",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al realizar un tab en el extra de un patron</p>"
@@ -4529,63 +4536,63 @@
           },
           {
             "group": "score_performances",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "fd_battles_id",
             "description": "<p>El <code>uuid</code> de la batalla de la fase y del evento</p>"
           },
           {
             "group": "score_performances",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "participants_id",
             "description": "<p>El <code>uuid</code> del MC/participante</p>"
           },
           {
             "group": "score_performances",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "judges_id",
             "description": "<p>El <code>uuid</code> del Juez que realiza la votación</p>"
           },
           {
             "group": "score_performances",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_data_scores_id",
             "description": "<p>El <code>uuid</code> del ss_data_scores (Tabla relacionada)</p>"
           },
           {
             "group": "score_performances",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_data_score_rounds_id",
             "description": "<p>El <code>uuid</code> del ss_data_score_rounds (Tabla relacionada)</p>"
           },
           {
             "group": "score_performances",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_styles_id",
             "description": "<p>El <code>uuid</code> del ss_styles (Tabla relacionada)</p>"
           },
           {
             "group": "score_performances",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_data_score_styles_id",
             "description": "<p>El <code>uuid</code> del ss_data_score_styles (Tabla relacionada)</p>"
           },
           {
             "group": "score_performances",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "ss_performance_id",
             "description": "<p>El <code>uuid</code> del ss_performance (Tabla relacionada)</p>"
           },
           {
             "group": "score_performances",
-            "type": "Boolean",
+            "type": "number",
             "optional": false,
             "field": "value",
             "description": "<p>El valor del performance al dar tab en la app</p>"
@@ -4599,7 +4606,7 @@
           },
           {
             "group": "score_performances",
-            "type": "Boolean",
+            "type": "Number",
             "optional": false,
             "field": "total",
             "description": "<p>El valor de la suma de los dos campos anteriores para obtener el total de un performance</p>"
@@ -4620,14 +4627,14 @@
           },
           {
             "group": "score_performances",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "time_performance",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al realizar un tab en un performance</p>"
           },
           {
             "group": "score_performances",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "time_extra",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al realizar un tab en el extra de un performance</p>"
