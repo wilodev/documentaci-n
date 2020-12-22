@@ -1309,7 +1309,7 @@
         "name": "Token de usuario autorizado"
       }
     ],
-    "description": "<p>Retorna la estrucutra completa de un rund con sus styles, patterns y performances  para poder crear las pantallas que el juez podrá votar.</p>",
+    "description": "<p>Retorna la estrucutra completa de un round con sus styles, patterns y performances  para poder crear las pantallas que el juez podrá votar.</p>",
     "examples": [
       {
         "title": "Retorna la estrucutra completa de un rund con sus styles, patterns y performances  para poder crear las pantallas que el juez podrá votar.",
@@ -2417,7 +2417,14 @@
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar un record</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "\n{\n    \"participants\":[\n        {\n            \"id\": \"568b8217-884f-46bc-9cc9-ad9cc6d7ec9b\",\n            \"ss_data_scores_id\": \"b8024511-2629-4bdc-914a-c6a35357ab0d\",\n            \"completed\": true,\n            \"time_finished\": \"1212018372.3366\"\n        },\n        {\n            \"id\": \"76a3c468-f833-4f83-b81c-d9a619cafb77\",\n            \"ss_data_scores_id\": \"8da5e391-f976-4859-b20a-ad9ccfa2d30a\",\n            \"completed\": true,\n            \"time_finished\": \"1212018372.3366\"\n        }\n    ]\n }",
+          "type": "json"
+        }
+      ]
     },
     "success": {
       "fields": {
@@ -3345,7 +3352,7 @@
         {
           "title": "Request-Example:",
           "content": "{\n    \"participants\":[\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n            \"ss_data_scores_id\": \"\",\n            \"ss_data_score_rounds_id\": \"fda7cdcb-8ee7-48a4-8855-776237749c78\",\n            \"won\": false,\n            \"lost\": true\n        },\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606421\",\n            \"ss_data_scores_id\": \"\",\n            \"ss_data_score_rounds_id\": \"fda7cdcb-8ee7-48a4-8855-776237749c54\",\n            \"won\": true,\n            \"lost\": false\n        }\n    ]\n}",
-          "type": "body"
+          "type": "json"
         }
       ]
     },
