@@ -1707,12 +1707,7 @@
       },
       "examples": [
         {
-          "title": "Header-example                           El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
-          "type": "json"
-        },
-        {
-          "title": "Header-example                           El api key que necesita para solicitar acceso",
+          "title": "Header-example                              El api key que necesita para solicitar acceso",
           "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
           "type": "json"
         }
@@ -4467,6 +4462,7 @@
     "type": "get",
     "url": "/results/get-score-battle/:event/:phase/:judge/:battle",
     "title": "4.3.- Devuelve los datos de los scores de una batalla",
+    "version": "1.0.0",
     "name": "getResultReplica",
     "group": "4.-_Resultados",
     "permission": [
@@ -5237,7 +5233,6 @@
         }
       ]
     },
-    "version": "0.0.0",
     "filename": "apps/api-app-judges/components/api-events/Front/ApiEventsController.php",
     "groupTitle": "4.-_Resultados",
     "sampleRequest": [
