@@ -3531,7 +3531,7 @@
     ]
   },
   {
-    "type": "post",
+    "type": "get",
     "url": "/results/get-result-battle/:event/:phase/:judge/:battle",
     "title": "4.1.- Obtiene los resultados de una batalla por juez",
     "name": "getResultBattle",
@@ -3709,7 +3709,7 @@
     ]
   },
   {
-    "type": "post",
+    "type": "get",
     "url": "/results/get-result-replica/:event/:phase/:judge/:battle",
     "title": "4.2.- Devuelve los resultados de una réplica",
     "name": "getResultReplica",
@@ -3887,7 +3887,7 @@
     ]
   },
   {
-    "type": "post",
+    "type": "get",
     "url": "/results/get-result-replica/:event/:phase/:judge/:battle",
     "title": "4.3.- Devuelve los datos de los scores de una batalla",
     "name": "getResultReplica",
