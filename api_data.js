@@ -3474,7 +3474,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/battle/set-finished-scores/:event/:phase/:judge/:battle",
+    "url": "/battle/set-finished-record/:event/:phase/:judge/:battle",
     "title": "3.4.- Finalizar un Score, Round o Style",
     "version": "1.0.0",
     "name": "setPerFinishedScores",
@@ -3488,7 +3488,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Cerramos un registro",
-        "content": "curl -i http://ionic.urbanroosters.com/api/battle/set-finished-scores/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/019f7830-bb26-412d-ae6b-fe5bc4782046",
+        "content": "curl -i http://ionic.urbanroosters.com/api/battle/set-finished-record/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/019f7830-bb26-412d-ae6b-fe5bc4782046",
         "type": "curl"
       }
     ],
@@ -3783,7 +3783,7 @@ define({ "api": [
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
-        "url": "https://ionic.urbanroosters.com/api/battle/set-finished-scores/:event/:phase/:judge/:battle"
+        "url": "https://ionic.urbanroosters.com/api/battle/set-finished-record/:event/:phase/:judge/:battle"
       }
     ]
   },
