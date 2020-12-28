@@ -1675,7 +1675,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/events/set-battles/:event/:phase/:judge",
+    "url": "/battles/set-battles/:event/:phase/:judge",
     "title": "3.2.-Cargamos una o varias batallas por lotes",
     "version": "1.0.0",
     "name": "setBattles",
@@ -1689,7 +1689,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Cargamos una o varias batallas por lotes",
-        "content": "curl -i http://ionic.urbanroosters.com/api/events/set-battles/0f62308e-8245-4e2f-8e01-b0c0920be35b/65443d8b-abfc-4e0b-a848-181fcfa1f4aj/019f7830-bb26-412d-ae6b-fe5bc4780359",
+        "content": "curl -i http://ionic.urbanroosters.com/api/battles/set-battles/0f62308e-8245-4e2f-8e01-b0c0920be35b/65443d8b-abfc-4e0b-a848-181fcfa1f4aj/019f7830-bb26-412d-ae6b-fe5bc4780359",
         "type": "curl"
       }
     ],
@@ -2832,7 +2832,7 @@ define({ "api": [
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
-        "url": "https://ionic.urbanroosters.com/api/events/set-battles/:event/:phase/:judge"
+        "url": "https://ionic.urbanroosters.com/api/battles/set-battles/:event/:phase/:judge"
       }
     ]
   },
@@ -3474,7 +3474,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/battle/set-finished-scores/:event/:phase/:judge",
+    "url": "/battle/set-finished-scores/:event/:phase/:judge/:battle",
     "title": "3.4.- Finalizar un Score, Round o Style",
     "version": "1.0.0",
     "name": "setPerFinishedScores",
@@ -3488,7 +3488,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Cerramos un registro",
-        "content": "curl -i http://ionic.urbanroosters.com/api/events/set-finished-scores/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357",
+        "content": "curl -i http://ionic.urbanroosters.com/api/battle/set-finished-scores/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/019f7830-bb26-412d-ae6b-fe5bc4782046",
         "type": "curl"
       }
     ],
@@ -3534,6 +3534,13 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "judge",
+            "description": "<p>El <code>uuid</code> del juez</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "battle",
             "description": "<p>El <code>uuid</code> del juez</p>"
           }
         ],
@@ -3776,7 +3783,7 @@ define({ "api": [
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
-        "url": "https://ionic.urbanroosters.com/api/battle/set-finished-scores/:event/:phase/:judge"
+        "url": "https://ionic.urbanroosters.com/api/battle/set-finished-scores/:event/:phase/:judge/:battle"
       }
     ]
   },
@@ -4296,7 +4303,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Obtiene los resultados de una batalla por juez",
-        "content": "curl -i http://ionic.urbanroosters.com/api/battle/get-result-replica/5ff887b7-62a5-4200-b90d-66eb08bd6676/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/300122ff-7b5e-4d0f-b679-675bdbf59b3b/ac9174c7-304e-4a5a-b6be-268714e0f779",
+        "content": "curl -i http://ionic.urbanroosters.com/api/results/get-result-replica/5ff887b7-62a5-4200-b90d-66eb08bd6676/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/300122ff-7b5e-4d0f-b679-675bdbf59b3b/ac9174c7-304e-4a5a-b6be-268714e0f779",
         "type": "curl"
       }
     ],
@@ -4474,7 +4481,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Obtiene los resultados de una batalla por juez",
-        "content": "curl -i http://ionic.urbanroosters.com/api/result/get-score-battle/5ff887b7-62a5-4200-b90d-66eb08bd6676/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/300122ff-7b5e-4d0f-b679-675bdbf59b3b/ac9174c7-304e-4a5a-b6be-268714e0f779",
+        "content": "curl -i http://ionic.urbanroosters.com/api/results/get-score-battle/5ff887b7-62a5-4200-b90d-66eb08bd6676/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/300122ff-7b5e-4d0f-b679-675bdbf59b3b/ac9174c7-304e-4a5a-b6be-268714e0f779",
         "type": "curl"
       }
     ],
