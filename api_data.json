@@ -1785,7 +1785,7 @@
             "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>El <code>uuid</code> del ss_data_scores</p>"
+            "description": "<p>El <code>uuid</code> del ss_data_scores este UUID se genera en el front con estandar UUID v4</p>"
           },
           {
             "group": "ss_data_score",
@@ -1878,7 +1878,7 @@
             "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>El <code>uuid</code> ss_data_score_rounds</p>"
+            "description": "<p>El <code>uuid</code> ss_data_score_rounds este UUID se genera en el front con estandar UUID v4</p>"
           },
           {
             "group": "ss_data_score_rounds",
@@ -1950,7 +1950,7 @@
             "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>El <code>uuid</code> ss_data_score_styles</p>"
+            "description": "<p>El <code>uuid</code> ss_data_score_styles este UUID se genera en el front con estandar UUID v4</p>"
           },
           {
             "group": "ss_data_score_styles",
@@ -2008,7 +2008,7 @@
             "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>El <code>uuid</code> ss_data_score_patrons</p>"
+            "description": "<p>El <code>uuid</code> ss_data_score_patrons este UUID se genera en el front con estandar UUID v4</p>"
           },
           {
             "group": "ss_data_score_style_patrons",
@@ -2066,7 +2066,7 @@
             "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>El <code>uuid</code> ss_data_score_performances</p>"
+            "description": "<p>El <code>uuid</code> ss_data_score_performances este UUID se genera en el front con estandar UUID v4</p>"
           },
           {
             "group": "ss_data_score_style_performances",
@@ -2269,511 +2269,513 @@
           },
           {
             "group": "score",
-            "type": "Object[score_rounds]",
+            "type": "Object[ss_data_score_rounds]",
             "optional": false,
-            "field": "score_rounds",
+            "field": "ss_data_score_rounds",
             "description": "<p>Array con los datos del ss_data_score_rounds</p>"
           }
         ],
-        "score_rounds": [
+        "ss_data_score_rounds": [
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "String",
             "optional": false,
             "field": "id",
             "description": "<p>El <code>uuid</code> del ss_data_score_rounds</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "String",
             "optional": false,
             "field": "fd_events_id",
             "description": "<p>El <code>uuid</code> del evento</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "String",
             "optional": false,
             "field": "fd_phases_id",
             "description": "<p>El <code>uuid</code> de la fase del evento</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "String",
             "optional": false,
             "field": "fd_battles_id",
             "description": "<p>El <code>uuid</code> de la batalla de la fase y del evento</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "String",
             "optional": false,
             "field": "participants_id",
             "description": "<p>El <code>uuid</code> del MC/participante</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "String",
             "optional": false,
             "field": "judges_id",
             "description": "<p>El <code>uuid</code> del Juez que realiza la votación</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "String",
             "optional": false,
             "field": "ss_data_scores_id",
             "description": "<p>El <code>uuid</code> del ss_data_scores padre (Tabla relacionada)</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "String",
             "optional": false,
             "field": "ss_round_structures_id",
             "description": "<p>El <code>uuid</code> del ss_round_structures (Es la estructura del round)</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "Number",
             "optional": false,
             "field": "total_round",
             "description": "<p>El valor del total del round para un round</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "Boolean",
             "optional": false,
             "field": "is_replica",
             "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el round es de tipo réplica o no.</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "Boolean",
             "optional": false,
             "field": "won",
             "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante ganó la batalla</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "Boolean",
             "optional": false,
             "field": "lost",
             "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante perdió la batalla</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "Boolean",
             "optional": false,
             "field": "started",
             "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla ya inicio</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "Boolean",
             "optional": false,
             "field": "finnished",
             "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla ya finalizó</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "String",
             "optional": false,
             "field": "time_started",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar una batalla</p>"
           },
           {
-            "group": "score_rounds",
+            "group": "ss_data_score_rounds",
             "type": "String",
             "optional": false,
             "field": "time_finished",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar una batalla</p>"
           },
           {
-            "group": "score_rounds",
-            "type": "Object[score_styles]",
+            "group": "ss_data_score_rounds",
+            "type": "Object[ss_data_score_styles]",
             "optional": false,
-            "field": "score_styles",
+            "field": "ss_data_score_styles",
             "description": "<p>Array con los datos del ss_data_score_styles</p>"
           }
         ],
-        "score_styles": [
+        "ss_data_score_styles": [
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "String",
             "optional": false,
             "field": "id",
             "description": "<p>El <code>uuid</code> del ss_data_score_styles</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "String",
             "optional": false,
             "field": "fd_events_id",
             "description": "<p>El <code>uuid</code> del evento</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "String",
             "optional": false,
             "field": "fd_phases_id",
             "description": "<p>El <code>uuid</code> de la fase del evento</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "String",
             "optional": false,
             "field": "fd_battles_id",
             "description": "<p>El <code>uuid</code> de la batalla de la fase y del evento</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "String",
             "optional": false,
             "field": "participants_id",
             "description": "<p>El <code>uuid</code> del MC/participante</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "String",
             "optional": false,
             "field": "judges_id",
             "description": "<p>El <code>uuid</code> del Juez que realiza la votación</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "String",
             "optional": false,
             "field": "ss_data_scores_id",
             "description": "<p>El <code>uuid</code> del ss_data_scores (Tabla relacionada)</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "String",
             "optional": false,
             "field": "ss_data_score_rounds_id",
             "description": "<p>El <code>uuid</code> del ss_data_score_rounds (Tabla relacionada)</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "String",
             "optional": false,
             "field": "ss_styles_id",
             "description": "<p>El <code>uuid</code> del ss_styles (Tabla relacionada)</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "Number",
             "optional": false,
             "field": "total_pattern",
             "description": "<p>El valor del total de los patrones para un style</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "Number",
             "optional": false,
             "field": "total_performances",
             "description": "<p>El valor del total de los performances para un style</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "Number",
             "optional": false,
             "field": "total",
             "description": "<p>El valor de la suma de los dos campos anteriores para obtener el total de un style</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "Boolean",
             "optional": false,
             "field": "started",
             "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla ya inicio</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "Boolean",
             "optional": false,
             "field": "finnished",
             "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla ya finalizó</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "String",
             "optional": false,
             "field": "time_started",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar una batalla</p>"
           },
           {
-            "group": "score_styles",
+            "group": "ss_data_score_styles",
             "type": "String",
             "optional": false,
             "field": "time_finished",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar una batalla</p>"
           },
           {
-            "group": "score_styles",
-            "type": "Object[score_patterns]",
+            "group": "ss_data_score_styles",
+            "type": "Object[ss_data_score_style_patrons]",
             "optional": false,
-            "field": "score_patterns",
-            "description": "<p>Array con los datos del ss_data_score_patterns</p>"
-          },
-          {
-            "group": "score_styles",
-            "type": "Object[score_performances]",
-            "optional": false,
-            "field": "score_perfomances",
-            "description": "<p>Array con los datos del ss_data_score_style_performaces</p>"
+            "field": "ss_data_score_style_patrons",
+            "description": "<p>Array con los datos del ss_data_score_style_patrons</p>"
           }
         ],
-        "score_patterns": [
+        "ss_data_score_style_patrons": [
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "String",
             "optional": false,
             "field": "id",
             "description": "<p>El <code>uuid</code> del ss_data_score_style_patrons</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "String",
             "optional": false,
             "field": "fd_events_id",
             "description": "<p>El <code>uuid</code> del evento</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "String",
             "optional": false,
             "field": "fd_phases_id",
             "description": "<p>El <code>uuid</code> de la fase del evento</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "String",
             "optional": false,
             "field": "fd_battles_id",
             "description": "<p>El <code>uuid</code> de la batalla de la fase y del evento</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "String",
             "optional": false,
             "field": "participants_id",
             "description": "<p>El <code>uuid</code> del MC/participante</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "String",
             "optional": false,
             "field": "judges_id",
             "description": "<p>El <code>uuid</code> del Juez que realiza la votación</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "String",
             "optional": false,
             "field": "ss_data_scores_id",
             "description": "<p>El <code>uuid</code> del ss_data_scores (Tabla relacionada)</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "String",
             "optional": false,
             "field": "ss_data_score_rounds_id",
             "description": "<p>El <code>uuid</code> del ss_data_score_rounds (Tabla relacionada)</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "String",
             "optional": false,
             "field": "ss_styles_id",
             "description": "<p>El <code>uuid</code> del ss_styles (Tabla relacionada)</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "String",
             "optional": false,
             "field": "ss_data_score_styles_id",
             "description": "<p>El <code>uuid</code> del ss_data_score_styles (Tabla relacionada)</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "String",
             "optional": false,
             "field": "ss_patterns_styles_id",
             "description": "<p>El <code>uuid</code> del ss_patterns_styles (Tabla relacionada)</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "Number",
             "optional": false,
             "field": "value",
             "description": "<p>El valor del patron al dar tab en la app</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "Boolean",
             "optional": false,
             "field": "extra",
             "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el patron tiene punto extra</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "Number",
             "optional": false,
             "field": "total",
             "description": "<p>El valor de la suma de los dos campos anteriores para obtener el total de un patron</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "Boolean",
             "optional": false,
             "field": "started",
             "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla ya inicio</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "Boolean",
             "optional": false,
             "field": "finished",
             "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla ya finalizó</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "String",
             "optional": false,
             "field": "time_pattern",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al realizar un tab en un patron</p>"
           },
           {
-            "group": "score_patterns",
+            "group": "ss_data_score_style_patrons",
             "type": "String",
             "optional": false,
             "field": "time_extra",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al realizar un tab en el extra de un patron</p>"
           }
         ],
-        "score_performances": [
+        "score_styles": [
           {
-            "group": "score_performances",
+            "group": "score_styles",
+            "type": "Object[ss_data_score_style_performances]",
+            "optional": false,
+            "field": "ss_data_score_style_perfomances",
+            "description": "<p>Array con los datos del ss_data_score_style_performaces</p>"
+          }
+        ],
+        "ss_data_score_style_performances": [
+          {
+            "group": "ss_data_score_style_performances",
             "type": "String",
             "optional": false,
             "field": "id",
             "description": "<p>El <code>uuid</code> del ss_data_score_style_performaces</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "String",
             "optional": false,
             "field": "fd_events_id",
             "description": "<p>El <code>uuid</code> del evento</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "String",
             "optional": false,
             "field": "fd_phases_id",
             "description": "<p>El <code>uuid</code> de la fase del evento</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "String",
             "optional": false,
             "field": "fd_battles_id",
             "description": "<p>El <code>uuid</code> de la batalla de la fase y del evento</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "String",
             "optional": false,
             "field": "participants_id",
             "description": "<p>El <code>uuid</code> del MC/participante</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "String",
             "optional": false,
             "field": "judges_id",
             "description": "<p>El <code>uuid</code> del Juez que realiza la votación</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "String",
             "optional": false,
             "field": "ss_data_scores_id",
             "description": "<p>El <code>uuid</code> del ss_data_scores (Tabla relacionada)</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "String",
             "optional": false,
             "field": "ss_data_score_rounds_id",
             "description": "<p>El <code>uuid</code> del ss_data_score_rounds (Tabla relacionada)</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "String",
             "optional": false,
             "field": "ss_styles_id",
             "description": "<p>El <code>uuid</code> del ss_styles (Tabla relacionada)</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "String",
             "optional": false,
             "field": "ss_data_score_styles_id",
             "description": "<p>El <code>uuid</code> del ss_data_score_styles (Tabla relacionada)</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "String",
             "optional": false,
             "field": "ss_performance_id",
             "description": "<p>El <code>uuid</code> del ss_performance (Tabla relacionada)</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "number",
             "optional": false,
             "field": "value",
             "description": "<p>El valor del performance al dar tab en la app</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "Boolean",
             "optional": false,
             "field": "extra",
             "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el performance tiene punto extra</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "Number",
             "optional": false,
             "field": "total",
             "description": "<p>El valor de la suma de los dos campos anteriores para obtener el total de un performance</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "Boolean",
             "optional": false,
             "field": "started",
             "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla ya inicio</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "Boolean",
             "optional": false,
             "field": "finished",
             "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla ya finalizó</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "String",
             "optional": false,
             "field": "time_performance",
             "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al realizar un tab en un performance</p>"
           },
           {
-            "group": "score_performances",
+            "group": "ss_data_score_style_performances",
             "type": "String",
             "optional": false,
             "field": "time_extra",
@@ -2784,7 +2786,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " HTTP/1.1 200 OK\n\"status\": \"success\",\n\"data\": [\n    [\n        {\n            \"id\": \"03fc0a8f-b06f-4682-a09a-92f4f3e09520\",\n            \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n            \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n            \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n            \"participants_id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n            \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n            \"total_battle\": 3.5,\n            \"has_replica\": 0,\n            \"judge_ur\": 0,\n            \"won\": 0,\n            \"lost\": 0,\n            \"completed\": 0,\n            \"partial\": 1,\n            \"order\": 2,\n            \"created_at\": \"2020-12-18T14:54:45.000000Z\",\n            \"updated_at\": \"2020-12-18T21:20:22.000000Z\",\n            \"deleted_at\": null,\n            \"params\": null,\n            \"log\": null,\n            \"started\": 1,\n            \"finished\": 0,\n            \"time_started\": \"1212018372.3366\",\n            \"time_finished\": null,\n            \"score_rounds\": [\n                {\n                   \"id\": \"bc212def-92fd-4fed-8faf-7323e5d6ac4e\",\n                   \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                   \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                   \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                   \"participants_id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n                   \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                   \"ss_data_scores_id\": \"03fc0a8f-b06f-4682-a09a-92f4f3e09520\",\n                   \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                   \"total_round\": 3.5,\n                   \"is_replica\": 0,\n                   \"order\": 2,\n                   \"created_at\": \"2020-12-18T14:54:45.000000Z\",\n                   \"updated_at\": \"2020-12-18T21:20:22.000000Z\",\n                   \"deleted_at\": null,\n                   \"params\": null,\n                   \"log\": null,\n                   \"won\": 0,\n                   \"lost\": 0,\n                   \"started\": 1,\n                   \"finished\": 0,\n                   \"time_started\": \"1212018372.3366\",\n                   \"time_finished\": null,\n                   \"score_styles\": [\n                       {\n                           \"id\": \"3fe2d9ff-4ebf-4a8a-9168-0598803b03ef\",\n                           \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                           \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                           \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                           \"participants_id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n                           \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                           \"ss_data_scores_id\": \"03fc0a8f-b06f-4682-a09a-92f4f3e09520\",\n                           \"ss_data_score_rounds_id\": \"bc212def-92fd-4fed-8faf-7323e5d6ac4e\",\n                           \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                           \"total_pattern\": 3.5,\n                           \"total_performances\": 0,\n                           \"total\": 3.5,\n                           \"order\": 2,\n                           \"created_at\": \"2020-12-18T14:54:45.000000Z\",\n                           \"updated_at\": \"2020-12-18T21:20:22.000000Z\",\n                           \"deleted_at\": null,\n                           \"params\": null,\n                           \"log\": null,\n                           \"started\": 1,\n                           \"finished\": 0,\n                           \"time_started\": \"1212018372.3366\",\n                           \"time_finished\": null,\n                           \"score_patterns\": [\n                               {\n                                   \"id\": \"0a648f1a-2640-463b-93cf-2888ee445b1f\",\n                                   \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                                   \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                                   \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                                   \"participants_id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n                                   \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                                   \"ss_data_scores_id\": \"03fc0a8f-b06f-4682-a09a-92f4f3e09520\",\n                                   \"ss_data_score_rounds_id\": \"bc212def-92fd-4fed-8faf-7323e5d6ac4e\",\n                                   \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                   \"ss_data_score_styles_id\": \"3fe2d9ff-4ebf-4a8a-9168-0598803b03ef\",\n                                   \"ss_patterns_styles_id\": 1,\n                                   \"value\": 2.5,\n                                   \"extra\": 1,\n                                   \"total\": 3.5,\n                                   \"order\": 1,\n                                   \"created_at\": \"2020-12-18T20:59:31.000000Z\",\n                                   \"updated_at\": \"2020-12-18T20:59:31.000000Z\",\n                                   \"deleted_at\": null,\n                                   \"params\": null,\n                                   \"log\": null,\n                                   \"time\": \"1212018372.3366\",\n                                   \"started\": 0,\n                                   \"finished\": 0\n                               }\n                           ],\n                           \"score_performances\": [\n                               {\n                                   \"id\": \"4a94a778-dd30-4808-8b82-86136f292927\",\n                                   \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                                   \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                                   \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                                   \"participants_id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n                                   \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                                   \"ss_data_scores_id\": \"03fc0a8f-b06f-4682-a09a-92f4f3e09520\",\n                                   \"ss_data_score_rounds_id\": \"bc212def-92fd-4fed-8faf-7323e5d6ac4e\",\n                                   \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                   \"ss_data_score_styles_id\": \"3fe2d9ff-4ebf-4a8a-9168-0598803b03ef\",\n                                   \"ss_performance_id\": \"e47148d0-dbb7-496f-85d7-933bf060c0de\",\n                                   \"value\": 1,\n                                   \"extra\": 0,\n                                   \"total\": 0,\n                                   \"order\": 1,\n                                   \"created_at\": \"2020-12-18T20:59:31.000000Z\",\n                                   \"updated_at\": \"2020-12-18T20:59:31.000000Z\",\n                                   \"deleted_at\": null,\n                                   \"params\": null,\n                                   \"log\": null,\n                                   \"time\": \"1212018372.3366\",\n                                   \"started\": 0,\n                                   \"finished\": 0\n                               }\n                           ]\n                       }\n                   ]\n                }\n            ]\n        },\n        {\n            \"id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n            \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n            \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n            \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n            \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n            \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n            \"total_battle\": 3.5,\n            \"has_replica\": 0,\n            \"judge_ur\": 0,\n            \"won\": 0,\n            \"lost\": 0,\n            \"completed\": 0,\n            \"partial\": 1,\n            \"order\": 1,\n            \"created_at\": \"2020-12-18T14:35:45.000000Z\",\n            \"updated_at\": \"2020-12-18T21:20:22.000000Z\",\n            \"deleted_at\": null,\n            \"params\": null,\n            \"log\": null,\n            \"started\": 1,\n            \"finished\": 0,\n            \"time_started\": \"1212018372.3366\",\n            \"time_finished\": null,\n            \"score_rounds\": [\n                {\n                    \"id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n                    \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                    \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                    \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                    \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n                    \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                    \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n                    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                    \"total_round\": 3.5,\n                    \"is_replica\": 0,\n                    \"order\": 1,\n                    \"created_at\": \"2020-12-18T14:48:50.000000Z\",\n                    \"updated_at\": \"2020-12-18T21:20:22.000000Z\",\n                    \"deleted_at\": null,\n                    \"params\": null,\n                    \"log\": null,\n                    \"won\": 0,\n                    \"lost\": 0,\n                    \"started\": 1,\n                    \"finished\": 0,\n                    \"time_started\": \"1212018372.3366\",\n                    \"time_finished\": null,\n                    \"score_styles\": [\n                        {\n                            \"id\": \"4adf4505-ceea-4a83-adc7-636cd4d2aee8\",\n                            \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                            \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                            \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                            \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n                            \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                            \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n                            \"ss_data_score_rounds_id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n                            \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                            \"total_pattern\": 3.5,\n                            \"total_performances\": 0,\n                            \"total\": 3.5,\n                            \"order\": 1,\n                            \"created_at\": \"2020-12-18T14:54:45.000000Z\",\n                            \"updated_at\": \"2020-12-18T21:20:22.000000Z\",\n                            \"deleted_at\": null,\n                            \"params\": null,\n                            \"log\": null,\n                            \"started\": 1,\n                            \"finished\": 0,\n                            \"time_started\": \"1212018372.3366\",\n                            \"time_finished\": null,\n                            \"score_patterns\": [\n                                {\n                                   \"id\": \"169cc5c5-420c-4a89-baa8-693d2f13938e\",\n                                   \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                                   \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                                   \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                                   \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n                                   \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                                   \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n                                   \"ss_data_score_rounds_id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n                                   \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                   \"ss_data_score_styles_id\": \"4adf4505-ceea-4a83-adc7-636cd4d2aee8\",\n                                   \"ss_patterns_styles_id\": 1,\n                                   \"value\": 2.5,\n                                   \"extra\": 1,\n                                   \"total\": 3.5,\n                                   \"order\": 1,\n                                   \"created_at\": \"2020-12-18T19:28:03.000000Z\",\n                                   \"updated_at\": \"2020-12-18T19:28:03.000000Z\",\n                                   \"deleted_at\": null,\n                                   \"params\": null,\n                                   \"log\": null,\n                                   \"time_patterns\": \"1212018372.3366\",\n                                   \"time_extra\": \"1212018372.3366\",\n                                   \"started\": 0,\n                                   \"finished\": 0\n                                }\n                            ],\n                            \"score_performances\": [\n                                {\n                                   \"id\": \"10ede3e1-030e-4283-8a55-3f9824a93d94\",\n                                   \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                                   \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                                   \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                                   \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n                                   \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                                   \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n                                   \"ss_data_score_rounds_id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n                                   \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                   \"ss_data_score_styles_id\": \"4adf4505-ceea-4a83-adc7-636cd4d2aee8\",\n                                   \"ss_performance_id\": \"e47148d0-dbb7-496f-85d7-933bf060c0de\",\n                                   \"value\": 1,\n                                   \"extra\": 0,\n                                   \"total\": 0,\n                                   \"order\": 1,\n                                   \"created_at\": \"2020-12-18T20:56:49.000000Z\",\n                                   \"updated_at\": \"2020-12-18T20:56:49.000000Z\",\n                                   \"deleted_at\": null,\n                                   \"params\": null,\n                                   \"log\": null,\n                                   \"time_performances\": \"1212018372.3366\",\n                                   \"time_extra\": \"1212018372.3366\",\n                                   \"started\": 0,\n                                   \"finished\": 0\n                                }\n                            ]\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n]",
+          "content": " HTTP/1.1 200 OK\n\"status\": \"success\",\n\"data\": [\n    [\n        {\n            \"id\": \"03fc0a8f-b06f-4682-a09a-92f4f3e09520\",\n            \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n            \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n            \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n            \"participants_id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n            \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n            \"total_battle\": 3.5,\n            \"has_replica\": 0,\n            \"judge_ur\": 0,\n            \"won\": 0,\n            \"lost\": 0,\n            \"completed\": 0,\n            \"partial\": 1,\n            \"order\": 2,\n            \"created_at\": \"2020-12-18T14:54:45.000000Z\",\n            \"updated_at\": \"2020-12-18T21:20:22.000000Z\",\n            \"deleted_at\": null,\n            \"params\": null,\n            \"log\": null,\n            \"started\": 1,\n            \"finished\": 0,\n            \"time_started\": \"1212018372.3366\",\n            \"time_finished\": null,\n            \"ss_data_score_rounds\": [\n                {\n                   \"id\": \"bc212def-92fd-4fed-8faf-7323e5d6ac4e\",\n                   \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                   \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                   \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                   \"participants_id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n                   \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                   \"ss_data_scores_id\": \"03fc0a8f-b06f-4682-a09a-92f4f3e09520\",\n                   \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                   \"total_round\": 3.5,\n                   \"is_replica\": 0,\n                   \"order\": 2,\n                   \"created_at\": \"2020-12-18T14:54:45.000000Z\",\n                   \"updated_at\": \"2020-12-18T21:20:22.000000Z\",\n                   \"deleted_at\": null,\n                   \"params\": null,\n                   \"log\": null,\n                   \"won\": 0,\n                   \"lost\": 0,\n                   \"started\": 1,\n                   \"finished\": 0,\n                   \"time_started\": \"1212018372.3366\",\n                   \"time_finished\": null,\n                   \"ss_data_score_styles\": [\n                       {\n                           \"id\": \"3fe2d9ff-4ebf-4a8a-9168-0598803b03ef\",\n                           \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                           \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                           \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                           \"participants_id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n                           \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                           \"ss_data_scores_id\": \"03fc0a8f-b06f-4682-a09a-92f4f3e09520\",\n                           \"ss_data_score_rounds_id\": \"bc212def-92fd-4fed-8faf-7323e5d6ac4e\",\n                           \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                           \"total_pattern\": 3.5,\n                           \"total_performances\": 0,\n                           \"total\": 3.5,\n                           \"order\": 2,\n                           \"created_at\": \"2020-12-18T14:54:45.000000Z\",\n                           \"updated_at\": \"2020-12-18T21:20:22.000000Z\",\n                           \"deleted_at\": null,\n                           \"params\": null,\n                           \"log\": null,\n                           \"started\": 1,\n                           \"finished\": 0,\n                           \"time_started\": \"1212018372.3366\",\n                           \"time_finished\": null,\n                           \"ss_data_score_style_patrons\": [\n                               {\n                                   \"id\": \"0a648f1a-2640-463b-93cf-2888ee445b1f\",\n                                   \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                                   \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                                   \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                                   \"participants_id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n                                   \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                                   \"ss_data_scores_id\": \"03fc0a8f-b06f-4682-a09a-92f4f3e09520\",\n                                   \"ss_data_score_rounds_id\": \"bc212def-92fd-4fed-8faf-7323e5d6ac4e\",\n                                   \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                   \"ss_data_score_styles_id\": \"3fe2d9ff-4ebf-4a8a-9168-0598803b03ef\",\n                                   \"ss_patterns_styles_id\": 1,\n                                   \"value\": 2.5,\n                                   \"extra\": 1,\n                                   \"total\": 3.5,\n                                   \"order\": 1,\n                                   \"created_at\": \"2020-12-18T20:59:31.000000Z\",\n                                   \"updated_at\": \"2020-12-18T20:59:31.000000Z\",\n                                   \"deleted_at\": null,\n                                   \"params\": null,\n                                   \"log\": null,\n                                   \"time\": \"1212018372.3366\",\n                                   \"started\": 0,\n                                   \"finished\": 0\n                               }\n                           ],\n                           \"ss_data_score_style_performances\": [\n                               {\n                                   \"id\": \"4a94a778-dd30-4808-8b82-86136f292927\",\n                                   \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                                   \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                                   \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                                   \"participants_id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n                                   \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                                   \"ss_data_scores_id\": \"03fc0a8f-b06f-4682-a09a-92f4f3e09520\",\n                                   \"ss_data_score_rounds_id\": \"bc212def-92fd-4fed-8faf-7323e5d6ac4e\",\n                                   \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                   \"ss_data_score_styles_id\": \"3fe2d9ff-4ebf-4a8a-9168-0598803b03ef\",\n                                   \"ss_performance_id\": \"e47148d0-dbb7-496f-85d7-933bf060c0de\",\n                                   \"value\": 1,\n                                   \"extra\": 0,\n                                   \"total\": 0,\n                                   \"order\": 1,\n                                   \"created_at\": \"2020-12-18T20:59:31.000000Z\",\n                                   \"updated_at\": \"2020-12-18T20:59:31.000000Z\",\n                                   \"deleted_at\": null,\n                                   \"params\": null,\n                                   \"log\": null,\n                                   \"time\": \"1212018372.3366\",\n                                   \"started\": 0,\n                                   \"finished\": 0\n                               }\n                           ]\n                       }\n                   ]\n                }\n            ]\n        },\n        {\n            \"id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n            \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n            \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n            \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n            \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n            \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n            \"total_battle\": 3.5,\n            \"has_replica\": 0,\n            \"judge_ur\": 0,\n            \"won\": 0,\n            \"lost\": 0,\n            \"completed\": 0,\n            \"partial\": 1,\n            \"order\": 1,\n            \"created_at\": \"2020-12-18T14:35:45.000000Z\",\n            \"updated_at\": \"2020-12-18T21:20:22.000000Z\",\n            \"deleted_at\": null,\n            \"params\": null,\n            \"log\": null,\n            \"started\": 1,\n            \"finished\": 0,\n            \"time_started\": \"1212018372.3366\",\n            \"time_finished\": null,\n            \"ss_data_score_rounds\": [\n                {\n                    \"id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n                    \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                    \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                    \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                    \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n                    \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                    \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n                    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                    \"total_round\": 3.5,\n                    \"is_replica\": 0,\n                    \"order\": 1,\n                    \"created_at\": \"2020-12-18T14:48:50.000000Z\",\n                    \"updated_at\": \"2020-12-18T21:20:22.000000Z\",\n                    \"deleted_at\": null,\n                    \"params\": null,\n                    \"log\": null,\n                    \"won\": 0,\n                    \"lost\": 0,\n                    \"started\": 1,\n                    \"finished\": 0,\n                    \"time_started\": \"1212018372.3366\",\n                    \"time_finished\": null,\n                    \"ss_data_score_styles\": [\n                        {\n                            \"id\": \"4adf4505-ceea-4a83-adc7-636cd4d2aee8\",\n                            \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                            \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                            \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                            \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n                            \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                            \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n                            \"ss_data_score_rounds_id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n                            \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                            \"total_pattern\": 3.5,\n                            \"total_performances\": 0,\n                            \"total\": 3.5,\n                            \"order\": 1,\n                            \"created_at\": \"2020-12-18T14:54:45.000000Z\",\n                            \"updated_at\": \"2020-12-18T21:20:22.000000Z\",\n                            \"deleted_at\": null,\n                            \"params\": null,\n                            \"log\": null,\n                            \"started\": 1,\n                            \"finished\": 0,\n                            \"time_started\": \"1212018372.3366\",\n                            \"time_finished\": null,\n                            \"ss_data_score_style_patrons\": [\n                                {\n                                   \"id\": \"169cc5c5-420c-4a89-baa8-693d2f13938e\",\n                                   \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                                   \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                                   \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                                   \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n                                   \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                                   \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n                                   \"ss_data_score_rounds_id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n                                   \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                   \"ss_data_score_styles_id\": \"4adf4505-ceea-4a83-adc7-636cd4d2aee8\",\n                                   \"ss_patterns_styles_id\": 1,\n                                   \"value\": 2.5,\n                                   \"extra\": 1,\n                                   \"total\": 3.5,\n                                   \"order\": 1,\n                                   \"created_at\": \"2020-12-18T19:28:03.000000Z\",\n                                   \"updated_at\": \"2020-12-18T19:28:03.000000Z\",\n                                   \"deleted_at\": null,\n                                   \"params\": null,\n                                   \"log\": null,\n                                   \"time_patterns\": \"1212018372.3366\",\n                                   \"time_extra\": \"1212018372.3366\",\n                                   \"started\": 0,\n                                   \"finished\": 0\n                                }\n                            ],\n                            \"ss_data_score_style_performances\": [\n                                {\n                                   \"id\": \"10ede3e1-030e-4283-8a55-3f9824a93d94\",\n                                   \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                                   \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                                   \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n                                   \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n                                   \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n                                   \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n                                   \"ss_data_score_rounds_id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n                                   \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                   \"ss_data_score_styles_id\": \"4adf4505-ceea-4a83-adc7-636cd4d2aee8\",\n                                   \"ss_performance_id\": \"e47148d0-dbb7-496f-85d7-933bf060c0de\",\n                                   \"value\": 1,\n                                   \"extra\": 0,\n                                   \"total\": 0,\n                                   \"order\": 1,\n                                   \"created_at\": \"2020-12-18T20:56:49.000000Z\",\n                                   \"updated_at\": \"2020-12-18T20:56:49.000000Z\",\n                                   \"deleted_at\": null,\n                                   \"params\": null,\n                                   \"log\": null,\n                                   \"time_performances\": \"1212018372.3366\",\n                                   \"time_extra\": \"1212018372.3366\",\n                                   \"started\": 0,\n                                   \"finished\": 0\n                                }\n                            ]\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n]",
           "type": "json"
         }
       ]
@@ -2930,7 +2932,7 @@
             "type": "String",
             "optional": false,
             "field": "ss_data_scores_id",
-            "description": "<p>El <code>uuid</code> score a cerrar o completar la batalla para dicho juez</p>"
+            "description": "<p>El <code>uuid</code> score a cerrar o completar la batalla para dicho juez este UUID ya esta del punto de set Order Battle es decir el ID que ya se tiene en el front</p>"
           },
           {
             "group": "participant",
@@ -3163,7 +3165,7 @@
             "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>El <code>uuid</code> del ss_data_scores</p>"
+            "description": "<p>El <code>uuid</code> del ss_data_scores este UUID se genera en el front con estandar UUID v4</p>"
           },
           {
             "group": "ss_data_scores",
@@ -3207,7 +3209,7 @@
             "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>El <code>uuid</code> del ss_data_score_round</p>"
+            "description": "<p>El <code>uuid</code> del ss_data_score_round este UUID se genera en el front con estandar UUID v4</p>"
           },
           {
             "group": "ss_data_score_round",
@@ -3237,7 +3239,7 @@
             "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>El <code>uuid</code> del ss_data_score_style</p>"
+            "description": "<p>El <code>uuid</code> del ss_data_score_style este UUID se genera en el front con estandar UUID v4</p>"
           },
           {
             "group": "ss_data_score_style",
@@ -3573,7 +3575,7 @@
             "type": "String",
             "optional": false,
             "field": "record_id",
-            "description": "<p>El <code>uuid</code> del record a cambiar</p>"
+            "description": "<p>El <code>uuid</code> del record a cambiar este UUID se genera en el front con estandar UUID v4</p>"
           },
           {
             "group": "participant",
@@ -3881,14 +3883,14 @@
             "type": "String",
             "optional": false,
             "field": "ss_data_scores_id",
-            "description": "<p>El <code>uuid</code> ss_data_scores</p>"
+            "description": "<p>El <code>uuid</code> ss_data_scores este UUID ya esta del punto de set Order Battle es decir el ID que ya se tiene en el front</p>"
           },
           {
             "group": "participant",
             "type": "String",
             "optional": false,
             "field": "ss_data_score_rounds_id",
-            "description": "<p>El <code>uuid</code> ss_data_score_rounds</p>"
+            "description": "<p>El <code>uuid</code> ss_data_score_rounds este UUID se genera en el front con estandar UUID v4</p>"
           },
           {
             "group": "participant",
