@@ -1166,10 +1166,24 @@ define({ "api": [
           },
           {
             "group": "styles",
-            "type": "String",
+            "type": "Object[Pivot]",
+            "optional": false,
+            "field": "pivot",
+            "description": ""
+          }
+        ],
+        "pivot": [
+          {
+            "group": "pivot",
             "optional": false,
             "field": "order",
-            "description": "<p>El numero de orden del style</p>"
+            "description": "<p>El orden en el que se mostrará el estilo en pantalla</p>"
+          },
+          {
+            "group": "pivot",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El numero del id es un entero el cual se enviara en el objeto al ingresar el valor. Es el id del ss_patterns_styles_id en la tabla ss_data_score_style_patrons</p>"
           }
         ],
         "patterns": [
@@ -1207,20 +1221,6 @@ define({ "api": [
             "optional": false,
             "field": "pivot",
             "description": ""
-          }
-        ],
-        "pivot": [
-          {
-            "group": "pivot",
-            "optional": false,
-            "field": "id",
-            "description": "<p>El numero del id es un entero el cual se enviara en el objeto al ingresar el valor. Es el id del ss_patterns_styles_id en la tabla ss_data_score_style_patrons</p>"
-          },
-          {
-            "group": "pivot",
-            "optional": false,
-            "field": "order",
-            "description": "<p>El orden en el que se mostrará el patron en pantalla</p>"
           }
         ],
         "performance": [
@@ -1264,7 +1264,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n        {\n            \"id\":\"5a2d413d-0e43-4d35-b5a8-cb83fe952654\",\n            \"ss_types_scoring_systems_id\":\"6878e106-d7df-4a9b-8bb3-688dc31ff7e4\",\n            \"name\":\"Sistema Votaci&oacute;n FMS\",\n            \"slug\":\"sistema-votacion-fms\",\n            \"description\":\"fms\",\n            \"order\":1,\n            \"created_at\":\"2020-07-11T11:13:57.000000Z\",\n            \"updated_at\":\"2020-07-11T11:13:57.000000Z\",\n            \"deleted_at\":null,\n            \"params\":null,\n            \"log\":null,\n            \"battle_structures\":\n                [\n                    {\n                        \"id\":\"7d4b4c3d-7d8d-4482-a497-cc1b64701d75\",\n                        \"ss_scoring_systems_id\":\"5a2d413d-0e43-4d35-b5a8-cb83fe952654\",\n                        \"name\":\"Batallas FMS\",\n                        \"slug\":\"batallas-fms\",\n                        \"description\":\"para las batallas FMS\",\n                        \"replica_id\":\"332cd557-ec53-4db6-bf83-ab9467714e40\",\n                        \"order\":1,\n                        \"created_at\":\"2020-07-11T11:18:36.000000Z\",\n                        \"updated_at\":\"2020-07-11T11:18:36.000000Z\",\n                        \"deleted_at\":null,\n                        \"params\":null,\n                        \"log\":null,\n                        \"rounds\":\n                            [\n                                {\n                                    \"id\":\"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                                    \"name\":\"Round 1\",\n                                    \"slug\":\"round-1\",\n                                    \"description\":\"para round 1\",\n                                    \"order\":1,\n                                    \"created_at\":\"2020-07-11T11:14:13.000000Z\",\n                                    \"updated_at\":\"2020-07-11T11:14:13.000000Z\",\n                                    \"deleted_at\":null,\n                                    \"params\":null,\n                                    \"log\":null,\n                                    \"pivot\":{\n                                        \"ss_battle_structures_id\":\"7d4b4c3d-7d8d-4482-a497-cc1b64701d75\",\n                                        \"ss_round_structures_id\":\"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                                        \"id\":1,\n                                        \"order\":1\n                                    },\n                                    \"styles\":[\n                                        {\n                                            \"id\":\"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                            \"ss_types_styles_id\":\"9809cecb-6499-4a40-b5b6-7af39918aacf\",\n                                            \"name\":\"Easy Mode\",\n                                            \"num_patterns\":6,\n                                            \"completed\":1,\n                                            \"extra_point\":0,\n                                            \"turn\":0,\n                                            \"order\":2,\n                                            \"created_at\":\"2020-07-11T11:06:39.000000Z\",\n                                            \"updated_at\":\"2020-07-11T11:06:52.000000Z\",\n                                            \"deleted_at\":null,\n                                            \"params\":null,\n                                            \"log\":null,\n                                            \"pivot\":{\n                                                \"ss_round_structures_id\":\"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                                                \"ss_styles_id\":\"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                                \"id\":1,\n                                                \"order\":1\n                                            },\n                                            \"patterns\":[\n                                                {\n                                                   \"id\":\"220fd555-19e9-44f0-a74c-70782dd7d7c3\",\n                                                   \"ss_types_patterns_id\":\"8a8f8f27-4be0-4998-8bfa-7366bf0be108\",\n                                                   \"name\":\"Patron Normal\",\n                                                   \"slug\":\"patron-normal\",\n                                                   \"score\":4,\n                                                   \"interval\":\"0.50\",\n                                                   \"order\":1,\n                                                   \"created_at\":\"2020-07-11T10:59:08.000000Z\",\n                                                   \"updated_at\":\"2020-07-11T10:59:08.000000Z\",\n                                                   \"deleted_at\":null,\n                                                   \"params\":null,\n                                                   \"log\":null,\n                                                   \"pivot\":{\n                                                      \"ss_styles_id\":\"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                                      \"ss_patterns_id\":\"220fd555-19e9-44f0-a74c-70782dd7d7c3\",\n                                                      \"id\":1, // Es el id del ss_patterns_styles_id en la tabla ss_data_score_style_patrons\n                                                      \"order\":1 // Este es el orden en el que se muestra en la tablet\n                                                   }\n                                                },\n                                                \"...\"\n                                            ],\n                                            \"performance\":[\n                                               {\n                                                  \"id\":\"e5efeac1-94cf-45f4-8aa2-275a1806826f\",\n                                                  \"name\":\"Escena\",\n                                                  \"slug\":\"escena\",\n                                                  \"score\":2,\n                                                  \"interval\":\"1.00\",\n                                                  \"order\":1,\n                                                  \"created_at\":\"2020-07-11T10:53:34.000000Z\",\n                                                  \"updated_at\":\"2020-07-11T10:53:34.000000Z\",\n                                                  \"deleted_at\":null,\n                                                  \"params\":null,\n                                                  \"log\":null,\n                                                  \"pivot\":{\n                                                     \"ss_styles_id\":\"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                                     \"ss_performance_id\":\"e5efeac1-94cf-45f4-8aa2-275a1806826f\"\n                                                  }\n                                               },\n                                               \"...\"\n                                            ]\n                                    },\n                                    \"....\"\n                            ]\n                    },\n                    \"...\"\n            ]\n        }\n    ]\n}",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n        {\n            \"id\":\"5a2d413d-0e43-4d35-b5a8-cb83fe952654\",\n            \"ss_types_scoring_systems_id\":\"6878e106-d7df-4a9b-8bb3-688dc31ff7e4\",\n            \"name\":\"Sistema Votaci&oacute;n FMS\",\n            \"slug\":\"sistema-votacion-fms\",\n            \"description\":\"fms\",\n            \"order\":1,\n            \"created_at\":\"2020-07-11T11:13:57.000000Z\",\n            \"updated_at\":\"2020-07-11T11:13:57.000000Z\",\n            \"deleted_at\":null,\n            \"params\":null,\n            \"log\":null,\n            \"battle_structures\":\n                [\n                    {\n                        \"id\":\"7d4b4c3d-7d8d-4482-a497-cc1b64701d75\",\n                        \"ss_scoring_systems_id\":\"5a2d413d-0e43-4d35-b5a8-cb83fe952654\",\n                        \"name\":\"Batallas FMS\",\n                        \"slug\":\"batallas-fms\",\n                        \"description\":\"para las batallas FMS\",\n                        \"replica_id\":\"332cd557-ec53-4db6-bf83-ab9467714e40\",\n                        \"order\":1,\n                        \"created_at\":\"2020-07-11T11:18:36.000000Z\",\n                        \"updated_at\":\"2020-07-11T11:18:36.000000Z\",\n                        \"deleted_at\":null,\n                        \"params\":null,\n                        \"log\":null,\n                        \"rounds\":\n                            [\n                                {\n                                    \"id\":\"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                                    \"name\":\"Round 1\",\n                                    \"slug\":\"round-1\",\n                                    \"description\":\"para round 1\",\n                                    \"order\":1,\n                                    \"created_at\":\"2020-07-11T11:14:13.000000Z\",\n                                    \"updated_at\":\"2020-07-11T11:14:13.000000Z\",\n                                    \"deleted_at\":null,\n                                    \"params\":null,\n                                    \"log\":null,\n                                    \"pivot\":{\n                                        \"ss_battle_structures_id\":\"7d4b4c3d-7d8d-4482-a497-cc1b64701d75\",\n                                        \"ss_round_structures_id\":\"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                                        \"id\":1,\n                                        \"order\":1\n                                    },\n                                    \"styles\":[\n                                        {\n                                            \"id\":\"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                            \"ss_types_styles_id\":\"9809cecb-6499-4a40-b5b6-7af39918aacf\",\n                                            \"name\":\"Easy Mode\",\n                                            \"num_patterns\":6,\n                                            \"completed\":1,\n                                            \"extra_point\":0,\n                                            \"turn\":0,\n                                            \"order\":2,\n                                            \"created_at\":\"2020-07-11T11:06:39.000000Z\",\n                                            \"updated_at\":\"2020-07-11T11:06:52.000000Z\",\n                                            \"deleted_at\":null,\n                                            \"params\":null,\n                                            \"log\":null,\n                                            \"pivot\":{\n                                                \"ss_round_structures_id\":\"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                                                \"ss_styles_id\":\"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                                \"id\":1,\n                                                \"order\":1 // El orden del estilo en el que se muestra en la pantalla de la tablet\n                                            },\n                                            \"patterns\":[\n                                                {\n                                                   \"id\":\"220fd555-19e9-44f0-a74c-70782dd7d7c3\",\n                                                   \"ss_types_patterns_id\":\"8a8f8f27-4be0-4998-8bfa-7366bf0be108\",\n                                                   \"name\":\"Patron Normal\",\n                                                   \"slug\":\"patron-normal\",\n                                                   \"score\":4,\n                                                   \"interval\":\"0.50\",\n                                                   \"order\":1,\n                                                   \"created_at\":\"2020-07-11T10:59:08.000000Z\",\n                                                   \"updated_at\":\"2020-07-11T10:59:08.000000Z\",\n                                                   \"deleted_at\":null,\n                                                   \"params\":null,\n                                                   \"log\":null,\n                                                   \"pivot\":{\n                                                      \"ss_styles_id\":\"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                                      \"ss_patterns_id\":\"220fd555-19e9-44f0-a74c-70782dd7d7c3\",\n                                                      \"id\":1, // Es el id del ss_patterns_styles_id en la tabla ss_data_score_style_patrons\n                                                      \"order\":1 // Este es el orden en el que se muestra en la tablet\n                                                   }\n                                                },\n                                                \"...\"\n                                            ],\n                                            \"performance\":[\n                                               {\n                                                  \"id\":\"e5efeac1-94cf-45f4-8aa2-275a1806826f\",\n                                                  \"name\":\"Escena\",\n                                                  \"slug\":\"escena\",\n                                                  \"score\":2,\n                                                  \"interval\":\"1.00\",\n                                                  \"order\":1,\n                                                  \"created_at\":\"2020-07-11T10:53:34.000000Z\",\n                                                  \"updated_at\":\"2020-07-11T10:53:34.000000Z\",\n                                                  \"deleted_at\":null,\n                                                  \"params\":null,\n                                                  \"log\":null,\n                                                  \"pivot\":{\n                                                     \"ss_styles_id\":\"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                                     \"ss_performance_id\":\"e5efeac1-94cf-45f4-8aa2-275a1806826f\"\n                                                  }\n                                               },\n                                               \"...\"\n                                            ]\n                                    },\n                                    \"....\"\n                            ]\n                    },\n                    \"...\"\n            ]\n        }\n    ]\n}",
           "type": "json"
         }
       ]
@@ -1541,10 +1541,10 @@ define({ "api": [
           },
           {
             "group": "styles",
-            "type": "String",
+            "type": "Object[Pivot]",
             "optional": false,
-            "field": "order",
-            "description": "<p>El numero de orden del style</p>"
+            "field": "pivot",
+            "description": ""
           },
           {
             "group": "styles",
@@ -1559,6 +1559,20 @@ define({ "api": [
             "optional": false,
             "field": "performance",
             "description": "<p>Array con los performance del style</p>"
+          }
+        ],
+        "pivot": [
+          {
+            "group": "pivot",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El orden en el que se mostrará el estilo en pantalla</p>"
+          },
+          {
+            "group": "pivot",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El numero del id es un entero el cual se enviara en el objeto al ingresar el valor. Es el id del ss_patterns_styles_id en la tabla ss_data_score_style_patrons</p>"
           }
         ],
         "patterns": [
@@ -1596,20 +1610,6 @@ define({ "api": [
             "optional": false,
             "field": "pivot",
             "description": ""
-          }
-        ],
-        "pivot": [
-          {
-            "group": "pivot",
-            "optional": false,
-            "field": "id",
-            "description": "<p>El numero del id es un entero el cual se enviara en el objeto al ingresar el valor. Es el id del ss_patterns_styles_id en la tabla ss_data_score_style_patrons</p>"
-          },
-          {
-            "group": "pivot",
-            "optional": false,
-            "field": "order",
-            "description": "<p>El orden en el que se mostrará el patron en pantalla</p>"
           }
         ],
         "performance": [
