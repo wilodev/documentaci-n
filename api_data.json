@@ -1166,24 +1166,18 @@
           },
           {
             "group": "styles",
-            "type": "Object[Pivot]",
+            "type": "Object[style-pivot]",
             "optional": false,
             "field": "pivot",
             "description": ""
           }
         ],
-        "pivot": [
+        "style-pivot": [
           {
-            "group": "pivot",
+            "group": "style-pivot",
             "optional": false,
             "field": "order",
             "description": "<p>El orden en el que se mostrará el estilo en pantalla</p>"
-          },
-          {
-            "group": "pivot",
-            "optional": false,
-            "field": "id",
-            "description": "<p>El numero del id es un entero el cual se enviara en el objeto al ingresar el valor. Es el id del ss_patterns_styles_id en la tabla ss_data_score_style_patrons</p>"
           }
         ],
         "patterns": [
@@ -1221,6 +1215,20 @@
             "optional": false,
             "field": "pivot",
             "description": ""
+          }
+        ],
+        "pivot": [
+          {
+            "group": "pivot",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El numero del id es un entero el cual se enviara en el objeto al ingresar el valor. Es el id del ss_patterns_styles_id en la tabla ss_data_score_style_patrons</p>"
+          },
+          {
+            "group": "pivot",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El orden en el que se mostrará el patron en pantalla</p>"
           }
         ],
         "performance": [
@@ -1541,7 +1549,7 @@
           },
           {
             "group": "styles",
-            "type": "Object[Pivot]",
+            "type": "Object[style-pivot]",
             "optional": false,
             "field": "pivot",
             "description": ""
@@ -1561,18 +1569,12 @@
             "description": "<p>Array con los performance del style</p>"
           }
         ],
-        "pivot": [
+        "style-pivot": [
           {
-            "group": "pivot",
+            "group": "style-pivot",
             "optional": false,
             "field": "order",
             "description": "<p>El orden en el que se mostrará el estilo en pantalla</p>"
-          },
-          {
-            "group": "pivot",
-            "optional": false,
-            "field": "id",
-            "description": "<p>El numero del id es un entero el cual se enviara en el objeto al ingresar el valor. Es el id del ss_patterns_styles_id en la tabla ss_data_score_style_patrons</p>"
           }
         ],
         "patterns": [
@@ -1610,6 +1612,20 @@
             "optional": false,
             "field": "pivot",
             "description": ""
+          }
+        ],
+        "pivot": [
+          {
+            "group": "pivot",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El numero del id es un entero el cual se enviara en el objeto al ingresar el valor. Es el id del ss_patterns_styles_id en la tabla ss_data_score_style_patrons</p>"
+          },
+          {
+            "group": "pivot",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El orden en el que se mostrará el patron en pantalla</p>"
           }
         ],
         "performance": [
