@@ -1,5 +1,329 @@
 [
   {
+    "type": "post",
+    "url": "/refresh-token",
+    "title": "0.2 Refresh Token",
+    "version": "1.0.0",
+    "name": "refreshTokenAction",
+    "group": "0.-_Signin",
+    "description": "<p>Reinicia sesión con el refresh token obtenido en el proceso de inicio de sesión obteniendo así las nueva credenciales donde se incluye el nuevo id_token</p>",
+    "examples": [
+      {
+        "title": "Ejemplo como se realiza la petición:",
+        "content": "curl -i http://ionic.urbanroosters.com/api/refrech-token",
+        "type": "curl"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "api-key",
+            "description": "<p>El api key que necesita para solicitar acceso</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-example                       El api key que necesita para solicitar acceso",
+          "content": "{\n    \"api-key\": \"sustituir por tu api key\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "body": [
+          {
+            "group": "body",
+            "type": "Object[refreshToken]",
+            "optional": false,
+            "field": "refreshToken",
+            "description": "<p>Array con el token para reiniciar la sesión</p>"
+          }
+        ],
+        "refreshToken": [
+          {
+            "group": "refreshToken",
+            "type": "String",
+            "optional": false,
+            "field": "refreshToken",
+            "description": "<p>El token para reiniciar la sesión</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example:",
+          "content": "{\n    \"refreshToken\": \"AOvuKvTOqNmdaZzYpPSAN_7Dwd6FcP82Lo8t0TANqgeDxTftBzjC3wS_e87Wp0Ig5jeir-UjY-Jn0YuB-lTEAnaCDeHyB1doEEToekPlZgMrf04v8CJmCg_3qZK8sbOmbM8kX7QW-SNP4bo4WpE4VEHvHBLdcYwvE3A9sCUU1tvEVGYdgpAGMgy9qgXDDAlnMYnmYQfGg7-XohuLNVAodcbppGYsFxdJFw\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[refreshToken]",
+            "optional": false,
+            "field": "refreshToken",
+            "description": "<p>Array con los datos para reiniciar la sesión</p>"
+          }
+        ],
+        "refreshToken": [
+          {
+            "group": "refreshToken",
+            "type": "String",
+            "optional": false,
+            "field": "token_type",
+            "description": "<p>El tipo de token</p>"
+          },
+          {
+            "group": "refreshToken",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>El token de acceso</p>"
+          },
+          {
+            "group": "refreshToken",
+            "type": "String",
+            "optional": false,
+            "field": "id_token",
+            "description": "<p>El token del usuario</p>"
+          },
+          {
+            "group": "refreshToken",
+            "type": "String",
+            "optional": false,
+            "field": "refresh_token",
+            "description": "<p>El token para reiniciar la sesión</p>"
+          },
+          {
+            "group": "refreshToken",
+            "type": "String",
+            "optional": false,
+            "field": "expires_in",
+            "description": "<p>El tiempo de duracion del token</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "     HTTP/1.1 200 OK\n     status: \"success\",\n{\n    \"token_type\": \"Bearer\",\n    \"access_token\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6ImEyYjkxODJiMWI0NmNiN2ZjN2MzMTFlZTgwMjFhZDY1MmVlMjc2MjIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdXItYWNjb3VudHMiLCJhdWQiOiJ1ci1hY2NvdW50cyIsImF1dGhfdGltZSI6MTYxMTI2ODQ4OSwidXNlcl9pZCI6IjkyYzk2MTViLTc0OWUtNGFkOS05NmM2LWFiNGEzZjRiNmU5NCIsInN1YiI6IjkyYzk2MTViLTc0OWUtNGFkOS05NmM2LWFiNGEzZjRiNmU5NCIsImlhdCI6MTYxMTMzNDAzMSwiZXhwIjoxNjExMzM3NjMxLCJlbWFpbCI6Im5vdmFfbWlnMjAyMUBob3RtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJub3ZhX21pZzIwMjFAaG90bWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.mp6jL9AorNngypyNm6JfRcGaaEtFItRP6gSee3IxyqS3OpDz_nX2UczeBuz7c0UgI0wmqvSYGZouq0K9992k7zV7tLRD1_5Y0Qfu9OO0nA7f-wXOVIa1omirTu5YQU-q2gJYR8V_fHTjb3N--Q1V1-jIzQthtehg67ZU9GtUM_scjbE81SpLb8SZ_UCk75XeVyCMIloKGdTLbn55JtUXKJpXry8XuksCxiI-5yLWMHU17zYg643DxW9-XEyusO2BmIPGyItl3SjOezHIArYKKzf6RBEOhpkNBICTx3exle5QSL62FDjV9Nbk6aN13c9Ycj4KsHFKaLL7s_untOJixg\",\n    \"id_token\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6ImEyYjkxODJiMWI0NmNiN2ZjN2MzMTFlZTgwMjFhZDY1MmVlMjc2MjIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdXItYWNjb3VudHMiLCJhdWQiOiJ1ci1hY2NvdW50cyIsImF1dGhfdGltZSI6MTYxMTI2ODQ4OSwidXNlcl9pZCI6IjkyYzk2MTViLTc0OWUtNGFkOS05NmM2LWFiNGEzZjRiNmU5NCIsInN1YiI6IjkyYzk2MTViLTc0OWUtNGFkOS05NmM2LWFiNGEzZjRiNmU5NCIsImlhdCI6MTYxMTMzNDAzMSwiZXhwIjoxNjExMzM3NjMxLCJlbWFpbCI6Im5vdmFfbWlnMjAyMUBob3RtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJub3ZhX21pZzIwMjFAaG90bWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.mp6jL9AorNngypyNm6JfRcGaaEtFItRP6gSee3IxyqS3OpDz_nX2UczeBuz7c0UgI0wmqvSYGZouq0K9992k7zV7tLRD1_5Y0Qfu9OO0nA7f-wXOVIa1omirTu5YQU-q2gJYR8V_fHTjb3N--Q1V1-jIzQthtehg67ZU9GtUM_scjbE81SpLb8SZ_UCk75XeVyCMIloKGdTLbn55JtUXKJpXry8XuksCxiI-5yLWMHU17zYg643DxW9-XEyusO2BmIPGyItl3SjOezHIArYKKzf6RBEOhpkNBICTx3exle5QSL62FDjV9Nbk6aN13c9Ycj4KsHFKaLL7s_untOJixg\",\n    \"refresh_token\": \"AOvuKvTOqNmdaZzYpPSAN_7Dwd6FcP82Lo8t0TANqgeDxTftBzjC3wS_e87Wp0Ig5jeir-UjY-Jn0YuB-lTEAnaCDeHyB1doEEToekPlZgMrf04v8CJmCg_3qZK8sbOmbM8kX7QW-SNP4bo4WpE4VEHvHBLdcYwvE3A9sCUU1tvEVGYdgpAGMgy9qgXDDAlnMYnmYQfGg7-XohuLNVAodcbppGYsFxdJFw\",\n    \"expires_in\": 3600\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "NoAccessRight",
+            "description": "<p>Solo los usuarios registrados pueden acceder</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ApiKeyNotFound",
+            "description": "<p>El <code>token</code> no coincide con un usuario</p>"
+          }
+        ],
+        "500 Internal Server Error": [
+          {
+            "group": "500 Internal Server Error",
+            "optional": false,
+            "field": "Error",
+            "description": "<p>de servidor</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response (example):",
+          "content": "\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apps/acl/components/signin/Front/SigninApiController.php",
+    "groupTitle": "0.-_Signin",
+    "sampleRequest": [
+      {
+        "url": "https://ionic.urbanroosters.com/api/refresh-token"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/signin",
+    "title": "0.1 Inicio de sesion",
+    "version": "1.0.0",
+    "name": "signinAction",
+    "group": "0.-_Signin",
+    "description": "<p>Realiza el proceso de inicio de sesión, este proceso se realiza enviando el nombre de usuario y la contraseña</p>",
+    "examples": [
+      {
+        "title": "Ejemplo como se realiza la petición:",
+        "content": "curl -i http://ionic.urbanroosters.com/api/signin",
+        "type": "curl"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "api-key",
+            "description": "<p>El api key que necesita para solicitar acceso</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-example                       El api key que necesita para solicitar acceso",
+          "content": "{\n    \"api-key\": \"sustituir por tu api key\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "body": [
+          {
+            "group": "body",
+            "type": "Object[signin]",
+            "optional": false,
+            "field": "signin",
+            "description": "<p>Array con nombre de usuaio y contraseña</p>"
+          }
+        ],
+        "signin": [
+          {
+            "group": "signin",
+            "type": "String",
+            "optional": false,
+            "field": "username",
+            "description": "<p>El <code>username</code> nombre de usuario(juez)</p>"
+          },
+          {
+            "group": "signin",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>El <code>password</code> clave o contraseña</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example:",
+          "content": "{\n    \"username\": \"nombre_de_usuario\",\n    \"password\": \"clave/contraseña\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[signin]",
+            "optional": false,
+            "field": "signin",
+            "description": "<p>Array con los datos del signin</p>"
+          }
+        ],
+        "signin": [
+          {
+            "group": "signin",
+            "type": "String",
+            "optional": false,
+            "field": "token_type",
+            "description": "<p>El tipo de token</p>"
+          },
+          {
+            "group": "signin",
+            "type": "String",
+            "optional": false,
+            "field": "id_token",
+            "description": "<p>El token del usuario</p>"
+          },
+          {
+            "group": "signin",
+            "type": "String",
+            "optional": false,
+            "field": "refresh_token",
+            "description": "<p>El token para reiniciar la sesión</p>"
+          },
+          {
+            "group": "signin",
+            "type": "String",
+            "optional": false,
+            "field": "expires_in",
+            "description": "<p>El tiempo de duración del token</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "     HTTP/1.1 200 OK\n     status: \"success\",\n{\n    \"token_type\": \"Bearer\",\n    \"access_token\": null,\n    \"id_token\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6ImEyYjkxODJiMWI0NmNiN2ZjN2MzMTFlZTgwMjFhZDY1MmVlMjc2MjIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdXItYWNjb3VudHMiLCJhdWQiOiJ1ci1hY2NvdW50cyIsImF1dGhfdGltZSI6MTYxMTMzMTUxMSwidXNlcl9pZCI6IjkyYzk2MTViLTc0OWUtNGFkOS05NmM2LWFiNGEzZjRiNmU5NCIsInN1YiI6IjkyYzk2MTViLTc0OWUtNGFkOS05NmM2LWFiNGEzZjRiNmU5NCIsImlhdCI6MTYxMTMzMTUxMSwiZXhwIjoxNjExMzM1MTExLCJlbWFpbCI6Im5vdmFfbWlnMjAyMUBob3RtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJub3ZhX21pZzIwMjFAaG90bWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.Vu72cvMw9xbAL9cOQNFXrIXWEQnDtq59Ia5xAadoyKy9TmNKe2WdowsCpmTeyN5yXWMm8Wb5EN5G2naex-YXmGQI2SoDQmkXIoqX_cc-BnauGoK5j_0fd_EVocUImK3gfDrju7_fGqm5DrS9EMIaPuZXun8VBOLoVViED48iTMA7nLymXaI1035NB0BDN4-PckbR-Etdor5rNsYat_RlmmuuSGL37b3HUqKq6lqo0yjFjaVz6lRnnhSEl9ssvAlaPSO6D2TmKzXilwa_iIXRyi5OSPcFumO0JPptx_LxNm9VzNNY67cl4tFcF9L_Z_7rIlBdLMHGc6bRCmDSeDEskQ\",\n    \"refresh_token\": \"AOvuKvT6IvlQmaP8l0sOljLb10MO1JtTJBiSZG3HFUed9bfnuwfl4ipl0S5K9YuzssFvodunjkgPUsMNz-KxPb6bd8Ndqka2-TB2k90Q8XyDRlyVEiILbLMBJuQbDKGrQuySP8NbowZdmCXFnb7fAXJmAYTNUsQDrj4kIQ7V1FnTYeoqPSR2kd9DRimZCdfqAk30-uzkeUnc2KBd0CZ9syWN3olUhUwTxg\",\n    \"expires_in\": 3600\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "NoAccessRight",
+            "description": "<p>Solo los usuarios registrados pueden acceder</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ApiKeyNotFound",
+            "description": "<p>El <code>token</code> no coincide con un usuario</p>"
+          }
+        ],
+        "500 Internal Server Error": [
+          {
+            "group": "500 Internal Server Error",
+            "optional": false,
+            "field": "Error",
+            "description": "<p>de servidor</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response (example):",
+          "content": "\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apps/acl/components/signin/Front/SigninApiController.php",
+    "groupTitle": "0.-_Signin",
+    "sampleRequest": [
+      {
+        "url": "https://ionic.urbanroosters.com/api/signin"
+      }
+    ]
+  },
+  {
     "type": "get",
     "url": "/events/:judge/:event",
     "title": "1.3.-Obtiene un evento especifico de un juez",
@@ -17,11 +341,6 @@
         "title": "Obtiene todos los datos de un evento de un juez en concreto",
         "content": "curl -i http://ionic.urbanroosters.com/api/events/019f7830-bb26-412d-ae6b-fe5bc4780357/0f62308e-8245-4e2f-8e01-b0c0920be35a",
         "type": "curl"
-      }
-    ],
-    "sampleRequest": [
-      {
-        "url": "http://ionic.urbanroosters.com/api/events/019f7830-bb26-412d-ae6b-fe5bc4780357/0f62308e-8245-4e2f-8e01-b0c0920be35a"
       }
     ],
     "header": {
@@ -420,7 +739,12 @@
       ]
     },
     "filename": "apps/api-app-judges/components/api-events/Front/ApiEventsController.php",
-    "groupTitle": "1.-_Eventos"
+    "groupTitle": "1.-_Eventos",
+    "sampleRequest": [
+      {
+        "url": "https://ionic.urbanroosters.com/api/events/:judge/:event"
+      }
+    ]
   },
   {
     "type": "get",
