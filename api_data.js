@@ -4263,7 +4263,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/battles/set-battles/:event/:phase/:judge",
-    "title": "3.2.-Cargamos una o varias batallas por lotes",
+    "title": "3.8.-Cargamos una o varias batallas por lotes",
     "version": "1.0.0",
     "name": "setBattles",
     "group": "3.-_Batallas",
@@ -5428,7 +5428,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/battle/set-completed/:event/:phase/:judge/:battle",
-    "title": "3.5.- Determina si la batalla termino",
+    "title": "3.11.- Determina si la batalla termino",
     "version": "1.0.0",
     "name": "setCompleted",
     "group": "3.-_Batallas",
@@ -6064,7 +6064,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/battle/set-finished-record/:event/:phase/:judge/:battle",
-    "title": "3.4.- Finalizar un Score, Round o Style",
+    "title": "3.10.- Finalizar un Score, Round o Style",
     "version": "1.0.0",
     "name": "setPerFinishedScores",
     "group": "3.-_Batallas",
@@ -6379,7 +6379,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/battle/set-round-replica/:event/:phase/:judge/:battle",
-    "title": "3.3.-Determina el ganador y perdedor de una réplica",
+    "title": "3.9.-Determina el ganador y perdedor de una réplica",
     "version": "1.0.0",
     "name": "setRoundReplica",
     "group": "3.-_Batallas",
