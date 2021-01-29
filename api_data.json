@@ -2057,7 +2057,7 @@
     "examples": [
       {
         "title": "Agrega un nuevo patron a un ss_data_score_styles.",
-        "content": "curl -i http://ionic.urbanroosters.com/api/battle/add-pattern/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
+        "content": "curl -i http://ionic.urbanroosters.com/api/scores/add-pattern/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
         "type": "curl"
       }
     ],
@@ -2217,29 +2217,20 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n    \"id\": \"169cc5c5-420c-4a89-baa8-693d2f13938e\",\n    \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n    \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n    \"ss_data_score_rounds_id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n    \"ss_data_score_styles_id\": \"4adf4505-ceea-4a83-adc7-636cd4d2aee8\",\n    \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n    \"ss_patterns_styles_id\": \"1\",\n    \"value\": 2.5,\n    \"extra\": true,\n    \"total\": 3.5,\n    \"order\": 1,\n    \"time_pattern\": \"1212018372.3366\",\n    \"time_extra\": \"1212018372.3366\",\n}",
+          "content": "{\n    \"id\": \"67b90854-d770-4381-bcfe-e9c1dc2b6336\",\n    \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n    \"ss_data_scores_id\": \"e6a5f7a7-6899-4dac-8abc-534ba71576b9\",\n    \"ss_data_score_rounds_id\": \"28766c9a-f80d-4221-8647-20a6d5fd634a\",\n    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n    \"ss_data_score_styles_id\": \"8f74a311-1b09-4800-b5a7-c55686629283\",\n    \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n    \"ss_patterns_styles_id\": \"1\",\n    \"value\": 2.5,\n    \"extra\": false,\n    \"total\": 2.5,\n    \"order\": 1,\n    \"time_pattern\": \"1212018372.3366\"\n}",
           "type": "json"
         }
       ]
     },
     "success": {
       "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object[score]",
-            "optional": false,
-            "field": "Scores",
-            "description": "<p>Array con los datos del ss_data_scores creado</p>"
-          }
-        ],
         "score": [
           {
             "group": "score",
             "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>El <code>uuid</code> del ss_data_scores creado</p>"
+            "description": "<p>El <code>uuid</code> del ss_data_score_style_patrons creado</p>"
           },
           {
             "group": "score",
@@ -2280,92 +2271,85 @@
             "group": "score",
             "type": "String",
             "optional": false,
-            "field": "total_battle",
-            "description": "<p>El total de la batalla</p>"
+            "field": "value",
+            "description": "<p>El valor que se le da un pattern</p>"
           },
           {
             "group": "score",
             "type": "Boolean",
             "optional": false,
-            "field": "has_replica",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla tiene réplica</p>"
+            "field": "extra",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el pattern tiene extra</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "judge_ur",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se decide por el juez en la réplica</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "won",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante ganó la batalla</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "lost",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante perdió la batalla</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "completed",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se completó</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "partial",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está incompleta</p>"
+            "field": "total",
+            "description": "<p>El total del pattern</p>"
           },
           {
             "group": "score",
             "type": "Number",
             "optional": false,
             "field": "order",
-            "description": "<p>El orden con el que inicia un MC/Participante</p>"
+            "description": "<p>El orden en el que se pulso</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "time_pattern",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al pulsar el tab</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "time_extra",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al pulsar el tab extra</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "ss_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_styles_id</p>"
           },
           {
             "group": "score",
             "type": "Number",
             "optional": false,
-            "field": "time_started",
-            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar un score</p>"
+            "field": "ss_patterns_styles_id",
+            "description": "<p>El <code>number</code> el id del ss_patterns_styles_id</p>"
           },
           {
             "group": "score",
-            "type": "Number",
+            "type": "String",
             "optional": false,
-            "field": "time_finished",
-            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar un score</p>"
+            "field": "ss_data_scores_id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores_id</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "started",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está iniciada</p>"
+            "field": "ss_data_score_rounds_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_rounds_id</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "finished",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está terminada</p>"
+            "field": "ss_data_score_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_styles_id</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"1\",\n        \"time_started\": \"1212018372.3366\",\n        \"time_finished\": \"1212018372.3366\",\n        \"started\": true,\n        \"finished\": false\n\n    },\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606421\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"2\",\n        \"time_started\": \"1212018372.3367\",\n        \"time_finished\": \"1212018372.3367\",\n        \"started\": true,\n        \"finished\": false\n\n    }\n]",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:{\n        \"id\": \"67b90854-d770-4381-bcfe-e9c1dc2b6336\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"ss_data_scores_id\": \"e6a5f7a7-6899-4dac-8abc-534ba71576b9\",\n        \"ss_data_score_rounds_id\": \"28766c9a-f80d-4221-8647-20a6d5fd634a\",\n        \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n        \"ss_data_score_styles_id\": \"8f74a311-1b09-4800-b5a7-c55686629283\",\n        \"ss_patterns_styles_id\": \"1\",\n        \"value\": 2.5,\n        \"extra\": false,\n        \"total\": 3.5,\n        \"order\": 1,\n        \"created_at\": \"2021-01-29T18:07:03.000000Z\",\n        \"updated_at\": \"2021-01-29T18:07:40.000000Z\",\n        \"deleted_at\": null,\n        \"params\": null,\n        \"log\": null,\n        \"started\": 0,\n        \"finished\": 0,\n        \"time_pattern\": \"1212018372.3366\",\n        \"time_extra\": null\n    }",
           "type": "json"
         }
       ]
@@ -2377,7 +2361,7 @@
             "group": "Error 4xx",
             "optional": false,
             "field": "BadRequest",
-            "description": "<p>Mensaje Personalizado del tipo de error de validación</p>"
+            "description": "<p>Mensaje Personalizado del tipo de error de validación (Integrity constraint violation: 1062 Duplicate entry hace referencia a que se esta intentando ingresar un registro ya creado con lo cual se debería actualizar)</p>"
           },
           {
             "group": "Error 4xx",
@@ -2404,7 +2388,7 @@
       "examples": [
         {
           "title": "Response (example):",
-          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}\n\nHTTP/1.1 200 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Integrity constraint violation: 1062 Duplicate entry\"\n}",
           "type": "json"
         }
       ]
@@ -2433,7 +2417,7 @@
     "examples": [
       {
         "title": "Agrega un nuevo performance a un ss_data_score_styles.",
-        "content": "curl -i http://ionic.urbanroosters.com/api/battle/add-performance/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
+        "content": "curl -i http://ionic.urbanroosters.com/api/scores/add-performance/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
         "type": "curl"
       }
     ],
@@ -2578,8 +2562,8 @@
             "group": "body",
             "type": "String",
             "optional": false,
-            "field": "time_pattern",
-            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al hacer un tap en un patron</p>"
+            "field": "time_performance",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al hacer un tap en un performance</p>"
           },
           {
             "group": "body",
@@ -2593,29 +2577,20 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n    \"id\": \"169cc5c5-420c-4a89-baa8-693d2f13938e\",\n    \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n    \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n    \"ss_data_score_rounds_id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n    \"ss_data_score_styles_id\": \"4adf4505-ceea-4a83-adc7-636cd4d2aee8\",\n    \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n    \"ss_performance_id\": \"1\",\n    \"value\": 2.5,\n    \"extra\": true,\n    \"total\": 3.5,\n    \"order\": 1,\n    \"time_pattern\": \"1212018372.3366\",\n    \"time_extra\": \"1212018372.3366\",\n}",
+          "content": "{\n    \"id\": \"772ab17f-946d-4fd7-8695-e71bebd9b638\",\n    \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n    \"ss_data_scores_id\": \"e6a5f7a7-6899-4dac-8abc-534ba71576b9\",\n    \"ss_data_score_rounds_id\": \"28766c9a-f80d-4221-8647-20a6d5fd634a\",\n    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n    \"ss_data_score_styles_id\": \"8f74a311-1b09-4800-b5a7-c55686629283\",\n    \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n    \"ss_performance_id\": \"ea042ddf-951f-4c97-a204-1fd8ebbd06ea\",\n    \"value\": 1,\n    \"extra\": false,\n    \"total\": 1,\n    \"order\": 1,\n    \"time_performance\": \"1212018372.3366\"\n}",
           "type": "json"
         }
       ]
     },
     "success": {
       "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object[score]",
-            "optional": false,
-            "field": "Scores",
-            "description": "<p>Array con los datos del ss_data_scores creado</p>"
-          }
-        ],
         "score": [
           {
             "group": "score",
             "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>El <code>uuid</code> del ss_data_scores creado</p>"
+            "description": "<p>El <code>uuid</code> del ss_data_score_style_performance creado</p>"
           },
           {
             "group": "score",
@@ -2656,92 +2631,85 @@
             "group": "score",
             "type": "String",
             "optional": false,
-            "field": "total_battle",
-            "description": "<p>El total de la batalla</p>"
+            "field": "value",
+            "description": "<p>El valor que se le da un performance</p>"
           },
           {
             "group": "score",
             "type": "Boolean",
             "optional": false,
-            "field": "has_replica",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla tiene réplica</p>"
+            "field": "extra",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el performance tiene extra</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "judge_ur",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se decide por el juez en la réplica</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "won",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante ganó la batalla</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "lost",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante perdió la batalla</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "completed",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se completó</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "partial",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está incompleta</p>"
+            "field": "total",
+            "description": "<p>El total del performance</p>"
           },
           {
             "group": "score",
             "type": "Number",
             "optional": false,
             "field": "order",
-            "description": "<p>El orden con el que inicia un MC/Participante</p>"
+            "description": "<p>El orden en el que se pulso</p>"
           },
           {
             "group": "score",
-            "type": "Number",
+            "type": "String",
             "optional": false,
-            "field": "time_started",
-            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar un score</p>"
+            "field": "time_performance",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al pulsar el tab</p>"
           },
           {
             "group": "score",
-            "type": "Number",
+            "type": "String",
             "optional": false,
-            "field": "time_finished",
-            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar un score</p>"
+            "field": "time_extra",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al pulsar el tab extra</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "started",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está iniciada</p>"
+            "field": "ss_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_styles_id</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "finished",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está terminada</p>"
+            "field": "ss_performance_id",
+            "description": "<p>El <code>uuid</code> del ss_performance_id</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_scores_id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores_id</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_score_rounds_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_rounds_id</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_score_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_styles_id</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"1\",\n        \"time_started\": \"1212018372.3366\",\n        \"time_finished\": \"1212018372.3366\",\n        \"started\": true,\n        \"finished\": false\n\n    },\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606421\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"2\",\n        \"time_started\": \"1212018372.3367\",\n        \"time_finished\": \"1212018372.3367\",\n        \"started\": true,\n        \"finished\": false\n\n    }\n]",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:{\n        \"id\": \"772ab17f-946d-4fd7-8695-e71bebd9b638\",\n        \"ss_data_scores_id\": \"e6a5f7a7-6899-4dac-8abc-534ba71576b9\",\n        \"ss_data_score_rounds_id\": \"28766c9a-f80d-4221-8647-20a6d5fd634a\",\n        \"ss_data_score_styles_id\": \"8f74a311-1b09-4800-b5a7-c55686629283\",\n        \"value\": 1,\n        \"extra\": false,\n        \"order\": 1,\n        \"time_performance\": \"1212018372.3366\",\n        \"time_extra\": null,\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n        \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n        \"ss_performance_id\": \"ea042ddf-951f-4c97-a204-1fd8ebbd06ea\",\n        \"updated_at\": \"2021-01-29T19:14:38.000000Z\",\n        \"created_at\": \"2021-01-29T19:14:38.000000Z\"\n    }",
           "type": "json"
         }
       ]
@@ -2753,7 +2721,7 @@
             "group": "Error 4xx",
             "optional": false,
             "field": "BadRequest",
-            "description": "<p>Mensaje Personalizado del tipo de error de validación</p>"
+            "description": "<p>Mensaje Personalizado del tipo de error de validación (Integrity constraint violation: 1062 Duplicate entry hace referencia a que se esta intentando ingresar un registro ya creado con lo cual se debería actualizar)</p>"
           },
           {
             "group": "Error 4xx",
@@ -2780,7 +2748,7 @@
       "examples": [
         {
           "title": "Response (example):",
-          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}\n\nHTTP/1.1 200 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Integrity constraint violation: 1062 Duplicate entry\"\n}",
           "type": "json"
         }
       ]
@@ -2809,7 +2777,7 @@
     "examples": [
       {
         "title": "Agrega el orden de cada participante al iniciar una batalla.",
-        "content": "curl -i http://ionic.urbanroosters.com/api/battle/add-data-round/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
+        "content": "curl -i http://ionic.urbanroosters.com/api/scores/add-data-round/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
         "type": "curl"
       }
     ],
@@ -2947,7 +2915,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n    \"participants\":[\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n            \"ss_data_score_rounds\":{\n                \"id\": \"215130ba-8054-455f-9622-cb27340277d2\",\n                \"ss_data_scores_id\": \"id\": \"8768b6ae-93d8-4831-a0ae-6b58a2490657\",\n                \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                \"order\": \"1\",\n                \"time_started\": \"1212018372.3366\",\n                \"started\": true,\n                \"is_replica\": false\n            }\n        },\n        {\n            \"id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n            \"ss_data_score_rounds\":{\n                \"id\": \"3b403879-4321-45f7-b71f-95462b6df174\",\n                \"ss_data_scores_id\": \"id\": \"8768b6ae-93d8-4831-a0ae-6b58a2490657\",\n                \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                \"order\": \"2\",\n                \"time_started\": \"1212018372.3366\",\n                \"started\": true,\n                \"is_replica\": false\n            }\n        }\n    ]\n}",
+          "content": "{\n    \"participants\": [\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n                \"ss_data_score_rounds\": {\n                    \"id\": \"28766c9a-f80d-4221-8647-20a6d5fd634a\",\n                    \"ss_data_scores_id\": \"e6a5f7a7-6899-4dac-8abc-534ba71576b9\",\n                    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                    \"order\": \"1\",\n                    \"time_started\": \"1212018372.3366\",\n                    \"started\": true\n                }\n        },\n        {\n            \"id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n                \"ss_data_score_rounds\": {\n                    \"id\": \"e9e3dd65-45db-4bed-9a08-1d6a9b7edbe7\",\n                    \"ss_data_scores_id\": \"c48201a0-e7f0-42b3-a19e-910ef3a4f9a2\",\n                    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                    \"order\": \"2\",\n                    \"time_started\": \"1212018372.3366\",\n                    \"started\": true\n                }\n        }\n    ]\n}",
           "type": "json"
         }
       ]
@@ -3060,7 +3028,7 @@
             "type": "Number",
             "optional": false,
             "field": "order",
-            "description": "<p>El orden con el que inicia un MC/Participante</p>"
+            "description": "<p>El orden con el que inicia un MC/Participante el Round</p>"
           },
           {
             "group": "score",
@@ -3163,7 +3131,7 @@
     "examples": [
       {
         "title": "Agrega el orden de cada participante al iniciar una batalla.",
-        "content": "curl -i http://ionic.urbanroosters.com/api/battle/add-data-style/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
+        "content": "curl -i http://ionic.urbanroosters.com/api/scores/add-data-style/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
         "type": "curl"
       }
     ],
@@ -3280,7 +3248,7 @@
             "type": "Number",
             "optional": false,
             "field": "order",
-            "description": "<p>El orden con el que inicia un MC/Participante</p>"
+            "description": "<p>El orden con el que inicia un MC/Participante el Estilo</p>"
           },
           {
             "group": "ss_data_score_style",
@@ -3308,7 +3276,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n    \"participants\":[\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n              \"ss_data_score_styles\": {\n                  \"id\": \"860741cf-7d5e-4ece-9a6a-e5bcb40d944a\",\n                  \"ss_data_scores_id\": \"0b85e9c5-198f-4a26-92f6-ef72b421cb57\",\n                  \"ss_data_score_rounds_id\": \"215130ba-8054-455f-9622-cb27340277d2\",\n                  \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                  \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                  \"order\": \"1\",\n                  \"time_started\": \"1212018372.3366\",\n                  \"time_finished\": \"1212018372.3366\",\n                  \"started\": true\n              }\n        },\n        {\n            \"id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n            \"ss_data_score_styles\": {\n                \"id\": \"ba0db2a1-55eb-4a42-9722-8706badf5095\",\n                \"ss_data_scores_id\": \"8768b6ae-93d8-4831-a0ae-6b58a2490657\",\n                \"ss_data_score_rounds_id\": \"3b403879-4321-45f7-b71f-95462b6df174\",\n                \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                \"order\": \"2\",\n                \"time_started\": \"1212018372.3366\",\n                \"time_finished\": \"1212018372.3366\",\n                \"started\": true\n            }\n        }\n    ]\n}",
+          "content": "{\n    \"participants\":[\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n             \"ss_data_score_styles\": {\n                 \"id\": \"8f74a311-1b09-4800-b5a7-c55686629283\",\n                 \"ss_data_scores_id\": \"e6a5f7a7-6899-4dac-8abc-534ba71576b9\",\n                 \"ss_data_score_rounds_id\": \"28766c9a-f80d-4221-8647-20a6d5fd634a\",\n                 \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                 \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                 \"order\": \"1\",\n                 \"time_started\": \"1212018372.3366\",\n                 \"time_finished\": \"1212018372.3366\",\n                 \"started\": true\n             }\n        },\n        {\n            \"id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n            \"ss_data_score_styles\": {\n                \"id\": \"2bac3ae6-6d45-4382-9911-b0a50649429c\",\n                \"ss_data_scores_id\": \"c48201a0-e7f0-42b3-a19e-910ef3a4f9a2\",\n                \"ss_data_score_rounds_id\": \"e9e3dd65-45db-4bed-9a08-1d6a9b7edbe7\",\n                \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                \"order\": \"2\",\n                \"time_started\": \"1212018372.3366\",\n                \"time_finished\": \"1212018372.3366\",\n                \"started\": true\n            }\n        }\n    ]\n}",
           "type": "json"
         }
       ]
@@ -3524,7 +3492,7 @@
     "examples": [
       {
         "title": "Actualiza el patron de un style.",
-        "content": "curl -i http://ionic.urbanroosters.com/api/battle/update-pattern/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
+        "content": "curl -i http://ionic.urbanroosters.com/api/scores/update-pattern/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
         "type": "curl"
       }
     ],
@@ -3684,29 +3652,20 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n    \"id\": \"169cc5c5-420c-4a89-baa8-693d2f13938e\",\n    \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n    \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n    \"ss_data_score_rounds_id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n    \"ss_data_score_styles_id\": \"4adf4505-ceea-4a83-adc7-636cd4d2aee8\",\n    \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n    \"ss_patterns_styles_id\": \"1\",\n    \"value\": 2.5,\n    \"extra\": true,\n    \"total\": 3.5,\n    \"order\": 1,\n    \"time_pattern\": \"1212018372.3366\",\n    \"time_extra\": \"1212018372.3366\",\n}",
+          "content": "{\n    \"id\": \"67b90854-d770-4381-bcfe-e9c1dc2b6336\",\n    \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n    \"ss_data_scores_id\": \"e6a5f7a7-6899-4dac-8abc-534ba71576b9\",\n    \"ss_data_score_rounds_id\": \"28766c9a-f80d-4221-8647-20a6d5fd634a\",\n    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n    \"ss_data_score_styles_id\": \"8f74a311-1b09-4800-b5a7-c55686629283\",\n    \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n    \"ss_patterns_styles_id\": \"1\",\n    \"value\": 2,\n    \"extra\": true,\n    \"total\": 3,\n    \"order\": 1,\n    \"time_pattern\": \"1212018372.3366\"\n    \"time_extra\": \"1212018372.3366\"\n}",
           "type": "json"
         }
       ]
     },
     "success": {
       "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object[score]",
-            "optional": false,
-            "field": "Scores",
-            "description": "<p>Array con los datos del ss_data_scores creado</p>"
-          }
-        ],
         "score": [
           {
             "group": "score",
             "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>El <code>uuid</code> del ss_data_scores creado</p>"
+            "description": "<p>El <code>uuid</code> del ss_data_score_style_patrons creado</p>"
           },
           {
             "group": "score",
@@ -3747,92 +3706,85 @@
             "group": "score",
             "type": "String",
             "optional": false,
-            "field": "total_battle",
-            "description": "<p>El total de la batalla</p>"
+            "field": "value",
+            "description": "<p>El valor que se le da un pattern</p>"
           },
           {
             "group": "score",
             "type": "Boolean",
             "optional": false,
-            "field": "has_replica",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla tiene réplica</p>"
+            "field": "extra",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el pattern tiene extra</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "judge_ur",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se decide por el juez en la réplica</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "won",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante ganó la batalla</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "lost",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante perdió la batalla</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "completed",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se completó</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "partial",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está incompleta</p>"
+            "field": "total",
+            "description": "<p>El total del pattern</p>"
           },
           {
             "group": "score",
             "type": "Number",
             "optional": false,
             "field": "order",
-            "description": "<p>El orden con el que inicia un MC/Participante</p>"
+            "description": "<p>El orden en el que se pulso</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "time_pattern",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al pulsar el tab</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "time_extra",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al pulsar el tab extra</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "ss_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_styles_id</p>"
           },
           {
             "group": "score",
             "type": "Number",
             "optional": false,
-            "field": "time_started",
-            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar un score</p>"
+            "field": "ss_patterns_styles_id",
+            "description": "<p>El <code>number</code> el id del ss_patterns_styles_id</p>"
           },
           {
             "group": "score",
-            "type": "Number",
+            "type": "String",
             "optional": false,
-            "field": "time_finished",
-            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar un score</p>"
+            "field": "ss_data_scores_id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores_id</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "started",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está iniciada</p>"
+            "field": "ss_data_score_rounds_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_rounds_id</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "finished",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está terminada</p>"
+            "field": "ss_data_score_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_styles_id</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"1\",\n        \"time_started\": \"1212018372.3366\",\n        \"time_finished\": \"1212018372.3366\",\n        \"started\": true,\n        \"finished\": false\n\n    },\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606421\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"2\",\n        \"time_started\": \"1212018372.3367\",\n        \"time_finished\": \"1212018372.3367\",\n        \"started\": true,\n        \"finished\": false\n\n    }\n]",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:{\n        \"id\": \"67b90854-d770-4381-bcfe-e9c1dc2b6336\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"ss_data_scores_id\": \"e6a5f7a7-6899-4dac-8abc-534ba71576b9\",\n        \"ss_data_score_rounds_id\": \"28766c9a-f80d-4221-8647-20a6d5fd634a\",\n        \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n        \"ss_data_score_styles_id\": \"8f74a311-1b09-4800-b5a7-c55686629283\",\n        \"ss_patterns_styles_id\": \"1\",\n        \"value\": 1,\n        \"extra\": true,\n        \"total\": 2,\n        \"order\": 1,\n        \"created_at\": \"2021-01-29T18:07:03.000000Z\",\n        \"updated_at\": \"2021-01-29T18:07:40.000000Z\",\n        \"deleted_at\": null,\n        \"params\": null,\n        \"log\": null,\n        \"started\": 0,\n        \"finished\": 0,\n        \"time_pattern\": \"1212018372.3366\",\n        \"time_extra\": null\n    }",
           "type": "json"
         }
       ]
@@ -3900,7 +3852,7 @@
     "examples": [
       {
         "title": "Actualiza un performance a un ss_data_score_styles.",
-        "content": "curl -i http://ionic.urbanroosters.com/api/battle/update-performance/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
+        "content": "curl -i http://ionic.urbanroosters.com/api/scores/update-performance/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
         "type": "curl"
       }
     ],
@@ -4067,22 +4019,13 @@
     },
     "success": {
       "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object[score]",
-            "optional": false,
-            "field": "Scores",
-            "description": "<p>Array con los datos del ss_data_scores creado</p>"
-          }
-        ],
         "score": [
           {
             "group": "score",
             "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>El <code>uuid</code> del ss_data_scores creado</p>"
+            "description": "<p>El <code>uuid</code> del ss_data_score_style_performance creado</p>"
           },
           {
             "group": "score",
@@ -4123,92 +4066,85 @@
             "group": "score",
             "type": "String",
             "optional": false,
-            "field": "total_battle",
-            "description": "<p>El total de la batalla</p>"
+            "field": "value",
+            "description": "<p>El valor que se le da un performance</p>"
           },
           {
             "group": "score",
             "type": "Boolean",
             "optional": false,
-            "field": "has_replica",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla tiene réplica</p>"
+            "field": "extra",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el performance tiene extra</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "judge_ur",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se decide por el juez en la réplica</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "won",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante ganó la batalla</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "lost",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante perdió la batalla</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "completed",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se completó</p>"
-          },
-          {
-            "group": "score",
-            "type": "Boolean",
-            "optional": false,
-            "field": "partial",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está incompleta</p>"
+            "field": "total",
+            "description": "<p>El total del performance</p>"
           },
           {
             "group": "score",
             "type": "Number",
             "optional": false,
             "field": "order",
-            "description": "<p>El orden con el que inicia un MC/Participante</p>"
+            "description": "<p>El orden en el que se pulso</p>"
           },
           {
             "group": "score",
-            "type": "Number",
+            "type": "String",
             "optional": false,
-            "field": "time_started",
-            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar un score</p>"
+            "field": "time_performance",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al pulsar el tab</p>"
           },
           {
             "group": "score",
-            "type": "Number",
+            "type": "String",
             "optional": false,
-            "field": "time_finished",
-            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar un score</p>"
+            "field": "time_extra",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al pulsar el tab extra</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "started",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está iniciada</p>"
+            "field": "ss_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_styles_id</p>"
           },
           {
             "group": "score",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "finished",
-            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está terminada</p>"
+            "field": "ss_performance_id",
+            "description": "<p>El <code>uuid</code> del ss_performance_id</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_scores_id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores_id</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_score_rounds_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_rounds_id</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_score_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_styles_id</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"1\",\n        \"time_started\": \"1212018372.3366\",\n        \"time_finished\": \"1212018372.3366\",\n        \"started\": true,\n        \"finished\": false\n\n    },\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606421\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"2\",\n        \"time_started\": \"1212018372.3367\",\n        \"time_finished\": \"1212018372.3367\",\n        \"started\": true,\n        \"finished\": false\n\n    }\n]",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:{\n        \"id\": \"772ab17f-946d-4fd7-8695-e71bebd9b638\",\n        \"ss_data_scores_id\": \"e6a5f7a7-6899-4dac-8abc-534ba71576b9\",\n        \"ss_data_score_rounds_id\": \"28766c9a-f80d-4221-8647-20a6d5fd634a\",\n        \"ss_data_score_styles_id\": \"8f74a311-1b09-4800-b5a7-c55686629283\",\n        \"value\": 1,\n        \"extra\": false,\n        \"order\": 1,\n        \"time_performance\": \"1212018372.3366\",\n        \"time_extra\": null,\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n        \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n        \"ss_performance_id\": \"ea042ddf-951f-4c97-a204-1fd8ebbd06ea\",\n        \"updated_at\": \"2021-01-29T19:14:38.000000Z\",\n        \"created_at\": \"2021-01-29T19:14:38.000000Z\"\n    }",
           "type": "json"
         }
       ]
@@ -4276,7 +4212,7 @@
     "examples": [
       {
         "title": "Cargamos una o varias batallas por lotes",
-        "content": "curl -i http://ionic.urbanroosters.com/api/battles/set-battles/0f62308e-8245-4e2f-8e01-b0c0920be35b/65443d8b-abfc-4e0b-a848-181fcfa1f4aj/019f7830-bb26-412d-ae6b-fe5bc4780359",
+        "content": "curl -i http://ionic.urbanroosters.com/api/scores/set-battles/0f62308e-8245-4e2f-8e01-b0c0920be35b/65443d8b-abfc-4e0b-a848-181fcfa1f4aj/019f7830-bb26-412d-ae6b-fe5bc4780359",
         "type": "curl"
       }
     ],
@@ -5441,7 +5377,7 @@
     "examples": [
       {
         "title": "Determina si la batalla termino",
-        "content": "curl -i http://ionic.urbanroosters.com/api/battle/set-completed/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/9e97ca3e-d2a4-4bcc-84fe-a2a37a24e093",
+        "content": "curl -i http://ionic.urbanroosters.com/api/scores/set-completed/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/9e97ca3e-d2a4-4bcc-84fe-a2a37a24e093",
         "type": "curl"
       }
     ],
@@ -5665,7 +5601,7 @@
     "examples": [
       {
         "title": "Agrega el orden de cada participante al iniciar una batalla.",
-        "content": "curl -i http://ionic.urbanroosters.com/api/battle/set-order-freestylers/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
+        "content": "curl -i http://ionic.urbanroosters.com/api/scores/set-order-freestylers/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
         "type": "curl"
       }
     ],
@@ -6077,7 +6013,7 @@
     "examples": [
       {
         "title": "Cerramos un registro",
-        "content": "curl -i http://ionic.urbanroosters.com/api/battle/set-finished-record/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/019f7830-bb26-412d-ae6b-fe5bc4782046",
+        "content": "curl -i http://ionic.urbanroosters.com/api/scores/set-finished-record/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/019f7830-bb26-412d-ae6b-fe5bc4782046",
         "type": "curl"
       }
     ],
@@ -6392,7 +6328,7 @@
     "examples": [
       {
         "title": "Determina un ganador o perdedor de una réplica",
-        "content": "curl -i http://ionic.urbanroosters.com/api/battle/set-round-replica/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/9e97ca3e-d2a4-4bcc-84fe-a2a37a24e093",
+        "content": "curl -i http://ionic.urbanroosters.com/api/scores/set-round-replica/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/9e97ca3e-d2a4-4bcc-84fe-a2a37a24e093",
         "type": "curl"
       }
     ],
@@ -6868,7 +6804,7 @@
         }
       ]
     },
-    "filename": "apps/api-app-judges/components/api-result/Front/ApiResultsController.php",
+    "filename": "apps/api-app-judges/components/api-results/Front/ApiResultsController.php",
     "groupTitle": "4.-_Resultados",
     "sampleRequest": [
       {
@@ -7046,7 +6982,7 @@
         }
       ]
     },
-    "filename": "apps/api-app-judges/components/api-result/Front/ApiResultsController.php",
+    "filename": "apps/api-app-judges/components/api-results/Front/ApiResultsController.php",
     "groupTitle": "4.-_Resultados",
     "sampleRequest": [
       {
@@ -7831,7 +7767,7 @@
         }
       ]
     },
-    "filename": "apps/api-app-judges/components/api-result/Front/ApiResultsController.php",
+    "filename": "apps/api-app-judges/components/api-results/Front/ApiResultsController.php",
     "groupTitle": "4.-_Resultados",
     "sampleRequest": [
       {
