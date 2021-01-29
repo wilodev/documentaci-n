@@ -1235,7 +1235,7 @@ define({ "api": [
         "name": "Token de usuario autorizado"
       }
     ],
-    "description": "<p>Retorna el sistema de votaciones completo con la relación de la estructura de batallas, round, estilo, patrones y performances para poder crear las pantallas que el juez podrá votar. Además al seleccionar quien inica una batalla debe llamar al endpoint 1.-Agrega el orden en el que inicia los participante una batalla para crear el registro de orden de una batalla</p>",
+    "description": "<p>Retorna el sistema de votaciones completo con la relación de la estructura de batallas, round, estilo, patrones y performances para poder crear las pantallas que el juez podrá votar. Además al seleccionar quien inica una batalla debe llamar al endpoint 1.-Agrega el orden en el que inicia los participante una batalla para crear el registro de orden de una batalla IMPORTANTE: en cada style se tiene los campos &quot;extra_point&quot;: 1 (para saber si se debe poner el botón de punto extra, en sangre 1 y 2 recordar que el extra solo lo tiene el segundo MC), &quot;turn&quot;: 1 (nos dice si el estilo es ida y vuelta cada patron),</p>",
     "examples": [
       {
         "title": "Retorna el sistema de votaciones completo con la relación de la estructura de batallas, round, estilo, patrones y performances",
