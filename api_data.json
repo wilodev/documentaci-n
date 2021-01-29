@@ -2043,6 +2043,2225 @@
   },
   {
     "type": "post",
+    "url": "/battle/add-pattern/:event/:phase/:judge/:battle",
+    "title": "3.4.- Agrega un nuevo patron a un ss_data_score_styles",
+    "version": "1.0.0",
+    "name": "AddPattern",
+    "group": "3.-_Batallas",
+    "permission": [
+      {
+        "name": "Token de usuario autorizado"
+      }
+    ],
+    "description": "<p>Agrega un nuevo patron a un ss_data_score_styles, este Endpoint se usa cada vez que se desea agregar un nuevo patron a un nuevo estilo</p>",
+    "examples": [
+      {
+        "title": "Agrega un nuevo patron a un ss_data_score_styles.",
+        "content": "curl -i http://ionic.urbanroosters.com/api/battle/add-pattern/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
+        "type": "curl"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "api-key",
+            "description": "<p>El api key que necesita para solicitar acceso</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-example                          El api key que necesita para solicitar acceso",
+          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "url": [
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "event",
+            "description": "<p>El <code>uuid</code> del evento</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "phase",
+            "description": "<p>El <code>uuid</code> de la fase</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "judge",
+            "description": "<p>El <code>uuid</code> del juez</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "battle",
+            "description": "<p>El <code>uuid</code> de la batalla</p>"
+          }
+        ],
+        "body": [
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_style_patrons este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "participants_id",
+            "description": "<p>El <code>uuid</code> del mc/participante</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_scores_id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_score_rounds_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_rounds este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_round_structures_id",
+            "description": "<p>El <code>uuid</code> del ss_round_structures</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_score_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_styles este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_patterns_styles_id",
+            "description": "<p>El <code>number</code> del ss_patterns_styles</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_styles</p>"
+          },
+          {
+            "group": "body",
+            "type": "Number",
+            "optional": false,
+            "field": "value",
+            "description": "<p>El valor <code>1</code> al dar tap</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "extra",
+            "description": "<p>El valor de <code>true</code> al marca un punto extra</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "total",
+            "description": "<p>El valor de <code>1</code> al sumar value mas extra</p>"
+          },
+          {
+            "group": "body",
+            "type": "Boolean",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El <code>number</code> de orden del tab realizado</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "time_pattern",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al hacer un tap en un patron</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "time_extra",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al hacer un tap en un punto extra</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n    \"id\": \"169cc5c5-420c-4a89-baa8-693d2f13938e\",\n    \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n    \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n    \"ss_data_score_rounds_id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n    \"ss_data_score_styles_id\": \"4adf4505-ceea-4a83-adc7-636cd4d2aee8\",\n    \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n    \"ss_patterns_styles_id\": \"1\",\n    \"value\": 2.5,\n    \"extra\": true,\n    \"total\": 3.5,\n    \"order\": 1,\n    \"time_pattern\": \"1212018372.3366\",\n    \"time_extra\": \"1212018372.3366\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[score]",
+            "optional": false,
+            "field": "Scores",
+            "description": "<p>Array con los datos del ss_data_scores creado</p>"
+          }
+        ],
+        "score": [
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores creado</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_events_id",
+            "description": "<p>El <code>uuid</code> del evento</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_phases_id",
+            "description": "<p>El <code>uuid</code> de la fase</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_battles_id",
+            "description": "<p>El <code>uuid</code> de la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "participants_id",
+            "description": "<p>El <code>uuid</code> del mc/participante</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "judges_id",
+            "description": "<p>El <code>uuid</code> del juez que esta votando</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "total_battle",
+            "description": "<p>El total de la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "has_replica",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla tiene réplica</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "judge_ur",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se decide por el juez en la réplica</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "won",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante ganó la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "lost",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante perdió la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "completed",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se completó</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "partial",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está incompleta</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El orden con el que inicia un MC/Participante</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "time_started",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar un score</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "time_finished",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar un score</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "started",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está iniciada</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "finished",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está terminada</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"1\",\n        \"time_started\": \"1212018372.3366\",\n        \"time_finished\": \"1212018372.3366\",\n        \"started\": true,\n        \"finished\": false\n\n    },\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606421\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"2\",\n        \"time_started\": \"1212018372.3367\",\n        \"time_finished\": \"1212018372.3367\",\n        \"started\": true,\n        \"finished\": false\n\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "BadRequest",
+            "description": "<p>Mensaje Personalizado del tipo de error de validación</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "NoAccessRight",
+            "description": "<p>Solo los usuarios registrados pueden acceder</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ApiKeyNotFound",
+            "description": "<p>El <code>token</code> no coincide con un usuario</p>"
+          }
+        ],
+        "500 Internal Server Error": [
+          {
+            "group": "500 Internal Server Error",
+            "optional": false,
+            "field": "Error",
+            "description": "<p>de servidor</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response (example):",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apps/api-app-judges/components/api-scores/Front/ApiScoresController.php",
+    "groupTitle": "3.-_Batallas",
+    "sampleRequest": [
+      {
+        "url": "https://ionic.urbanroosters.com/api/battle/add-pattern/:event/:phase/:judge/:battle"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/battle/add-performance/:event/:phase/:judge/:battle",
+    "title": "3.6.- Agrega un nuevo performance a un ss_data_score_styles",
+    "version": "1.0.0",
+    "name": "AddPerformance",
+    "group": "3.-_Batallas",
+    "permission": [
+      {
+        "name": "Token de usuario autorizado"
+      }
+    ],
+    "description": "<p>Agrega un nuevo performance a un ss_data_score_styles, este Endpoint se usa cada vez que se desea agregar un nuevo performance a un nuevo estilo</p>",
+    "examples": [
+      {
+        "title": "Agrega un nuevo performance a un ss_data_score_styles.",
+        "content": "curl -i http://ionic.urbanroosters.com/api/battle/add-performance/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
+        "type": "curl"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "api-key",
+            "description": "<p>El api key que necesita para solicitar acceso</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-example                          El api key que necesita para solicitar acceso",
+          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "url": [
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "event",
+            "description": "<p>El <code>uuid</code> del evento</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "phase",
+            "description": "<p>El <code>uuid</code> de la fase</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "judge",
+            "description": "<p>El <code>uuid</code> del juez</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "battle",
+            "description": "<p>El <code>uuid</code> de la batalla</p>"
+          }
+        ],
+        "body": [
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_style_performances este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "participants_id",
+            "description": "<p>El <code>uuid</code> del mc/participante</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_scores_id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_score_rounds_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_rounds este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_round_structures_id",
+            "description": "<p>El <code>uuid</code> del ss_round_structures</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_score_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_styles este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_performance_id",
+            "description": "<p>El <code>uuid</code> del ss_performance</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_styles</p>"
+          },
+          {
+            "group": "body",
+            "type": "Number",
+            "optional": false,
+            "field": "value",
+            "description": "<p>El valor <code>1</code> al dar tap</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "extra",
+            "description": "<p>El valor de <code>true</code> al marca un punto extra</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "total",
+            "description": "<p>El valor de <code>1</code> al sumar value mas extra</p>"
+          },
+          {
+            "group": "body",
+            "type": "Boolean",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El <code>number</code> de orden del tab realizado</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "time_pattern",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al hacer un tap en un patron</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "time_extra",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al hacer un tap en un punto extra</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n    \"id\": \"169cc5c5-420c-4a89-baa8-693d2f13938e\",\n    \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n    \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n    \"ss_data_score_rounds_id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n    \"ss_data_score_styles_id\": \"4adf4505-ceea-4a83-adc7-636cd4d2aee8\",\n    \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n    \"ss_performance_id\": \"1\",\n    \"value\": 2.5,\n    \"extra\": true,\n    \"total\": 3.5,\n    \"order\": 1,\n    \"time_pattern\": \"1212018372.3366\",\n    \"time_extra\": \"1212018372.3366\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[score]",
+            "optional": false,
+            "field": "Scores",
+            "description": "<p>Array con los datos del ss_data_scores creado</p>"
+          }
+        ],
+        "score": [
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores creado</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_events_id",
+            "description": "<p>El <code>uuid</code> del evento</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_phases_id",
+            "description": "<p>El <code>uuid</code> de la fase</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_battles_id",
+            "description": "<p>El <code>uuid</code> de la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "participants_id",
+            "description": "<p>El <code>uuid</code> del mc/participante</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "judges_id",
+            "description": "<p>El <code>uuid</code> del juez que esta votando</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "total_battle",
+            "description": "<p>El total de la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "has_replica",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla tiene réplica</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "judge_ur",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se decide por el juez en la réplica</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "won",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante ganó la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "lost",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante perdió la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "completed",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se completó</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "partial",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está incompleta</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El orden con el que inicia un MC/Participante</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "time_started",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar un score</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "time_finished",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar un score</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "started",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está iniciada</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "finished",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está terminada</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"1\",\n        \"time_started\": \"1212018372.3366\",\n        \"time_finished\": \"1212018372.3366\",\n        \"started\": true,\n        \"finished\": false\n\n    },\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606421\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"2\",\n        \"time_started\": \"1212018372.3367\",\n        \"time_finished\": \"1212018372.3367\",\n        \"started\": true,\n        \"finished\": false\n\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "BadRequest",
+            "description": "<p>Mensaje Personalizado del tipo de error de validación</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "NoAccessRight",
+            "description": "<p>Solo los usuarios registrados pueden acceder</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ApiKeyNotFound",
+            "description": "<p>El <code>token</code> no coincide con un usuario</p>"
+          }
+        ],
+        "500 Internal Server Error": [
+          {
+            "group": "500 Internal Server Error",
+            "optional": false,
+            "field": "Error",
+            "description": "<p>de servidor</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response (example):",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apps/api-app-judges/components/api-scores/Front/ApiScoresController.php",
+    "groupTitle": "3.-_Batallas",
+    "sampleRequest": [
+      {
+        "url": "https://ionic.urbanroosters.com/api/battle/add-performance/:event/:phase/:judge/:battle"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/battle/add-data-round/:event/:phase/:judge/:battle",
+    "title": "3.2.- Agrega un nuevo ss_data_score_rounds a un ss_data_scores",
+    "version": "1.0.0",
+    "name": "AddRoundToScore",
+    "group": "3.-_Batallas",
+    "permission": [
+      {
+        "name": "Token de usuario autorizado"
+      }
+    ],
+    "description": "<p>Agrega un nuevo ss_data_score_rounds a un ss_data_scores, este Endpoint se usa cada vez que se inicie un round es decir si pasamos del Round 1 al Round 2 se debe llamar a este punto para crear el Round 2 en el sistema, después de este punto se debe llamar al endpoint 3.3 Agregar un Estilo al Round creado en este punto</p>",
+    "examples": [
+      {
+        "title": "Agrega el orden de cada participante al iniciar una batalla.",
+        "content": "curl -i http://ionic.urbanroosters.com/api/battle/add-data-round/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
+        "type": "curl"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "api-key",
+            "description": "<p>El api key que necesita para solicitar acceso</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-example                          El api key que necesita para solicitar acceso",
+          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "url": [
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "event",
+            "description": "<p>El <code>uuid</code> del evento</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "phase",
+            "description": "<p>El <code>uuid</code> de la fase</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "judge",
+            "description": "<p>El <code>uuid</code> del juez</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "battle",
+            "description": "<p>El <code>uuid</code> de la batalla</p>"
+          }
+        ],
+        "body": [
+          {
+            "group": "body",
+            "type": "Object[participant]",
+            "optional": false,
+            "field": "participants",
+            "description": "<p>Array con los participantes del evento  que contiene id y order</p>"
+          }
+        ],
+        "participant": [
+          {
+            "group": "participant",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El <code>uuid</code> del mc/participante</p>"
+          }
+        ],
+        "ss_data_score_rounds": [
+          {
+            "group": "ss_data_score_rounds",
+            "type": "Object[ss_data_score_rounds]",
+            "optional": false,
+            "field": "ss_data_score_rounds",
+            "description": "<p>Array con los datos del round</p>"
+          },
+          {
+            "group": "ss_data_score_rounds",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_scores_id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "ss_data_score_rounds",
+            "type": "String",
+            "optional": false,
+            "field": "ss_round_structures_id",
+            "description": "<p>El <code>uuid</code> del ss_round_structures_id</p>"
+          },
+          {
+            "group": "ss_data_score_rounds",
+            "type": "Number",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El orden con el que inicia un MC/Participante</p>"
+          },
+          {
+            "group": "ss_data_score_rounds",
+            "type": "String",
+            "optional": false,
+            "field": "time_started",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar un round</p>"
+          },
+          {
+            "group": "ss_data_score_rounds",
+            "type": "Boolean",
+            "optional": false,
+            "field": "started",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el round esta iniciado</p>"
+          },
+          {
+            "group": "ss_data_score_rounds",
+            "type": "Boolean",
+            "optional": false,
+            "field": "is_replica",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el round es una réplica</p>"
+          }
+        ],
+        "ss_data_score_style": [
+          {
+            "group": "ss_data_score_style",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_rounds este UUID se genera en el front con estandar UUID v4</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n    \"participants\":[\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n            \"ss_data_score_rounds\":{\n                \"id\": \"215130ba-8054-455f-9622-cb27340277d2\",\n                \"ss_data_scores_id\": \"id\": \"8768b6ae-93d8-4831-a0ae-6b58a2490657\",\n                \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                \"order\": \"1\",\n                \"time_started\": \"1212018372.3366\",\n                \"started\": true,\n                \"is_replica\": false\n            }\n        },\n        {\n            \"id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n            \"ss_data_score_rounds\":{\n                \"id\": \"3b403879-4321-45f7-b71f-95462b6df174\",\n                \"ss_data_scores_id\": \"id\": \"8768b6ae-93d8-4831-a0ae-6b58a2490657\",\n                \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                \"order\": \"2\",\n                \"time_started\": \"1212018372.3366\",\n                \"started\": true,\n                \"is_replica\": false\n            }\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[score]",
+            "optional": false,
+            "field": "Scores",
+            "description": "<p>Array con los datos del ss_data_scores creado</p>"
+          }
+        ],
+        "score": [
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores creado</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_events_id",
+            "description": "<p>El <code>uuid</code> del evento</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_phases_id",
+            "description": "<p>El <code>uuid</code> de la fase</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_battles_id",
+            "description": "<p>El <code>uuid</code> de la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "participants_id",
+            "description": "<p>El <code>uuid</code> del mc/participante</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "judges_id",
+            "description": "<p>El <code>uuid</code> del juez que esta votando</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "total_battle",
+            "description": "<p>El total de la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "has_replica",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla tiene réplica</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "judge_ur",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se decide por el juez en la réplica</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "won",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante ganó la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "lost",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante perdió la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "completed",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se completó</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "partial",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está incompleta</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El orden con el que inicia un MC/Participante</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "time_started",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar un score</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "time_finished",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar un score</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "started",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está iniciada</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "finished",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está terminada</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"1\",\n        \"time_started\": \"1212018372.3366\",\n        \"time_finished\": \"1212018372.3366\",\n        \"started\": true,\n        \"finished\": false\n\n    },\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606421\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"2\",\n        \"time_started\": \"1212018372.3367\",\n        \"time_finished\": \"1212018372.3367\",\n        \"started\": true,\n        \"finished\": false\n\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "BadRequest",
+            "description": "<p>Mensaje Personalizado del tipo de error de validación</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "NoAccessRight",
+            "description": "<p>Solo los usuarios registrados pueden acceder</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ApiKeyNotFound",
+            "description": "<p>El <code>token</code> no coincide con un usuario</p>"
+          }
+        ],
+        "500 Internal Server Error": [
+          {
+            "group": "500 Internal Server Error",
+            "optional": false,
+            "field": "Error",
+            "description": "<p>de servidor</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response (example):",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apps/api-app-judges/components/api-scores/Front/ApiScoresController.php",
+    "groupTitle": "3.-_Batallas",
+    "sampleRequest": [
+      {
+        "url": "https://ionic.urbanroosters.com/api/battle/add-data-round/:event/:phase/:judge/:battle"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/battle/add-data-style/:event/:phase/:judge/:battle",
+    "title": "3.3.- Agrega un nuevo ss_data_score_styles a un ss_data_score_rounds",
+    "version": "1.0.0",
+    "name": "AddStyletoRound",
+    "group": "3.-_Batallas",
+    "permission": [
+      {
+        "name": "Token de usuario autorizado"
+      }
+    ],
+    "description": "<p>Agrega un nuevo ss_data_score_styles a un ss_data_score_rounds, este Endpoint se usa cada vez que se inicie un nuevo estilo ejemplo pasamos de Easy Mode a Hard Mode se debe llamar a este punto para crear el Style en el sistema, después de este punto se debe llamar al endpoint (3.4, 3.5 ) o (3.6, 3.7) Agregar un Patron o Performance al Estilo creado en este punto</p>",
+    "examples": [
+      {
+        "title": "Agrega el orden de cada participante al iniciar una batalla.",
+        "content": "curl -i http://ionic.urbanroosters.com/api/battle/add-data-style/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
+        "type": "curl"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "api-key",
+            "description": "<p>El api key que necesita para solicitar acceso</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-example                          El api key que necesita para solicitar acceso",
+          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "url": [
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "event",
+            "description": "<p>El <code>uuid</code> del evento</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "phase",
+            "description": "<p>El <code>uuid</code> de la fase</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "judge",
+            "description": "<p>El <code>uuid</code> del juez</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "battle",
+            "description": "<p>El <code>uuid</code> de la batalla</p>"
+          }
+        ],
+        "body": [
+          {
+            "group": "body",
+            "type": "Object[participant]",
+            "optional": false,
+            "field": "participants",
+            "description": "<p>Array con los participantes del evento  que contiene id y order</p>"
+          }
+        ],
+        "participant": [
+          {
+            "group": "participant",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El <code>uuid</code> del mc/participante</p>"
+          }
+        ],
+        "ss_data_score_round": [
+          {
+            "group": "ss_data_score_round",
+            "type": "Object[ss_data_score_styles]",
+            "optional": false,
+            "field": "ss_data_score_styles",
+            "description": "<p>Array con los datos del style</p>"
+          }
+        ],
+        "ss_data_score_style": [
+          {
+            "group": "ss_data_score_style",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_style este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "ss_data_score_style",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_scores_id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "ss_data_score_style",
+            "type": "String",
+            "optional": false,
+            "field": "ss_round_structures_id",
+            "description": "<p>El <code>uuid</code> del ss_round_structures_id</p>"
+          },
+          {
+            "group": "ss_data_score_style",
+            "type": "String",
+            "optional": false,
+            "field": "ss_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_styles_id</p>"
+          },
+          {
+            "group": "ss_data_score_style",
+            "type": "Number",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El orden con el que inicia un MC/Participante</p>"
+          },
+          {
+            "group": "ss_data_score_style",
+            "type": "String",
+            "optional": false,
+            "field": "time_started",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar un style</p>"
+          },
+          {
+            "group": "ss_data_score_style",
+            "type": "String",
+            "optional": false,
+            "field": "time_finished",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finzalizar un style</p>"
+          },
+          {
+            "group": "ss_data_score_style",
+            "type": "Boolean",
+            "optional": false,
+            "field": "started",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está iniciada</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n    \"participants\":[\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n              \"ss_data_score_styles\": {\n                  \"id\": \"860741cf-7d5e-4ece-9a6a-e5bcb40d944a\",\n                  \"ss_data_scores_id\": \"0b85e9c5-198f-4a26-92f6-ef72b421cb57\",\n                  \"ss_data_score_rounds_id\": \"215130ba-8054-455f-9622-cb27340277d2\",\n                  \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                  \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                  \"order\": \"1\",\n                  \"time_started\": \"1212018372.3366\",\n                  \"time_finished\": \"1212018372.3366\",\n                  \"started\": true\n              }\n        },\n        {\n            \"id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n            \"ss_data_score_styles\": {\n                \"id\": \"ba0db2a1-55eb-4a42-9722-8706badf5095\",\n                \"ss_data_scores_id\": \"8768b6ae-93d8-4831-a0ae-6b58a2490657\",\n                \"ss_data_score_rounds_id\": \"3b403879-4321-45f7-b71f-95462b6df174\",\n                \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n                \"order\": \"2\",\n                \"time_started\": \"1212018372.3366\",\n                \"time_finished\": \"1212018372.3366\",\n                \"started\": true\n            }\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[score]",
+            "optional": false,
+            "field": "Scores",
+            "description": "<p>Array con los datos del ss_data_scores creado</p>"
+          }
+        ],
+        "score": [
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores creado</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_events_id",
+            "description": "<p>El <code>uuid</code> del evento</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_phases_id",
+            "description": "<p>El <code>uuid</code> de la fase</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_battles_id",
+            "description": "<p>El <code>uuid</code> de la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "participants_id",
+            "description": "<p>El <code>uuid</code> del mc/participante</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "judges_id",
+            "description": "<p>El <code>uuid</code> del juez que esta votando</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "total_battle",
+            "description": "<p>El total de la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "has_replica",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla tiene réplica</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "judge_ur",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se decide por el juez en la réplica</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "won",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante ganó la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "lost",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante perdió la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "completed",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se completó</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "partial",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está incompleta</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El orden con el que inicia un MC/Participante</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "time_started",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar un score</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "time_finished",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar un score</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "started",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está iniciada</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "finished",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está terminada</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"1\",\n        \"time_started\": \"1212018372.3366\",\n        \"time_finished\": \"1212018372.3366\",\n        \"started\": true,\n        \"finished\": false\n\n    },\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606421\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"2\",\n        \"time_started\": \"1212018372.3367\",\n        \"time_finished\": \"1212018372.3367\",\n        \"started\": true,\n        \"finished\": false\n\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "BadRequest",
+            "description": "<p>Mensaje Personalizado del tipo de error de validación</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "NoAccessRight",
+            "description": "<p>Solo los usuarios registrados pueden acceder</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ApiKeyNotFound",
+            "description": "<p>El <code>token</code> no coincide con un usuario</p>"
+          }
+        ],
+        "500 Internal Server Error": [
+          {
+            "group": "500 Internal Server Error",
+            "optional": false,
+            "field": "Error",
+            "description": "<p>de servidor</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response (example):",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apps/api-app-judges/components/api-scores/Front/ApiScoresController.php",
+    "groupTitle": "3.-_Batallas",
+    "sampleRequest": [
+      {
+        "url": "https://ionic.urbanroosters.com/api/battle/add-data-style/:event/:phase/:judge/:battle"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/battle/update-pattern/:event/:phase/:judge/:battle",
+    "title": "3.5.- Actualiza un patron a un ss_data_score_styles",
+    "version": "1.0.0",
+    "name": "UpdatePattern",
+    "group": "3.-_Batallas",
+    "permission": [
+      {
+        "name": "Token de usuario autorizado"
+      }
+    ],
+    "description": "<p>Actualiza un patron a un ss_data_score_styles, este Endpoint se usa cada vez que se desea Actualizar un patron a un nuevo estilo</p>",
+    "examples": [
+      {
+        "title": "Actualiza el patron de un style.",
+        "content": "curl -i http://ionic.urbanroosters.com/api/battle/update-pattern/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
+        "type": "curl"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "api-key",
+            "description": "<p>El api key que necesita para solicitar acceso</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-example                          El api key que necesita para solicitar acceso",
+          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "url": [
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "event",
+            "description": "<p>El <code>uuid</code> del evento</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "phase",
+            "description": "<p>El <code>uuid</code> de la fase</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "judge",
+            "description": "<p>El <code>uuid</code> del juez</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "battle",
+            "description": "<p>El <code>uuid</code> de la batalla</p>"
+          }
+        ],
+        "body": [
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_style_patrons este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "participants_id",
+            "description": "<p>El <code>uuid</code> del mc/participante</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_scores_id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_score_rounds_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_rounds este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_round_structures_id",
+            "description": "<p>El <code>uuid</code> del ss_round_structures</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_score_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_styles este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_patterns_styles_id",
+            "description": "<p>El <code>number</code> del ss_patterns_styles</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_styles</p>"
+          },
+          {
+            "group": "body",
+            "type": "Number",
+            "optional": false,
+            "field": "value",
+            "description": "<p>El valor <code>1</code> al dar tap</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "extra",
+            "description": "<p>El valor de <code>true</code> al marca un punto extra</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "total",
+            "description": "<p>El valor de <code>1</code> al sumar value mas extra</p>"
+          },
+          {
+            "group": "body",
+            "type": "Boolean",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El <code>number</code> de orden del tab realizado</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "time_pattern",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al hacer un tap en un patron</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "time_extra",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al hacer un tap en un punto extra</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n    \"id\": \"169cc5c5-420c-4a89-baa8-693d2f13938e\",\n    \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n    \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n    \"ss_data_score_rounds_id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n    \"ss_data_score_styles_id\": \"4adf4505-ceea-4a83-adc7-636cd4d2aee8\",\n    \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n    \"ss_patterns_styles_id\": \"1\",\n    \"value\": 2.5,\n    \"extra\": true,\n    \"total\": 3.5,\n    \"order\": 1,\n    \"time_pattern\": \"1212018372.3366\",\n    \"time_extra\": \"1212018372.3366\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[score]",
+            "optional": false,
+            "field": "Scores",
+            "description": "<p>Array con los datos del ss_data_scores creado</p>"
+          }
+        ],
+        "score": [
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores creado</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_events_id",
+            "description": "<p>El <code>uuid</code> del evento</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_phases_id",
+            "description": "<p>El <code>uuid</code> de la fase</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_battles_id",
+            "description": "<p>El <code>uuid</code> de la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "participants_id",
+            "description": "<p>El <code>uuid</code> del mc/participante</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "judges_id",
+            "description": "<p>El <code>uuid</code> del juez que esta votando</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "total_battle",
+            "description": "<p>El total de la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "has_replica",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla tiene réplica</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "judge_ur",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se decide por el juez en la réplica</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "won",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante ganó la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "lost",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante perdió la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "completed",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se completó</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "partial",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está incompleta</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El orden con el que inicia un MC/Participante</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "time_started",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar un score</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "time_finished",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar un score</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "started",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está iniciada</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "finished",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está terminada</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"1\",\n        \"time_started\": \"1212018372.3366\",\n        \"time_finished\": \"1212018372.3366\",\n        \"started\": true,\n        \"finished\": false\n\n    },\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606421\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"2\",\n        \"time_started\": \"1212018372.3367\",\n        \"time_finished\": \"1212018372.3367\",\n        \"started\": true,\n        \"finished\": false\n\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "BadRequest",
+            "description": "<p>Mensaje Personalizado del tipo de error de validación</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "NoAccessRight",
+            "description": "<p>Solo los usuarios registrados pueden acceder</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ApiKeyNotFound",
+            "description": "<p>El <code>token</code> no coincide con un usuario</p>"
+          }
+        ],
+        "500 Internal Server Error": [
+          {
+            "group": "500 Internal Server Error",
+            "optional": false,
+            "field": "Error",
+            "description": "<p>de servidor</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response (example):",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apps/api-app-judges/components/api-scores/Front/ApiScoresController.php",
+    "groupTitle": "3.-_Batallas",
+    "sampleRequest": [
+      {
+        "url": "https://ionic.urbanroosters.com/api/battle/update-pattern/:event/:phase/:judge/:battle"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/battle/update-performance/:event/:phase/:judge/:battle",
+    "title": "3.7.- Actualiza un performance a un ss_data_score_styles",
+    "version": "1.0.0",
+    "name": "UpdatePerformance",
+    "group": "3.-_Batallas",
+    "permission": [
+      {
+        "name": "Token de usuario autorizado"
+      }
+    ],
+    "description": "<p>Actualiza un performance a un ss_data_score_styles, este Endpoint se usa cada vez que se desea Actualiza un performance a un estilo</p>",
+    "examples": [
+      {
+        "title": "Actualiza un performance a un ss_data_score_styles.",
+        "content": "curl -i http://ionic.urbanroosters.com/api/battle/update-performance/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/eece274b-a418-48af-8b56-6f658f10cb5f",
+        "type": "curl"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "api-key",
+            "description": "<p>El api key que necesita para solicitar acceso</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-example                          El api key que necesita para solicitar acceso",
+          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "url": [
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "event",
+            "description": "<p>El <code>uuid</code> del evento</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "phase",
+            "description": "<p>El <code>uuid</code> de la fase</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "judge",
+            "description": "<p>El <code>uuid</code> del juez</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "battle",
+            "description": "<p>El <code>uuid</code> de la batalla</p>"
+          }
+        ],
+        "body": [
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_style_performances este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "participants_id",
+            "description": "<p>El <code>uuid</code> del mc/participante</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_scores_id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_score_rounds_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_rounds este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_round_structures_id",
+            "description": "<p>El <code>uuid</code> del ss_round_structures</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_data_score_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_data_score_styles este UUID se genera en el front con estandar UUID v4</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_performance_id",
+            "description": "<p>El <code>uuid</code> del ss_performance</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "ss_styles_id",
+            "description": "<p>El <code>uuid</code> del ss_styles</p>"
+          },
+          {
+            "group": "body",
+            "type": "Number",
+            "optional": false,
+            "field": "value",
+            "description": "<p>El valor <code>1</code> al dar tap</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "extra",
+            "description": "<p>El valor de <code>true</code> al marca un punto extra</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "total",
+            "description": "<p>El valor de <code>1</code> al sumar value mas extra</p>"
+          },
+          {
+            "group": "body",
+            "type": "Boolean",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El <code>number</code> de orden del tab realizado</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "time_pattern",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al hacer un tap en un patron</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "time_extra",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al hacer un tap en un punto extra</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n    \"id\": \"169cc5c5-420c-4a89-baa8-693d2f13938e\",\n    \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n    \"ss_data_scores_id\": \"7d47ff74-2f91-451c-974c-8113a843433d\",\n    \"ss_data_score_rounds_id\": \"b5703e3d-39d0-4775-8018-93309cdeccf6\",\n    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n    \"ss_data_score_styles_id\": \"4adf4505-ceea-4a83-adc7-636cd4d2aee8\",\n    \"ss_styles_id\": \"e5b36279-ce82-462d-8864-d0866ac21263\",\n    \"ss_performance_id\": \"1\",\n    \"value\": 2.5,\n    \"extra\": true,\n    \"total\": 3.5,\n    \"order\": 1,\n    \"time_pattern\": \"1212018372.3366\",\n    \"time_extra\": \"1212018372.3366\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[score]",
+            "optional": false,
+            "field": "Scores",
+            "description": "<p>Array con los datos del ss_data_scores creado</p>"
+          }
+        ],
+        "score": [
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El <code>uuid</code> del ss_data_scores creado</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_events_id",
+            "description": "<p>El <code>uuid</code> del evento</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_phases_id",
+            "description": "<p>El <code>uuid</code> de la fase</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "fd_battles_id",
+            "description": "<p>El <code>uuid</code> de la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "participants_id",
+            "description": "<p>El <code>uuid</code> del mc/participante</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "judges_id",
+            "description": "<p>El <code>uuid</code> del juez que esta votando</p>"
+          },
+          {
+            "group": "score",
+            "type": "String",
+            "optional": false,
+            "field": "total_battle",
+            "description": "<p>El total de la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "has_replica",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla tiene réplica</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "judge_ur",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se decide por el juez en la réplica</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "won",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante ganó la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "lost",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si el MC/participante perdió la batalla</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "completed",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si la batalla se completó</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "partial",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está incompleta</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "order",
+            "description": "<p>El orden con el que inicia un MC/Participante</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "time_started",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al iniciar un score</p>"
+          },
+          {
+            "group": "score",
+            "type": "Number",
+            "optional": false,
+            "field": "time_finished",
+            "description": "<p>El <code>1212018372.3366</code> de la marca de tiempo al finalizar un score</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "started",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está iniciada</p>"
+          },
+          {
+            "group": "score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "finished",
+            "description": "<p>El valor de <code>TRUE</code> o <code>FALSE</code> si batalla está terminada</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"1\",\n        \"time_started\": \"1212018372.3366\",\n        \"time_finished\": \"1212018372.3366\",\n        \"started\": true,\n        \"finished\": false\n\n    },\n    {\n        \"id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n        \"fd_battles_id\": \"eece274b-a418-48af-8b56-6f658f10cb5f\",\n        \"participants_id\": \"42c51902-d524-4dc9-95db-4846f0606421\",\n        \"judges_id\": \"019f7830-bb26-412d-ae6b-fe5bc4780357\",\n        \"total_battle\": 0,\n        \"has_replica\": \"false\",\n        \"judge_ur\": false,\n        \"won\": false,\n        \"lost\": false,\n        \"completed\": false,\n        \"partial\": false,\n        \"order\": \"2\",\n        \"time_started\": \"1212018372.3367\",\n        \"time_finished\": \"1212018372.3367\",\n        \"started\": true,\n        \"finished\": false\n\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "BadRequest",
+            "description": "<p>Mensaje Personalizado del tipo de error de validación</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "NoAccessRight",
+            "description": "<p>Solo los usuarios registrados pueden acceder</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ApiKeyNotFound",
+            "description": "<p>El <code>token</code> no coincide con un usuario</p>"
+          }
+        ],
+        "500 Internal Server Error": [
+          {
+            "group": "500 Internal Server Error",
+            "optional": false,
+            "field": "Error",
+            "description": "<p>de servidor</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response (example):",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apps/api-app-judges/components/api-scores/Front/ApiScoresController.php",
+    "groupTitle": "3.-_Batallas",
+    "sampleRequest": [
+      {
+        "url": "https://ionic.urbanroosters.com/api/battle/update-performance/:event/:phase/:judge/:battle"
+      }
+    ]
+  },
+  {
+    "type": "post",
     "url": "/battles/set-battles/:event/:phase/:judge",
     "title": "3.2.-Cargamos una o varias batallas por lotes",
     "version": "1.0.0",
@@ -3198,7 +5417,7 @@
         }
       ]
     },
-    "filename": "apps/api-app-judges/components/api-events/Front/ApiEventsController.php",
+    "filename": "apps/api-app-judges/components/api-scores/Front/ApiScoresController.php",
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
@@ -3422,7 +5641,7 @@
         }
       ]
     },
-    "filename": "apps/api-app-judges/components/api-events/Front/ApiEventsController.php",
+    "filename": "apps/api-app-judges/components/api-scores/Front/ApiScoresController.php",
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
@@ -3834,7 +6053,7 @@
         }
       ]
     },
-    "filename": "apps/api-app-judges/components/api-events/Front/ApiEventsController.php",
+    "filename": "apps/api-app-judges/components/api-scores/Front/ApiScoresController.php",
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
@@ -4149,7 +6368,7 @@
         }
       ]
     },
-    "filename": "apps/api-app-judges/components/api-events/Front/ApiEventsController.php",
+    "filename": "apps/api-app-judges/components/api-scores/Front/ApiScoresController.php",
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
@@ -4471,7 +6690,7 @@
         }
       ]
     },
-    "filename": "apps/api-app-judges/components/api-events/Front/ApiEventsController.php",
+    "filename": "apps/api-app-judges/components/api-scores/Front/ApiScoresController.php",
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
@@ -4649,7 +6868,7 @@
         }
       ]
     },
-    "filename": "apps/api-app-judges/components/api-events/Front/ApiEventsController.php",
+    "filename": "apps/api-app-judges/components/api-result/Front/ApiResultsController.php",
     "groupTitle": "4.-_Resultados",
     "sampleRequest": [
       {
@@ -4827,7 +7046,7 @@
         }
       ]
     },
-    "filename": "apps/api-app-judges/components/api-events/Front/ApiEventsController.php",
+    "filename": "apps/api-app-judges/components/api-result/Front/ApiResultsController.php",
     "groupTitle": "4.-_Resultados",
     "sampleRequest": [
       {
@@ -5612,7 +7831,7 @@
         }
       ]
     },
-    "filename": "apps/api-app-judges/components/api-events/Front/ApiEventsController.php",
+    "filename": "apps/api-app-judges/components/api-result/Front/ApiResultsController.php",
     "groupTitle": "4.-_Resultados",
     "sampleRequest": [
       {
