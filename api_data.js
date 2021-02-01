@@ -2043,7 +2043,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/battle/add-pattern/:event/:phase/:judge/:battle",
+    "url": "/scores/add-pattern/:event/:phase/:judge/:battle",
     "title": "3.4.- Agrega un nuevo patron a un ss_data_score_styles",
     "version": "1.0.0",
     "name": "AddPattern",
@@ -2397,13 +2397,13 @@ define({ "api": [
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
-        "url": "https://ionic.urbanroosters.com/api/battle/add-pattern/:event/:phase/:judge/:battle"
+        "url": "https://ionic.urbanroosters.com/api/scores/add-pattern/:event/:phase/:judge/:battle"
       }
     ]
   },
   {
     "type": "post",
-    "url": "/battle/add-performance/:event/:phase/:judge/:battle",
+    "url": "/scores/add-performance/:event/:phase/:judge/:battle",
     "title": "3.6.- Agrega un nuevo performance a un ss_data_score_styles",
     "version": "1.0.0",
     "name": "AddPerformance",
@@ -2757,13 +2757,13 @@ define({ "api": [
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
-        "url": "https://ionic.urbanroosters.com/api/battle/add-performance/:event/:phase/:judge/:battle"
+        "url": "https://ionic.urbanroosters.com/api/scores/add-performance/:event/:phase/:judge/:battle"
       }
     ]
   },
   {
     "type": "post",
-    "url": "/battle/add-data-round/:event/:phase/:judge/:battle",
+    "url": "/scores/add-data-round/:event/:phase/:judge/:battle",
     "title": "3.2.- Agrega un nuevo ss_data_score_rounds a un ss_data_scores",
     "version": "1.0.0",
     "name": "AddRoundToScore",
@@ -3111,13 +3111,13 @@ define({ "api": [
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
-        "url": "https://ionic.urbanroosters.com/api/battle/add-data-round/:event/:phase/:judge/:battle"
+        "url": "https://ionic.urbanroosters.com/api/scores/add-data-round/:event/:phase/:judge/:battle"
       }
     ]
   },
   {
     "type": "post",
-    "url": "/battle/add-data-style/:event/:phase/:judge/:battle",
+    "url": "/scores/add-data-style/:event/:phase/:judge/:battle",
     "title": "3.3.- Agrega un nuevo ss_data_score_styles a un ss_data_score_rounds",
     "version": "1.0.0",
     "name": "AddStyletoRound",
@@ -3472,13 +3472,13 @@ define({ "api": [
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
-        "url": "https://ionic.urbanroosters.com/api/battle/add-data-style/:event/:phase/:judge/:battle"
+        "url": "https://ionic.urbanroosters.com/api/scores/add-data-style/:event/:phase/:judge/:battle"
       }
     ]
   },
   {
     "type": "post",
-    "url": "/battle/update-pattern/:event/:phase/:judge/:battle",
+    "url": "/scores/update-pattern/:event/:phase/:judge/:battle",
     "title": "3.5.- Actualiza un patron a un ss_data_score_styles",
     "version": "1.0.0",
     "name": "UpdatePattern",
@@ -3832,13 +3832,13 @@ define({ "api": [
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
-        "url": "https://ionic.urbanroosters.com/api/battle/update-pattern/:event/:phase/:judge/:battle"
+        "url": "https://ionic.urbanroosters.com/api/scores/update-pattern/:event/:phase/:judge/:battle"
       }
     ]
   },
   {
     "type": "post",
-    "url": "/battle/update-performance/:event/:phase/:judge/:battle",
+    "url": "/scores/update-performance/:event/:phase/:judge/:battle",
     "title": "3.7.- Actualiza un performance a un ss_data_score_styles",
     "version": "1.0.0",
     "name": "UpdatePerformance",
@@ -4192,13 +4192,13 @@ define({ "api": [
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
-        "url": "https://ionic.urbanroosters.com/api/battle/update-performance/:event/:phase/:judge/:battle"
+        "url": "https://ionic.urbanroosters.com/api/scores/update-performance/:event/:phase/:judge/:battle"
       }
     ]
   },
   {
     "type": "post",
-    "url": "/battles/set-battles/:event/:phase/:judge",
+    "url": "/scoress/set-battles/:event/:phase/:judge",
     "title": "3.8.-Cargamos una o varias batallas por lotes",
     "version": "1.0.0",
     "name": "setBattles",
@@ -5357,13 +5357,13 @@ define({ "api": [
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
-        "url": "https://ionic.urbanroosters.com/api/battles/set-battles/:event/:phase/:judge"
+        "url": "https://ionic.urbanroosters.com/api/scoress/set-battles/:event/:phase/:judge"
       }
     ]
   },
   {
     "type": "post",
-    "url": "/battle/set-completed/:event/:phase/:judge/:battle",
+    "url": "/scores/set-completed/:event/:phase/:judge/:battle",
     "title": "3.11.- Determina si la batalla termino",
     "version": "1.0.0",
     "name": "setCompleted",
@@ -5581,13 +5581,13 @@ define({ "api": [
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
-        "url": "https://ionic.urbanroosters.com/api/battle/set-completed/:event/:phase/:judge/:battle"
+        "url": "https://ionic.urbanroosters.com/api/scores/set-completed/:event/:phase/:judge/:battle"
       }
     ]
   },
   {
     "type": "post",
-    "url": "/battle/set-order-freestylers/:event/:phase/:judge/:battle",
+    "url": "/scores/set-order-freestylers/:event/:phase/:judge/:battle",
     "title": "3.1.-Agrega el orden en el que inicia los participante una batalla",
     "version": "1.0.0",
     "name": "setOrderFreestylers",
@@ -5993,13 +5993,13 @@ define({ "api": [
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
-        "url": "https://ionic.urbanroosters.com/api/battle/set-order-freestylers/:event/:phase/:judge/:battle"
+        "url": "https://ionic.urbanroosters.com/api/scores/set-order-freestylers/:event/:phase/:judge/:battle"
       }
     ]
   },
   {
     "type": "post",
-    "url": "/battle/set-finished-record/:event/:phase/:judge/:battle",
+    "url": "/scores/set-finished-record/:event/:phase/:judge/:battle",
     "title": "3.10.- Finalizar un Score, Round o Style",
     "version": "1.0.0",
     "name": "setPerFinishedScores",
@@ -6308,13 +6308,13 @@ define({ "api": [
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
-        "url": "https://ionic.urbanroosters.com/api/battle/set-finished-record/:event/:phase/:judge/:battle"
+        "url": "https://ionic.urbanroosters.com/api/scores/set-finished-record/:event/:phase/:judge/:battle"
       }
     ]
   },
   {
     "type": "post",
-    "url": "/battle/set-round-replica/:event/:phase/:judge/:battle",
+    "url": "/scores/set-round-replica/:event/:phase/:judge/:battle",
     "title": "3.9.-Determina el ganador y perdedor de una réplica",
     "version": "1.0.0",
     "name": "setRoundReplica",
@@ -6630,7 +6630,7 @@ define({ "api": [
     "groupTitle": "3.-_Batallas",
     "sampleRequest": [
       {
-        "url": "https://ionic.urbanroosters.com/api/battle/set-round-replica/:event/:phase/:judge/:battle"
+        "url": "https://ionic.urbanroosters.com/api/scores/set-round-replica/:event/:phase/:judge/:battle"
       }
     ]
   },
