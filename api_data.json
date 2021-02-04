@@ -271,13 +271,34 @@
             "optional": false,
             "field": "expires_in",
             "description": "<p>El tiempo de duración del token</p>"
+          },
+          {
+            "group": "signin",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>El id delusuario</p>"
+          },
+          {
+            "group": "signin",
+            "type": "String",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Nombre de usuario registrado</p>"
+          },
+          {
+            "group": "signin",
+            "type": "String",
+            "optional": false,
+            "field": "fullname",
+            "description": "<p>Nombre completo del usuario</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "     HTTP/1.1 200 OK\n     status: \"success\",\n{\n    \"token_type\": \"Bearer\",\n    \"access_token\": null,\n    \"id_token\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6ImEyYjkxODJiMWI0NmNiN2ZjN2MzMTFlZTgwMjFhZDY1MmVlMjc2MjIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdXItYWNjb3VudHMiLCJhdWQiOiJ1ci1hY2NvdW50cyIsImF1dGhfdGltZSI6MTYxMTMzMTUxMSwidXNlcl9pZCI6IjkyYzk2MTViLTc0OWUtNGFkOS05NmM2LWFiNGEzZjRiNmU5NCIsInN1YiI6IjkyYzk2MTViLTc0OWUtNGFkOS05NmM2LWFiNGEzZjRiNmU5NCIsImlhdCI6MTYxMTMzMTUxMSwiZXhwIjoxNjExMzM1MTExLCJlbWFpbCI6Im5vdmFfbWlnMjAyMUBob3RtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJub3ZhX21pZzIwMjFAaG90bWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.Vu72cvMw9xbAL9cOQNFXrIXWEQnDtq59Ia5xAadoyKy9TmNKe2WdowsCpmTeyN5yXWMm8Wb5EN5G2naex-YXmGQI2SoDQmkXIoqX_cc-BnauGoK5j_0fd_EVocUImK3gfDrju7_fGqm5DrS9EMIaPuZXun8VBOLoVViED48iTMA7nLymXaI1035NB0BDN4-PckbR-Etdor5rNsYat_RlmmuuSGL37b3HUqKq6lqo0yjFjaVz6lRnnhSEl9ssvAlaPSO6D2TmKzXilwa_iIXRyi5OSPcFumO0JPptx_LxNm9VzNNY67cl4tFcF9L_Z_7rIlBdLMHGc6bRCmDSeDEskQ\",\n    \"refresh_token\": \"AOvuKvT6IvlQmaP8l0sOljLb10MO1JtTJBiSZG3HFUed9bfnuwfl4ipl0S5K9YuzssFvodunjkgPUsMNz-KxPb6bd8Ndqka2-TB2k90Q8XyDRlyVEiILbLMBJuQbDKGrQuySP8NbowZdmCXFnb7fAXJmAYTNUsQDrj4kIQ7V1FnTYeoqPSR2kd9DRimZCdfqAk30-uzkeUnc2KBd0CZ9syWN3olUhUwTxg\",\n    \"expires_in\": 3600\n}",
+          "content": "     HTTP/1.1 200 OK\n     status: \"success\",\n{\n    \"token_type\": \"Bearer\",\n    \"access_token\": null,\n    \"id_token\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6ImEyYjkxODJiMWI0NmNiN2ZjN2MzMTFlZTgwMjFhZDY1MmVlMjc2MjIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdXItYWNjb3VudHMiLCJhdWQiOiJ1ci1hY2NvdW50cyIsImF1dGhfdGltZSI6MTYxMTMzMTUxMSwidXNlcl9pZCI6IjkyYzk2MTViLTc0OWUtNGFkOS05NmM2LWFiNGEzZjRiNmU5NCIsInN1YiI6IjkyYzk2MTViLTc0OWUtNGFkOS05NmM2LWFiNGEzZjRiNmU5NCIsImlhdCI6MTYxMTMzMTUxMSwiZXhwIjoxNjExMzM1MTExLCJlbWFpbCI6Im5vdmFfbWlnMjAyMUBob3RtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJub3ZhX21pZzIwMjFAaG90bWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.Vu72cvMw9xbAL9cOQNFXrIXWEQnDtq59Ia5xAadoyKy9TmNKe2WdowsCpmTeyN5yXWMm8Wb5EN5G2naex-YXmGQI2SoDQmkXIoqX_cc-BnauGoK5j_0fd_EVocUImK3gfDrju7_fGqm5DrS9EMIaPuZXun8VBOLoVViED48iTMA7nLymXaI1035NB0BDN4-PckbR-Etdor5rNsYat_RlmmuuSGL37b3HUqKq6lqo0yjFjaVz6lRnnhSEl9ssvAlaPSO6D2TmKzXilwa_iIXRyi5OSPcFumO0JPptx_LxNm9VzNNY67cl4tFcF9L_Z_7rIlBdLMHGc6bRCmDSeDEskQ\",\n    \"refresh_token\": \"AOvuKvT6IvlQmaP8l0sOljLb10MO1JtTJBiSZG3HFUed9bfnuwfl4ipl0S5K9YuzssFvodunjkgPUsMNz-KxPb6bd8Ndqka2-TB2k90Q8XyDRlyVEiILbLMBJuQbDKGrQuySP8NbowZdmCXFnb7fAXJmAYTNUsQDrj4kIQ7V1FnTYeoqPSR2kd9DRimZCdfqAk30-uzkeUnc2KBd0CZ9syWN3olUhUwTxg\",\n    \"expires_in\": 3600,\n    \"id\": \"5215d701-7d59-4f7b-7ffb-b1ec603c4516\",\n    \"username\": \"mc-test\",\n    \"fullname\": Mc Test\n}",
           "type": "json"
         }
       ]
@@ -358,7 +379,7 @@
       "examples": [
         {
           "title": "Header-example                      El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -781,7 +802,7 @@
       "examples": [
         {
           "title": "Header-example                      El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -1023,7 +1044,7 @@
       "examples": [
         {
           "title": "Header-example                          El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -1263,7 +1284,7 @@
       "examples": [
         {
           "title": "Header-example                                      El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -1683,7 +1704,7 @@
       "examples": [
         {
           "title": "Header-example                                      El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -2068,7 +2089,7 @@
             "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "api-key",
+            "field": "token",
             "description": "<p>El api key que necesita para solicitar acceso</p>"
           }
         ]
@@ -2076,7 +2097,7 @@
       "examples": [
         {
           "title": "Header-example                          El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -2372,7 +2393,7 @@
           {
             "group": "Error 4xx",
             "optional": false,
-            "field": "ApiKeyNotFound",
+            "field": "TokenNotFound",
             "description": "<p>El <code>token</code> no coincide con un usuario</p>"
           }
         ],
@@ -2388,7 +2409,7 @@
       "examples": [
         {
           "title": "Response (example):",
-          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}\n\nHTTP/1.1 200 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Integrity constraint violation: 1062 Duplicate entry\"\n}",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el token.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El token recibido no tiene autorización.\"\n}\n\nHTTP/1.1 200 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Integrity constraint violation: 1062 Duplicate entry\"\n}",
           "type": "json"
         }
       ]
@@ -2428,7 +2449,7 @@
             "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "api-key",
+            "field": "token",
             "description": "<p>El api key que necesita para solicitar acceso</p>"
           }
         ]
@@ -2436,7 +2457,7 @@
       "examples": [
         {
           "title": "Header-example                          El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -2732,7 +2753,7 @@
           {
             "group": "Error 4xx",
             "optional": false,
-            "field": "ApiKeyNotFound",
+            "field": "TokenNotFound",
             "description": "<p>El <code>token</code> no coincide con un usuario</p>"
           }
         ],
@@ -2748,7 +2769,7 @@
       "examples": [
         {
           "title": "Response (example):",
-          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}\n\nHTTP/1.1 200 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Integrity constraint violation: 1062 Duplicate entry\"\n}",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el token.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El token recibido no tiene autorización.\"\n}\n\nHTTP/1.1 200 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Integrity constraint violation: 1062 Duplicate entry\"\n}",
           "type": "json"
         }
       ]
@@ -2788,7 +2809,7 @@
             "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "api-key",
+            "field": "token",
             "description": "<p>El api key que necesita para solicitar acceso</p>"
           }
         ]
@@ -2796,7 +2817,7 @@
       "examples": [
         {
           "title": "Header-example                          El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -3086,7 +3107,7 @@
           {
             "group": "Error 4xx",
             "optional": false,
-            "field": "ApiKeyNotFound",
+            "field": "TokenNotFound",
             "description": "<p>El <code>token</code> no coincide con un usuario</p>"
           }
         ],
@@ -3102,7 +3123,7 @@
       "examples": [
         {
           "title": "Response (example):",
-          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el token.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El token recibido no tiene autorización.\"\n}",
           "type": "json"
         }
       ]
@@ -3142,7 +3163,7 @@
             "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "api-key",
+            "field": "token",
             "description": "<p>El api key que necesita para solicitar acceso</p>"
           }
         ]
@@ -3150,7 +3171,7 @@
       "examples": [
         {
           "title": "Header-example                          El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -3447,7 +3468,7 @@
           {
             "group": "Error 4xx",
             "optional": false,
-            "field": "ApiKeyNotFound",
+            "field": "TokenNotFound",
             "description": "<p>El <code>token</code> no coincide con un usuario</p>"
           }
         ],
@@ -3463,7 +3484,7 @@
       "examples": [
         {
           "title": "Response (example):",
-          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el token.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El token recibido no tiene autorización.\"\n}",
           "type": "json"
         }
       ]
@@ -3503,7 +3524,7 @@
             "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "api-key",
+            "field": "token",
             "description": "<p>El api key que necesita para solicitar acceso</p>"
           }
         ]
@@ -3511,7 +3532,7 @@
       "examples": [
         {
           "title": "Header-example                          El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -3807,7 +3828,7 @@
           {
             "group": "Error 4xx",
             "optional": false,
-            "field": "ApiKeyNotFound",
+            "field": "TokenNotFound",
             "description": "<p>El <code>token</code> no coincide con un usuario</p>"
           }
         ],
@@ -3823,7 +3844,7 @@
       "examples": [
         {
           "title": "Response (example):",
-          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el token.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El token recibido no tiene autorización.\"\n}",
           "type": "json"
         }
       ]
@@ -3863,7 +3884,7 @@
             "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "api-key",
+            "field": "token",
             "description": "<p>El api key que necesita para solicitar acceso</p>"
           }
         ]
@@ -3871,7 +3892,7 @@
       "examples": [
         {
           "title": "Header-example                          El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -4167,7 +4188,7 @@
           {
             "group": "Error 4xx",
             "optional": false,
-            "field": "ApiKeyNotFound",
+            "field": "TokenNotFound",
             "description": "<p>El <code>token</code> no coincide con un usuario</p>"
           }
         ],
@@ -4183,7 +4204,7 @@
       "examples": [
         {
           "title": "Response (example):",
-          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el token.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El token recibido no tiene autorización.\"\n}",
           "type": "json"
         }
       ]
@@ -4223,7 +4244,7 @@
             "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "api-key",
+            "field": "token",
             "description": "<p>El api key que necesita para solicitar acceso</p>"
           }
         ]
@@ -4231,7 +4252,7 @@
       "examples": [
         {
           "title": "Header-example                              El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -5332,7 +5353,7 @@
           {
             "group": "Error 4xx",
             "optional": false,
-            "field": "ApiKeyNotFound",
+            "field": "TokenNotFound",
             "description": "<p>El <code>token</code> no coincide con un usuario</p>"
           }
         ],
@@ -5348,7 +5369,7 @@
       "examples": [
         {
           "title": "Response (example):",
-          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el token.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El token recibido no tiene autorización.\"\n}",
           "type": "json"
         }
       ]
@@ -5388,7 +5409,7 @@
             "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "api-key",
+            "field": "token",
             "description": "<p>El api key que necesita para solicitar acceso</p>"
           }
         ]
@@ -5396,7 +5417,7 @@
       "examples": [
         {
           "title": "Header-example                      El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -5556,7 +5577,7 @@
           {
             "group": "Error 4xx",
             "optional": false,
-            "field": "ApiKeyNotFound",
+            "field": "TokenNotFound",
             "description": "<p>El <code>token</code> no coincide con un usuario</p>"
           }
         ],
@@ -5572,7 +5593,7 @@
       "examples": [
         {
           "title": "Response (example):",
-          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el token.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El token recibido no tiene autorización.\"\n}",
           "type": "json"
         }
       ]
@@ -5582,6 +5603,186 @@
     "sampleRequest": [
       {
         "url": "https://ionic.urbanroosters.com/api/scores/set-completed/:event/:phase/:judge/:battle"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/scores/set-completed-patterns/:event/:phase/:judge/:battle",
+    "title": "3.12.- Determina si un style, round o score envió todos los patrones",
+    "version": "1.0.0",
+    "name": "setCompletedPatterns",
+    "group": "3.-_Batallas",
+    "permission": [
+      {
+        "name": "Token de usuario autorizado"
+      }
+    ],
+    "description": "<p>Determina si el style, round o score enviarón todos los patrones para poder calcular la sumatoria de los registros, es decir que si nos envian el ID en un style nos da la sumatoria total del style, así para round y score (IMPORTANTE: Enviar solo cuando el registro este completo)</p>",
+    "examples": [
+      {
+        "title": "Determina si un style, round o score envió todos los patrones",
+        "content": "curl -i http://ionic.urbanroosters.com/api/scores/set-completed-patterns/0f62308e-8245-4e2f-8e01-b0c0920be35a/65443d8b-abfc-4e0b-a848-181fcfa1f4a3/019f7830-bb26-412d-ae6b-fe5bc4780357/9e97ca3e-d2a4-4bcc-84fe-a2a37a24e093",
+        "type": "curl"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>El api key que necesita para solicitar acceso</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-example                      El api key que necesita para solicitar acceso",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "url": [
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "event",
+            "description": "<p>El <code>uuid</code> del evento</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "phase",
+            "description": "<p>El <code>uuid</code> de la fase</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "judge",
+            "description": "<p>El <code>uuid</code> del juez</p>"
+          },
+          {
+            "group": "url",
+            "type": "String",
+            "optional": false,
+            "field": "battle",
+            "description": "<p>El <code>uuid</code> de la batalla</p>"
+          }
+        ],
+        "body": [
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "model",
+            "description": "<p>El nombre del modelo a cerrar, puede ser: ss_data_scores, ss_data_score_rounds, ss_data_score_styles</p>"
+          },
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "record_id",
+            "description": "<p>El <code>uuid</code> del record que se calculo el total</p>"
+          }
+        ],
+        "participant": [
+          {
+            "group": "participant",
+            "type": "String",
+            "optional": false,
+            "field": "record_id",
+            "description": "<p>El <code>uuid</code> del record a cambiar este UUID se genera en el front con estandar UUID v4</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n    \"model\": \"ss_data_score_styles\",\n    \"record_id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "body": [
+          {
+            "group": "body",
+            "type": "String",
+            "optional": false,
+            "field": "model",
+            "description": "<p>El nombre del modelo a cerrar, puede ser: ss_data_scores, ss_data_score_rounds, ss_data_score_styles</p>"
+          },
+          {
+            "group": "body",
+            "type": "Number",
+            "optional": false,
+            "field": "total",
+            "description": "<p>El total del registro solicitado</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:\n    {\n        \"model\": \"ss_data_score_styles\",\n        \"record_id\": \"8da5e391-f976-4859-b20a-ad9ccfa2d30a\",\n        \"total\": 115\n    }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "BadRequest",
+            "description": "<p>Mensaje Personalizado del tipo de error de validación</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "NoAccessRight",
+            "description": "<p>Solo los usuarios registrados pueden acceder</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "TokenNotFound",
+            "description": "<p>El <code>token</code> no coincide con un usuario</p>"
+          }
+        ],
+        "500 Internal Server Error": [
+          {
+            "group": "500 Internal Server Error",
+            "optional": false,
+            "field": "Error",
+            "description": "<p>de servidor</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response (example):",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el token.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El token recibido no tiene autorización.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apps/api-app-judges/components/api-scores/Front/ApiScoresController.php",
+    "groupTitle": "3.-_Batallas",
+    "sampleRequest": [
+      {
+        "url": "https://ionic.urbanroosters.com/api/scores/set-completed-patterns/:event/:phase/:judge/:battle"
       }
     ]
   },
@@ -5612,7 +5813,7 @@
             "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "api-key",
+            "field": "token",
             "description": "<p>El api key que necesita para solicitar acceso</p>"
           }
         ]
@@ -5620,7 +5821,7 @@
       "examples": [
         {
           "title": "Header-example                          El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -5968,7 +6169,7 @@
           {
             "group": "Error 4xx",
             "optional": false,
-            "field": "ApiKeyNotFound",
+            "field": "TokenNotFound",
             "description": "<p>El <code>token</code> no coincide con un usuario</p>"
           }
         ],
@@ -5984,7 +6185,7 @@
       "examples": [
         {
           "title": "Response (example):",
-          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el token.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El token recibido no tiene autorización.\"\n}",
           "type": "json"
         }
       ]
@@ -6024,7 +6225,7 @@
             "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "api-key",
+            "field": "token",
             "description": "<p>El api key que necesita para solicitar acceso</p>"
           }
         ]
@@ -6032,7 +6233,7 @@
       "examples": [
         {
           "title": "Header-example                      El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -6283,7 +6484,7 @@
           {
             "group": "Error 4xx",
             "optional": false,
-            "field": "ApiKeyNotFound",
+            "field": "TokenNotFound",
             "description": "<p>El <code>token</code> no coincide con un usuario</p>"
           }
         ],
@@ -6299,7 +6500,7 @@
       "examples": [
         {
           "title": "Response (example):",
-          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el token.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El token recibido no tiene autorización.\"\n}",
           "type": "json"
         }
       ]
@@ -6339,7 +6540,7 @@
             "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "api-key",
+            "field": "token",
             "description": "<p>El api key que necesita para solicitar acceso</p>"
           }
         ]
@@ -6347,7 +6548,7 @@
       "examples": [
         {
           "title": "Header-example                      El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -6605,7 +6806,7 @@
           {
             "group": "Error 4xx",
             "optional": false,
-            "field": "ApiKeyNotFound",
+            "field": "TokenNotFound",
             "description": "<p>El <code>token</code> no coincide con un usuario</p>"
           }
         ],
@@ -6621,7 +6822,7 @@
       "examples": [
         {
           "title": "Response (example):",
-          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el api-key.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El api-key recibido no tiene autorización.\"\n}",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el token.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El token recibido no tiene autorización.\"\n}",
           "type": "json"
         }
       ]
@@ -6669,7 +6870,7 @@
       "examples": [
         {
           "title": "Header-example                      El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -6847,7 +7048,7 @@
       "examples": [
         {
           "title": "Header-example                      El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
@@ -7025,7 +7226,7 @@
       "examples": [
         {
           "title": "Header-example                      El api key que necesita para solicitar acceso",
-          "content": " {\n  \"api-key\": \"sustituir por tu api key\"\n}",
+          "content": " {\n  \"Authorization\": \"Bearer El token generado en el login del sistema del punto 0.1 de los endpoints\"\n}",
           "type": "json"
         }
       ]
