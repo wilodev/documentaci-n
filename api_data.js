@@ -5773,7 +5773,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response (example):",
-          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el token.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El token recibido no tiene autorización.\"\n}",
+          "content": "\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"Uuid Incorrecto\"\n}\nHTTP/1.1 400 Bad Request\n{\n    \"status\": \"Error\"\n    \"message\": \"El total no coincide (Esto pasa cuando lo enviado desde la App no coincide con la sumatoria del backend)\"\n}\nHTTP/1.1 401 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"No se recibió el token.\"\n}\n\nHTTP/1.1 403 Not Authenticated\n{\n    \"status\": \"Error\"\n    \"message\": \"El token recibido no tiene autorización.\"\n}",
           "type": "json"
         }
       ]
@@ -6303,6 +6303,13 @@ define({ "api": [
           },
           {
             "group": "participant",
+            "type": "Float",
+            "optional": false,
+            "field": "total",
+            "description": "<p>El <code>number</code> es el total record (ss_data_scores, ss_data_score_rounds, ss_data_score_styles)</p>"
+          },
+          {
+            "group": "participant",
             "type": "Boolean",
             "optional": false,
             "field": "finished",
@@ -6320,7 +6327,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n    \"model\": \"ss_data_scores\",\n    \"participants\":[\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n            \"record_id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n            \"finished\": true,\n            \"time_finished\":\"1212018372.3366\"\n        },\n        {\n            \"id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n            \"record_id\": \"3325709f-078b-43c6-b48f-28427ae58638\",\n            \"finished\": true,\n            \"time_finished\":\"1212018372.3366\"\n        }\n    ]\n}",
+          "content": "{\n    \"model\": \"ss_data_scores\",\n    \"participants\":[\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n            \"record_id\": \"0018ed8c-2ec0-4992-ab6f-69e1f4eab8b9\",\n            \"finished\": true,\n            \"total\": 10\n            \"time_finished\":\"1212018372.3366\"\n        },\n        {\n            \"id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n            \"record_id\": \"3325709f-078b-43c6-b48f-28427ae58638\",\n            \"finished\": true,\n            \"total\": 15\n            \"time_finished\":\"1212018372.3366\"\n        }\n    ]\n}",
           "type": "json"
         }
       ]
