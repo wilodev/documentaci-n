@@ -706,6 +706,13 @@ define({ "api": [
             "group": "participant",
             "type": "String",
             "optional": false,
+            "field": "full_name",
+            "description": "<p>Nombre completo del usuario</p>"
+          },
+          {
+            "group": "participant",
+            "type": "String",
+            "optional": false,
             "field": "email",
             "description": "<p>Id del tipo de batalla</p>"
           },
@@ -721,7 +728,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n   {\n        \"id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_calendars_id\": \"d93b4c9c-a4a5-4ca1-8f7e-8023554a28bd\",\n        \"ss_scoring_systems_id\": \"5a2d413d-0e43-4d35-b5a8-cb83fe952654\",\n        \"fd_event_types_id\": \"a7ee229d-9a52-4af3-9b8f-2ef73ed6e90f\",\n        \"countries_id\": \"\",\n        \"states_id\": \"\",\n        \"cities_id\": \"\",\n        \"name\": \"Jornada Esp 1\",\n        \"sub_name\": null,\n        \"slug\": \"jornada-esp-1\",\n        \"avatar\": \"images/events/jornada-esp-5_events.png\",\n        \"cover\": \"images/events/jornada-esp-5_events.png\",\n        \"video\": null,\n        \"video_embed\": \"\",\n        \"introduction\": \"intro del evento\",\n        \"description\": \"descripci&oacute;n del evento\",\n        \"start_date_event\": \"2020-07-11\",\n        \"ending_date_event\": \"2020-07-11\",\n        \"start_time\": \"00:00:00\",\n        \"ending_time\": \"00:00:00\",\n        \"limit\": 10,\n        \"max_judges\": 5,\n        \"diff_replica\": 5,\n        \"max_replica\": 2,\n        \"partial\": 0,\n        \"completed\": 1,\n        \"phases\": [\n            {\n                \"id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                \"previous_phase_id\": null,\n                \"next_phase_id\": null,\n                \"name\": \"Jornada\",\n                \"slug\": \"jornada\",\n                \"avatar\": null,\n                \"cover\": null,\n                \"video\": null,\n                \"video_embed\": null,\n                \"introduction\": null,\n                \"description\": null,\n                \"battles\": [\n                    {\n                        \"id\": \"60399e46-f24e-42f2-bcf0-2de0739b5282\",\n                        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                        \"fd_battle_types_id\": \"3e98efef-9f35-4e4a-88a8-f5f9589a0909\",\n                        \"name\": \"Bnet vs Errece\",\n                        \"slug\": \"bnet-vs-errece\",\n                        \"diff_replica\": 0,\n                        \"participants\": [\n                            {\n                               \"id\": \"cc19a9ef-77cb-45ee-819e-eaaf43bbe295\",\n                               \"role\": \"user\",\n                               \"username\": \"bnet\",\n                               \"email\": \"\",\n                               \"avatar\": \"images/profiles/bnet.jpg\"\n                             },\n                             {\n                                \"id\": \"d1823229-99a7-4fc9-93de-d496b4a97769\",\n                                \"role\": \"user\",\n                                \"username\": \"errece\",\n                                \"email\": \"\",\n                                \"avatar\": \"images/profiles/errece.jpg\"\n                            }\n                         ]\n                    },\n                    ...\n                ]\n            },\n            ...\n        ]\n    }",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n   {\n        \"id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_calendars_id\": \"d93b4c9c-a4a5-4ca1-8f7e-8023554a28bd\",\n        \"ss_scoring_systems_id\": \"5a2d413d-0e43-4d35-b5a8-cb83fe952654\",\n        \"fd_event_types_id\": \"a7ee229d-9a52-4af3-9b8f-2ef73ed6e90f\",\n        \"countries_id\": \"\",\n        \"states_id\": \"\",\n        \"cities_id\": \"\",\n        \"name\": \"Jornada Esp 1\",\n        \"sub_name\": null,\n        \"slug\": \"jornada-esp-1\",\n        \"avatar\": \"images/events/jornada-esp-5_events.png\",\n        \"cover\": \"images/events/jornada-esp-5_events.png\",\n        \"video\": null,\n        \"video_embed\": \"\",\n        \"introduction\": \"intro del evento\",\n        \"description\": \"descripci&oacute;n del evento\",\n        \"start_date_event\": \"2020-07-11\",\n        \"ending_date_event\": \"2020-07-11\",\n        \"start_time\": \"00:00:00\",\n        \"ending_time\": \"00:00:00\",\n        \"limit\": 10,\n        \"max_judges\": 5,\n        \"diff_replica\": 5,\n        \"max_replica\": 2,\n        \"partial\": 0,\n        \"completed\": 1,\n        \"phases\": [\n            {\n                \"id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                \"previous_phase_id\": null,\n                \"next_phase_id\": null,\n                \"name\": \"Jornada\",\n                \"slug\": \"jornada\",\n                \"avatar\": null,\n                \"cover\": null,\n                \"video\": null,\n                \"video_embed\": null,\n                \"introduction\": null,\n                \"description\": null,\n                \"battles\": [\n                    {\n                        \"id\": \"60399e46-f24e-42f2-bcf0-2de0739b5282\",\n                        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                        \"fd_battle_types_id\": \"3e98efef-9f35-4e4a-88a8-f5f9589a0909\",\n                        \"name\": \"Bnet vs Errece\",\n                        \"slug\": \"bnet-vs-errece\",\n                        \"diff_replica\": 0,\n                        \"participants\": [\n                            {\n                               \"id\": \"cc19a9ef-77cb-45ee-819e-eaaf43bbe295\",\n                               \"role\": \"user\",\n                               \"username\": \"bnet\",\n                               \"email\": \"\",\n                                \"full_name\": Bnet,\n                               \"avatar\": \"images/profiles/bnet.jpg\"\n                             },\n                             {\n                                \"id\": \"d1823229-99a7-4fc9-93de-d496b4a97769\",\n                                \"role\": \"user\",\n                                \"username\": \"errece\",\n                                \"email\": \"\",\n                                \"full_name\": Errece,\n                                \"avatar\": \"images/profiles/errece.jpg\"\n                            }\n                         ]\n                    },\n                    ...\n                ]\n            },\n            ...\n        ]\n    }",
           "type": "json"
         }
       ]
@@ -4410,6 +4417,13 @@ define({ "api": [
           },
           {
             "group": "ss_data_score",
+            "type": "Boolean",
+            "optional": false,
+            "field": "verified",
+            "description": "<p>*El valor de <code>true</code>  para indicar que los patrones, styles y rounds de una batalla esta comprobado (SOLO para el modo Offline el campo es opcional solo obligatiorio en modo offline)</p>"
+          },
+          {
+            "group": "ss_data_score",
             "type": "Object[ss_data_score_rounds]",
             "optional": false,
             "field": "ss_data_score_rounds",
@@ -4482,6 +4496,13 @@ define({ "api": [
           },
           {
             "group": "ss_data_score_rounds",
+            "type": "Boolean",
+            "optional": false,
+            "field": "verified",
+            "description": "<p>*El valor de <code>true</code>  para indicar que los patrones, styles  de una batalla esta comprobado (SOLO para el modo Offline el campo es opcional solo obligatiorio en modo offline)</p>"
+          },
+          {
+            "group": "ss_data_score_rounds",
             "type": "Object[ss_data_score_styles]",
             "optional": false,
             "field": "ss_data_score_styles",
@@ -4530,6 +4551,13 @@ define({ "api": [
             "optional": false,
             "field": "finished",
             "description": "<p>*El valor de <code>true</code> o <code>false</code> al finalizar un style</p>"
+          },
+          {
+            "group": "ss_data_score_styles",
+            "type": "Boolean",
+            "optional": false,
+            "field": "verified",
+            "description": "<p>*El valor de <code>true</code>  para indicar que los patrones de una batalla esta comprobado (SOLO para el modo Offline el campo es opcional solo obligatiorio en modo offline)</p>"
           },
           {
             "group": "ss_data_score_styles",
