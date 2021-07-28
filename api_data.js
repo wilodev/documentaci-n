@@ -356,7 +356,7 @@ define({ "api": [
         "name": "Token de usuario autorizado"
       }
     ],
-    "description": "<p>Obtiene un evento especifico de un juez con el id del sistema de votaciones (ss_scoring_systems_id) más el id de la estructura de batalla (esta en la sección pivot) que esta en phases y con esos datos se debe llamar al endpoint 1.-Devuelve el sistema de votación y Estructura de la batalla para tener los datos necesarios para crear las pantallas de votación</p>",
+    "description": "<p>Obtiene un evento especifico de un juez con el id del sistema de votaciones (ss_scoring_systems_id) más el id de la estructura de batalla (esta en la sección pivot) que esta en phases y con esos datos se debe llamar al endpoint 1.-Devuelve el sistema de votación y Estructura de la batalla para tener los datos necesarios para crear las pantallas de votación.</p> <p>Además para saber el orden de las phases se debe usar los campos:</p> <p>&quot;previous_phase_id&quot;: &quot;ad502a5d-1b84-4320-9028-db18c9c3dd6d&quot;</p> <p>&quot;next_phase_id&quot;: &quot;3bf49a12-9371-4bb1-9da8-bb6529f9fedd&quot;</p> <p>Cuando previous y next sean null significa que es la phase inicial que puede ser una phase normal o grupos luego todas tiene su relación en caso de un toreno con final solo la final tiene el campo next en null</p> <p>Existe 3 tipos de phases de un evento:</p> <p>1.- 066f8733-833c-405e-8645-e98e9f33ea50 Para la phase de tipo torneo que puede ir sedes Diciseisavos, octavos, etc...</p> <p>2.- 69b888c1-80ce-46f8-9df1-7e3f7182e1f4 Para la phase de tipo clasificatoria o normal de una FMS.</p> <p>3.- e668586c-083e-4e53-9d4b-3ace5b1e38cc Para la phase de tipo mudial con grupos.</p> <p>NOTA: el campo diff_replica Es la diferencia de puntos para ganar una batalla o todo inferior a ese valor es un réplica que esta en la tabla pivot de phases</p>",
     "examples": [
       {
         "title": "Obtiene todos los datos de un evento de un juez en concreto",
@@ -423,6 +423,27 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "Object[pivot_phases]",
+            "optional": false,
+            "field": "pivot_phases",
+            "description": "<p>Listado de todas las opciones de las tablas intermedias</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[groups]",
+            "optional": false,
+            "field": "groups",
+            "description": "<p>Listado de todos los grupos  que pertenecen a una fase</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[pivot_groups]",
+            "optional": false,
+            "field": "pivot_groups",
+            "description": "<p>Listado de todas las opciones de las tablas intermedias</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Object[battle]",
             "optional": false,
             "field": "battles",
@@ -434,6 +455,13 @@ define({ "api": [
             "optional": false,
             "field": "participants",
             "description": "<p>Listado de los participantes de una batalla</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[profile]",
+            "optional": false,
+            "field": "profile",
+            "description": "<p>El perfil de cada participante</p>"
           }
         ],
         "event": [
@@ -530,27 +558,6 @@ define({ "api": [
           },
           {
             "group": "event",
-            "type": "Number",
-            "optional": false,
-            "field": "limit",
-            "description": "<p>Limite de Freestylers por evento</p>"
-          },
-          {
-            "group": "event",
-            "type": "Number",
-            "optional": false,
-            "field": "max_judges",
-            "description": "<p>Número máximo de jueces por evento</p>"
-          },
-          {
-            "group": "event",
-            "type": "Number",
-            "optional": false,
-            "field": "max_replica",
-            "description": "<p>Diferencia de puntos para que sea una réplica</p>"
-          },
-          {
-            "group": "event",
             "type": "Boolean",
             "optional": false,
             "field": "partial",
@@ -629,6 +636,117 @@ define({ "api": [
             "description": "<p>Descripción del fase</p>"
           }
         ],
+        "pivot_phases": [
+          {
+            "group": "pivot_phases",
+            "type": "Number",
+            "optional": false,
+            "field": "max_judges",
+            "description": "<p>Indica el número máximo de jueces por fase</p>"
+          },
+          {
+            "group": "pivot_phases",
+            "type": "Number",
+            "optional": false,
+            "field": "max_participants",
+            "description": "<p>Indica el número máximo de participantes por fase</p>"
+          },
+          {
+            "group": "pivot_phases",
+            "type": "String",
+            "optional": false,
+            "field": "ss_battle_structures_id",
+            "description": "<p>Id de la estrucutra de la batalla para el punto 2.1</p>"
+          },
+          {
+            "group": "pivot_phases",
+            "type": "Number",
+            "optional": false,
+            "field": "diff_replica",
+            "description": "<p>Es la diferencia de puntos para ganar o lo inferior es entrar en la réplica</p>"
+          },
+          {
+            "group": "pivot_phases",
+            "type": "Number",
+            "optional": false,
+            "field": "number_groups",
+            "description": "<p>El número de grupos de una phase</p>"
+          },
+          {
+            "group": "pivot_phases",
+            "type": "Number",
+            "optional": false,
+            "field": "participants_per_group",
+            "description": "<p>El número de participantes de un grupo</p>"
+          },
+          {
+            "group": "pivot_phases",
+            "type": "Number",
+            "optional": false,
+            "field": "pass_by_group",
+            "description": "<p>El número de participantes que pasan de cada grupo</p>"
+          },
+          {
+            "group": "pivot_phases",
+            "type": "Boolean",
+            "optional": false,
+            "field": "have_extra_groups",
+            "description": "<p>Variable en TRUE o FALSE para saber si se tiene grupos Extras o Suplentes</p>"
+          },
+          {
+            "group": "pivot_phases",
+            "type": "Number",
+            "optional": false,
+            "field": "number_extra_groups",
+            "description": "<p>El número de grupos extras que tiene una phase</p>"
+          },
+          {
+            "group": "pivot_phases",
+            "type": "Number",
+            "optional": false,
+            "field": "participants_per_extra_group",
+            "description": "<p>El número de participantes de cada grupo extra</p>"
+          },
+          {
+            "group": "pivot_phases",
+            "type": "Number",
+            "optional": false,
+            "field": "pass_by_extra_group",
+            "description": "<p>El número de participantes que pasan de cada grupo extra</p>"
+          }
+        ],
+        "groups": [
+          {
+            "group": "groups",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Indica el identificador de un grupo</p>"
+          },
+          {
+            "group": "groups",
+            "type": "Number",
+            "optional": false,
+            "field": "name",
+            "description": "<p>El nombre del grupo</p>"
+          }
+        ],
+        "pivot_groups": [
+          {
+            "group": "pivot_groups",
+            "type": "Number",
+            "optional": false,
+            "field": "group_type",
+            "description": "<p>Indica el tipo de grupo 1 para normal, 2 para suplentes</p>"
+          },
+          {
+            "group": "pivot_groups",
+            "type": "Number",
+            "optional": false,
+            "field": "order",
+            "description": "<p>Indica el orden de los grupos en cada fase</p>"
+          }
+        ],
         "battle": [
           {
             "group": "battle",
@@ -650,6 +768,13 @@ define({ "api": [
             "optional": false,
             "field": "fd_phases_id",
             "description": "<p>Id de la fase</p>"
+          },
+          {
+            "group": "battle",
+            "type": "String",
+            "optional": false,
+            "field": "fd_groups_id",
+            "description": "<p>Id del grupo al que pertenece cada batalla</p>"
           },
           {
             "group": "battle",
@@ -706,13 +831,6 @@ define({ "api": [
             "group": "participant",
             "type": "String",
             "optional": false,
-            "field": "full_name",
-            "description": "<p>Nombre completo del usuario</p>"
-          },
-          {
-            "group": "participant",
-            "type": "String",
-            "optional": false,
             "field": "email",
             "description": "<p>Id del tipo de batalla</p>"
           },
@@ -723,12 +841,35 @@ define({ "api": [
             "field": "avatar",
             "description": "<p>Avatar de un usuario</p>"
           }
+        ],
+        "profile": [
+          {
+            "group": "profile",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Id del profile</p>"
+          },
+          {
+            "group": "profile",
+            "type": "String",
+            "optional": false,
+            "field": "first_name",
+            "description": "<p>El nombre del participante</p>"
+          },
+          {
+            "group": "profile",
+            "type": "String",
+            "optional": false,
+            "field": "last_name",
+            "description": "<p>El apellido del participante</p>"
+          }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n   {\n        \"id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n        \"fd_calendars_id\": \"d93b4c9c-a4a5-4ca1-8f7e-8023554a28bd\",\n        \"ss_scoring_systems_id\": \"5a2d413d-0e43-4d35-b5a8-cb83fe952654\",\n        \"fd_event_types_id\": \"a7ee229d-9a52-4af3-9b8f-2ef73ed6e90f\",\n        \"countries_id\": \"\",\n        \"states_id\": \"\",\n        \"cities_id\": \"\",\n        \"name\": \"Jornada Esp 1\",\n        \"sub_name\": null,\n        \"slug\": \"jornada-esp-1\",\n        \"avatar\": \"images/events/jornada-esp-5_events.png\",\n        \"cover\": \"images/events/jornada-esp-5_events.png\",\n        \"video\": null,\n        \"video_embed\": \"\",\n        \"introduction\": \"intro del evento\",\n        \"description\": \"descripci&oacute;n del evento\",\n        \"start_date_event\": \"2020-07-11\",\n        \"ending_date_event\": \"2020-07-11\",\n        \"start_time\": \"00:00:00\",\n        \"ending_time\": \"00:00:00\",\n        \"limit\": 10,\n        \"max_judges\": 5,\n        \"diff_replica\": 5,\n        \"max_replica\": 2,\n        \"partial\": 0,\n        \"completed\": 1,\n        \"phases\": [\n            {\n                \"id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                \"previous_phase_id\": null,\n                \"next_phase_id\": null,\n                \"name\": \"Jornada\",\n                \"slug\": \"jornada\",\n                \"avatar\": null,\n                \"cover\": null,\n                \"video\": null,\n                \"video_embed\": null,\n                \"introduction\": null,\n                \"description\": null,\n                \"battles\": [\n                    {\n                        \"id\": \"60399e46-f24e-42f2-bcf0-2de0739b5282\",\n                        \"fd_events_id\": \"0f62308e-8245-4e2f-8e01-b0c0920be35a\",\n                        \"fd_phases_id\": \"65443d8b-abfc-4e0b-a848-181fcfa1f4a3\",\n                        \"fd_battle_types_id\": \"3e98efef-9f35-4e4a-88a8-f5f9589a0909\",\n                        \"name\": \"Bnet vs Errece\",\n                        \"slug\": \"bnet-vs-errece\",\n                        \"diff_replica\": 0,\n                        \"participants\": [\n                            {\n                               \"id\": \"cc19a9ef-77cb-45ee-819e-eaaf43bbe295\",\n                               \"role\": \"user\",\n                               \"username\": \"bnet\",\n                               \"email\": \"\",\n                                \"full_name\": Bnet,\n                               \"avatar\": \"images/profiles/bnet.jpg\"\n                             },\n                             {\n                                \"id\": \"d1823229-99a7-4fc9-93de-d496b4a97769\",\n                                \"role\": \"user\",\n                                \"username\": \"errece\",\n                                \"email\": \"\",\n                                \"full_name\": Errece,\n                                \"avatar\": \"images/profiles/errece.jpg\"\n                            }\n                         ]\n                    },\n                    ...\n                ]\n            },\n            ...\n        ]\n    }",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n        {\n            \"id\": \"7c1409cf-a406-4aa8-9e74-ab2c8424cdd7\",\n            \"fd_calendars_id\": \"b4cf9ee7-7f41-46eb-b60f-5ff42776ee6c\",\n            \"ss_scoring_systems_id\": \"5a2d413d-0e43-4d35-b5a8-cb83fe952654\",\n            \"fd_event_types_id\": \"e073b3ec-e6b8-4cda-be90-c74baf98d6b9\",\n            \"countries_id\": \"\",\n            \"states_id\": \"\",\n            \"cities_id\": \"\",\n            \"name\": \"Fms Internacional\",\n            \"sub_name\": null,\n            \"slug\": \"fms-internacional\",\n            \"avatar\": \"\",\n            \"cover\": \"\",\n            \"video\": \"\",\n            \"video_embed\": \"\",\n            \"introduction\": \"Para el evento de la internacional\",\n            \"description\": \"Para de descripci&oacute;n de la internacional\",\n            \"start_date_event\": \"2021-09-06\",\n            \"ending_date_event\": \"2021-09-13\",\n            \"start_time\": \"00:00:00\",\n            \"ending_time\": \"00:00:00\",\n            \"limit\": 10,\n            \"max_judges\": 5,\n            \"diff_replica\": 5,\n            \"max_replica\": 2,\n            \"partial\": 0,\n            \"completed\": 0,\n            \"order\": 66,\n            \"change_patterns\": null,\n            \"fd_phase_types_id\": \"69b888c1-80ce-46f8-9df1-7e3f7182e1f4\",\n            \"pivot\": {\n                    \"users_id\": \"0156b395-82e1-4713-8188-cc6c227d4cf1\",\n                    \"fd_events_id\": \"7c1409cf-a406-4aa8-9e74-ab2c8424cdd7\"\n            },\n            \"phases\": [\n                {\n                    \"id\": \"681cece9-c8ce-44e3-8510-c358e1631636\",\n                    \"fd_phase_types_id\": \"e668586c-083e-4e53-9d4b-3ace5b1e38cc\",\n                    \"previous_phase_id\": null,\n                    \"next_phase_id\": null,\n                    \"name\": \"Grupos\",\n                    \"slug\": \"grupos\",\n                    \"avatar\": null,\n                    \"cover\": null,\n                    \"video\": null,\n                    \"video_embed\": null,\n                    \"introduction\": null,\n                    \"description\": null,\n                    \"num_battles\": null,\n                    \"order\": 2,\n                    \"created_at\": \"2021-07-09T21:05:42.000000Z\",\n                    \"updated_at\": \"2021-07-09T21:05:42.000000Z\",\n                    \"deleted_at\": null,\n                    \"params\": null,\n                    \"log\": null,\n                    \"pivot\": {\n                        \"fd_events_id\": \"7c1409cf-a406-4aa8-9e74-ab2c8424cdd7\",\n                        \"fd_phases_id\": \"681cece9-c8ce-44e3-8510-c358e1631636\",\n                        \"created_at\": \"2021-07-13T14:36:22.000000Z\",\n                        \"updated_at\": \"2021-07-13T19:36:52.000000Z\",\n                        \"ss_battle_structures_id\": \"1ea9655d-52db-471c-9dd1-abde95e8df34\",\n                        \"diff_replica\": 2,\n                        \"number_groups\": 5,\n                        \"participants_per_group\": 5,\n                        \"pass_by_group\": 3,\n                        \"have_extra_groups\": 1,\n                        \"number_extra_groups\": 1,\n                        \"participants_per_extra_group\": 5,\n                        \"pass_by_extra_group\": 4,\n                        \"order\": null\n                    },\n                    \"groups\": [\n                        {\n                            \"id\": \"1f4d0ea6-ea72-4eba-866f-be8ed20d4d9a\",\n                            \"name\": \"Grupo F\",\n                            \"slug\": \"grupo-f\",\n                            \"order\": 6,\n                            \"created_at\": \"2021-07-09T21:05:37.000000Z\",\n                            \"updated_at\": \"2021-07-09T21:05:37.000000Z\",\n                            \"deleted_at\": null,\n                            \"params\": null,\n                            \"log\": null,\n                            \"pivot\": {\n                                \"fd_phases_id\": \"681cece9-c8ce-44e3-8510-c358e1631636\",\n                                \"fd_groups_id\": \"1f4d0ea6-ea72-4eba-866f-be8ed20d4d9a\",\n                                \"created_at\": \"2021-07-13T16:54:05.000000Z\",\n                                \"updated_at\": \"2021-07-13T16:54:05.000000Z\",\n                                \"fd_events_id\": \"7c1409cf-a406-4aa8-9e74-ab2c8424cdd7\",\n                                \"group_type\": 1,\n                                \"order\": 1\n                            }\n                        },\n                        ...\n                    ],\n                    \"battles\": [\n                        {\n                            \"id\": \"020ac15b-777a-4b2a-b71c-d0f324d4a8e5\",\n                            \"fd_events_id\": \"7c1409cf-a406-4aa8-9e74-ab2c8424cdd7\",\n                            \"fd_phases_id\": \"681cece9-c8ce-44e3-8510-c358e1631636\",\n                            \"fd_groups_id\": \"6d7d2ec0-1320-4ec8-ae8e-7332fc0a1cb6\",\n                            \"fd_battle_types_id\": \"3e98efef-9f35-4e4a-88a8-f5f9589a0909\",\n                            \"name\": \"Strike  VS B One\",\n                            \"slug\": \"strike-vs-b-one\",\n                            \"diff_replica\": 0,\n                            \"order\": 3,\n                            \"created_at\": \"2021-07-13T17:08:10.000000Z\",\n                            \"updated_at\": \"2021-07-13T17:08:10.000000Z\",\n                            \"deleted_at\": null,\n                            \"params\": null,\n                            \"log\": null,\n                            \"direct_pass\": null,\n                            \"participants\": [\n                                {\n                                    \"id\": \"0a95f642-dc3f-42c7-93e7-ced22f04a34c\",\n                                    \"roles_id\": \"5c1f5459-815d-4f81-bb73-43fbb75da916\",\n                                    \"username\": \"b_one\",\n                                    \"email\": \"\",\n                                    \"avatar\": \"images/profiles/b_one.jpg\",\n                                    \"pivot\": {\n                                        \"fd_battles_id\": \"020ac15b-777a-4b2a-b71c-d0f324d4a8e5\",\n                                        \"users_id\": \"0a95f642-dc3f-42c7-93e7-ced22f04a34c\",\n                                        \"result\": null,\n                                        \"score\": 0,\n                                        \"order\": null,\n                                        \"won\": 0,\n                                        \"lost\": 0,\n                                        \"num_replicas\": 0,\n                                        \"has_replica\": 0\n                                    },\n                                    \"profile\": {\n                                        \"id\": \"ba3c9002-c8d6-4f67-a230-ea68a9e7e9b0\",\n                                        \"users_id\": \"0a95f642-dc3f-42c7-93e7-ced22f04a34c\",\n                                        \"first_name\": \"B\",\n                                        \"last_name\": \"One\"\n                                    }\n                                },\n                                ...\n                            ]\n                        },\n                        ...\n                    ]\n                }\n            ]\n        }\n]",
           "type": "json"
         }
       ]
@@ -1263,7 +1404,7 @@ define({ "api": [
         "name": "Token de usuario autorizado"
       }
     ],
-    "description": "<p>Retorna el sistema de votaciones completo con la relación de la estructura de batallas, round, estilo, patrones y performances para poder crear las pantallas que el juez podrá votar. Además al seleccionar quien inica una batalla debe llamar al endpoint 1.-Agrega el orden en el que inicia los participante una batalla para crear el registro de orden de una batalla IMPORTANTE: en cada style se tiene los campos &quot;extra_point&quot;: 1 (para saber si se debe poner el botón de punto extra, en sangre 1 y 2 recordar que el extra solo lo tiene el segundo MC), &quot;turn&quot;: 1 (nos dice si el estilo es ida y vuelta cada patron),</p>",
+    "description": "<p>Retorna el sistema de votaciones completo con la relación de la estructura de batallas, round, estilo, patrones y performances para poder crear las pantallas que el juez podrá votar.</p> <p>Además al seleccionar quien inica una batalla debe llamar a los endpoints:</p> <p>1.-Agrega el orden en el que inicia los participante una batalla para crear el registro de orden de una batalla IMPORTANTE: en cada style se tiene los campos &quot;extra_point&quot;: 1 (para saber si se debe poner el botón de punto extra, en sangre 1 y 2 recordar que el extra solo lo tiene el segundo MC), &quot;turn&quot;: 1 (nos dice si el estilo es ida y vuelta cada patron).</p> <p>Cambio:</p> <p>Ahora ya no se debe usar el replica_id para usar el endopint 2.2.- Devuelve la estructura de un Round</p> <p>En el array battle_structures ya nos devuelve un array rounds con todos los rounds necesarios para una batalla, ahora si incluye el tipo de round, (round_type):</p> <p>1 Round Normal 2 Round Réplica</p> <p>Recordar que en la tabla pivot esta el order de cada round en la estrucutura de las pantallas de votación y la diferencia para ganar ese round y es de tipo réplica.</p> <p>Al igual en cada round esta un array con los styles y en la tabla pivot de esta esta el orden de los styles de cada round.</p> <p>Nota: Recordar que en cada el orden para la replica es importante tenerlar para asignar a cada round replica de la tabla pivot</p>",
     "examples": [
       {
         "title": "Retorna el sistema de votaciones completo con la relación de la estructura de batallas, round, estilo, patrones y performances",
@@ -1481,10 +1622,24 @@ define({ "api": [
           },
           {
             "group": "rounds",
-            "type": "String",
+            "type": "Object[round-pivot]",
+            "optional": false,
+            "field": "pivot",
+            "description": ""
+          }
+        ],
+        "round-pivot": [
+          {
+            "group": "round-pivot",
             "optional": false,
             "field": "order",
-            "description": "<p>El numero de orden del round</p>"
+            "description": "<p>El orden en el que se mostrará el round en pantalla // Además recordar que para los rounds de tipo réplica  es importante almancerlo en el ss_data_score_rounds 3.2 Endpoint</p>"
+          },
+          {
+            "group": "round-pivot",
+            "optional": false,
+            "field": "difference_to_replica",
+            "description": "<p>Tiene la diferencia para ganar el round esto aplica en el caso de los rounds de tipo réplica</p>"
           }
         ],
         "styles": [
@@ -1624,7 +1779,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n        {\n            \"id\":\"5a2d413d-0e43-4d35-b5a8-cb83fe952654\",\n            \"ss_types_scoring_systems_id\":\"6878e106-d7df-4a9b-8bb3-688dc31ff7e4\",\n            \"name\":\"Sistema Votaci&oacute;n FMS\",\n            \"slug\":\"sistema-votacion-fms\",\n            \"description\":\"fms\",\n            \"order\":1,\n            \"created_at\":\"2020-07-11T11:13:57.000000Z\",\n            \"updated_at\":\"2020-07-11T11:13:57.000000Z\",\n            \"deleted_at\":null,\n            \"params\":null,\n            \"log\":null,\n            \"battle_structures\":\n                [\n                    {\n                        \"id\":\"7d4b4c3d-7d8d-4482-a497-cc1b64701d75\",\n                        \"ss_scoring_systems_id\":\"5a2d413d-0e43-4d35-b5a8-cb83fe952654\",\n                        \"name\":\"Batallas FMS\",\n                        \"slug\":\"batallas-fms\",\n                        \"description\":\"para las batallas FMS\",\n                        \"replica_id\":\"332cd557-ec53-4db6-bf83-ab9467714e40\",\n                        \"order\":1,\n                        \"created_at\":\"2020-07-11T11:18:36.000000Z\",\n                        \"updated_at\":\"2020-07-11T11:18:36.000000Z\",\n                        \"deleted_at\":null,\n                        \"params\":null,\n                        \"log\":null,\n                        \"rounds\":\n                            [\n                                {\n                                    \"id\":\"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                                    \"name\":\"Round 1\",\n                                    \"slug\":\"round-1\",\n                                    \"description\":\"para round 1\",\n                                    \"order\":1,\n                                    \"created_at\":\"2020-07-11T11:14:13.000000Z\",\n                                    \"updated_at\":\"2020-07-11T11:14:13.000000Z\",\n                                    \"deleted_at\":null,\n                                    \"params\":null,\n                                    \"log\":null,\n                                    \"pivot\":{\n                                        \"ss_battle_structures_id\":\"7d4b4c3d-7d8d-4482-a497-cc1b64701d75\",\n                                        \"ss_round_structures_id\":\"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                                        \"id\":1,\n                                        \"order\":1\n                                    },\n                                    \"styles\":[\n                                        {\n                                            \"id\":\"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                            \"ss_types_styles_id\":\"9809cecb-6499-4a40-b5b6-7af39918aacf\",\n                                            \"name\":\"Easy Mode\",\n                                            \"num_patterns\":6,\n                                            \"completed\":1,\n                                            \"extra_point\":0,\n                                            \"turn\":0,\n                                            \"order\":2,\n                                            \"created_at\":\"2020-07-11T11:06:39.000000Z\",\n                                            \"updated_at\":\"2020-07-11T11:06:52.000000Z\",\n                                            \"deleted_at\":null,\n                                            \"params\":null,\n                                            \"log\":null,\n                                            \"pivot\":{\n                                                \"ss_round_structures_id\":\"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                                                \"ss_styles_id\":\"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                                \"id\":1,\n                                                \"order\":1 // El orden del estilo en el que se muestra en la pantalla de la tablet\n                                            },\n                                            \"patterns\":[\n                                                {\n                                                   \"id\":\"220fd555-19e9-44f0-a74c-70782dd7d7c3\",\n                                                   \"ss_types_patterns_id\":\"8a8f8f27-4be0-4998-8bfa-7366bf0be108\",\n                                                   \"name\":\"Patron Normal\",\n                                                   \"slug\":\"patron-normal\",\n                                                   \"score\":4,\n                                                   \"interval\":\"0.50\",\n                                                   \"order\":1,\n                                                   \"created_at\":\"2020-07-11T10:59:08.000000Z\",\n                                                   \"updated_at\":\"2020-07-11T10:59:08.000000Z\",\n                                                   \"deleted_at\":null,\n                                                   \"params\":null,\n                                                   \"log\":null,\n                                                   \"pivot\":{\n                                                      \"ss_styles_id\":\"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                                      \"ss_patterns_id\":\"220fd555-19e9-44f0-a74c-70782dd7d7c3\",\n                                                      \"id\":1, // Es el id del ss_patterns_styles_id en la tabla ss_data_score_style_patrons\n                                                      \"order\":1 // Este es el orden en el que se muestra en la tablet\n                                                   }\n                                                },\n                                                \"...\"\n                                            ],\n                                            \"performance\":[\n                                               {\n                                                  \"id\":\"e5efeac1-94cf-45f4-8aa2-275a1806826f\",\n                                                  \"name\":\"Escena\",\n                                                  \"slug\":\"escena\",\n                                                  \"score\":2,\n                                                  \"interval\":\"1.00\",\n                                                  \"order\":1,\n                                                  \"created_at\":\"2020-07-11T10:53:34.000000Z\",\n                                                  \"updated_at\":\"2020-07-11T10:53:34.000000Z\",\n                                                  \"deleted_at\":null,\n                                                  \"params\":null,\n                                                  \"log\":null,\n                                                  \"pivot\":{\n                                                     \"ss_styles_id\":\"e5b36279-ce82-462d-8864-d0866ac21263\",\n                                                     \"ss_performance_id\":\"e5efeac1-94cf-45f4-8aa2-275a1806826f\"\n                                                  }\n                                               },\n                                               \"...\"\n                                            ]\n                                    },\n                                    \"....\"\n                            ]\n                    },\n                    \"...\"\n            ]\n        }\n    ]\n}",
+          "content": "HTTP/1.1 200 OK\nstatus: \"success\",\ndata:[\n{\n    \"id\": \"52018330-57c7-4e9a-9992-9402eb9178e9\",\n    \"ss_types_scoring_systems_id\": \"bf98ddc5-b3f3-4fd4-a8c2-e8d61e6147cf\",\n    \"name\": \"Sistema Votaci&oacute;n FMS\",\n    \"slug\": \"sistema-votacion-fms\",\n    \"description\": \"fms\",\n    \"order\": 1,\n    ...,\n    \"battle_structures\": [\n        {\n            \"id\": \"d14dd034-cb7e-4332-a4a3-fa31401a3e0c\",\n            \"ss_scoring_systems_id\": \"52018330-57c7-4e9a-9992-9402eb9178e9\",\n            \"name\": \"Batallas Fase Grupos\",\n            \"slug\": \"batallas-fase-grupos\",\n            \"description\": \"Estructura de batallas de la fase de grupos desde el 2021\",\n            \"params\": null,\n            \"log\": null,\n            \"difference_to_win\": 1,\n            \"rounds\": [\n                {\n                    \"id\": \"180b02a7-8f4c-4421-aae9-3d53173e10ee\",\n                    \"name\": \"Round 1 Grupos\",\n                    \"slug\": \"round-1-grupos\",\n                    \"description\": \"para round 1\",\n                    \"order\": 0,\n                    \"created_at\": \"2021-07-01T17:46:33.000000Z\",\n                    \"updated_at\": \"2021-07-02T16:13:31.000000Z\",\n                    \"deleted_at\": null,\n                    \"params\": null,\n                    \"log\": null,\n                    \"round_type\": 1,\n                    \"pivot\": {\n                        \"ss_battle_structures_id\": \"d14dd034-cb7e-4332-a4a3-fa31401a3e0c\",\n                        \"ss_round_structures_id\": \"180b02a7-8f4c-4421-aae9-3d53173e10ee\",\n                        \"id\": 22,\n                        \"order\": 1,\n                        \"difference_to_replica\": null\n                    },\n                    \"styles\": [\n                        {\n                            \"id\": \"348bbf08-4451-4019-959a-b159f76b075a\",\n                            \"ss_types_styles_id\": \"4145d397-d601-4c9f-8769-95253fce38e7\",\n                            \"name\": \"Incremental\",\n                            \"num_patterns\": 9,\n                            \"completed\": 1,\n                            \"extra_point\": 0,\n                            \"turn\": 0,\n                            \"order\": 23,\n                            \"created_at\": \"2021-07-01T22:26:24.000000Z\",\n                            \"updated_at\": \"2021-07-01T22:28:09.000000Z\",\n                            \"deleted_at\": null,\n                            \"params\": null,\n                            \"log\": null,\n                            \"pivot\": {\n                                \"ss_round_structures_id\": \"180b02a7-8f4c-4421-aae9-3d53173e10ee\",\n                                \"ss_styles_id\": \"348bbf08-4451-4019-959a-b159f76b075a\",\n                                \"id\": 10,\n                                \"order\": 1\n                            },\n                            \"patterns\": [\n                                {\n                                    \"id\": \"894b765e-99d7-4d98-be25-9149648c19d6\",\n                                    \"ss_types_patterns_id\": \"1867dd97-dd7e-4a27-97ba-ffe4d6f4a546\",\n                                    \"name\": \"Patron Normal\",\n                                    \"slug\": \"patron-normal\",\n                                    \"score\": 4,\n                                    \"interval\": \"0.50\",\n                                    \"order\": 1,\n                                    \"created_at\": \"2021-07-01T16:28:06.000000Z\",\n                                    \"updated_at\": \"2021-07-01T16:28:06.000000Z\",\n                                    \"deleted_at\": null,\n                                    \"params\": null,\n                                    \"log\": null,\n                                    \"pivot\": {\n                                        \"ss_styles_id\": \"348bbf08-4451-4019-959a-b159f76b075a\",\n                                        \"ss_patterns_id\": \"894b765e-99d7-4d98-be25-9149648c19d6\",\n                                        \"id\": 13,\n                                        \"order\": 1\n                                    }\n                                },\n                                ...\n                            ],\n                            \"performance\": [\n                                {\n                                    \"id\": \"83065003-12d0-4d54-a423-3cf2da288d4e\",\n                                    \"name\": \"Escena\",\n                                    \"slug\": \"escena\",\n                                    \"score\": 2,\n                                    \"interval\": \"1.00\",\n                                    \"order\": 1,\n                                    \"created_at\": \"2021-07-01T16:35:11.000000Z\",\n                                    \"updated_at\": \"2021-07-01T16:35:11.000000Z\",\n                                    \"deleted_at\": null,\n                                    \"params\": null,\n                                    \"log\": null,\n                                    \"pivot\": {\n                                    }\n                                },\n                                ...\n                            ]\n                        }\n                    ]\n                },\n                ...,\n            ]\n        }\n    ]\n}",
           "type": "json"
         }
       ]
@@ -2910,6 +3065,13 @@ define({ "api": [
           },
           {
             "group": "ss_data_score_rounds",
+            "type": "Number",
+            "optional": false,
+            "field": "order_round_replica",
+            "description": "<p>El orden de la réplica que se debe sacar de la tabla pivot en el punto 2.1</p>"
+          },
+          {
+            "group": "ss_data_score_rounds",
             "type": "String",
             "optional": false,
             "field": "time_started",
@@ -2943,7 +3105,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n    \"participants\": [\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n                \"ss_data_score_rounds\": {\n                    \"id\": \"28766c9a-f80d-4221-8647-20a6d5fd634a\",\n                    \"ss_data_scores_id\": \"e6a5f7a7-6899-4dac-8abc-534ba71576b9\",\n                    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                    \"order\": \"1\",\n                    \"time_started\": \"1212018372.3366\",\n                    \"started\": true\n                }\n        },\n        {\n            \"id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n                \"ss_data_score_rounds\": {\n                    \"id\": \"e9e3dd65-45db-4bed-9a08-1d6a9b7edbe7\",\n                    \"ss_data_scores_id\": \"c48201a0-e7f0-42b3-a19e-910ef3a4f9a2\",\n                    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                    \"order\": \"2\",\n                    \"time_started\": \"1212018372.3366\",\n                    \"started\": true\n                }\n        }\n    ]\n}",
+          "content": "{\n    \"participants\": [\n        {\n            \"id\": \"42c51902-d524-4dc9-95db-4846f0606420\",\n                \"ss_data_score_rounds\": {\n                    \"id\": \"28766c9a-f80d-4221-8647-20a6d5fd634a\",\n                    \"ss_data_scores_id\": \"e6a5f7a7-6899-4dac-8abc-534ba71576b9\",\n                    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                    \"order\": \"1\",\n                    \"order_round_replica\": \"6\",\n                    \"time_started\": \"1212018372.3366\",\n                    \"started\": true\n                }\n        },\n        {\n            \"id\": \"349a1e2f-46a3-4fc0-a372-24596faf8328\",\n                \"ss_data_score_rounds\": {\n                    \"id\": \"e9e3dd65-45db-4bed-9a08-1d6a9b7edbe7\",\n                    \"ss_data_scores_id\": \"c48201a0-e7f0-42b3-a19e-910ef3a4f9a2\",\n                    \"ss_round_structures_id\": \"938402b7-fab4-4b86-9033-09f66bde9da3\",\n                    \"order\": \"2\",\n                    \"order_round_replica\": \"6\",\n                    \"time_started\": \"1212018372.3366\",\n                    \"started\": true\n                }\n        }\n    ]\n}",
           "type": "json"
         }
       ]
