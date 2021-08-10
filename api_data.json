@@ -1639,7 +1639,7 @@
             "group": "round-pivot",
             "optional": false,
             "field": "difference_to_replica",
-            "description": "<p>Tiene la diferencia para ganar el round esto aplica en el caso de los rounds de tipo réplica</p>"
+            "description": "<p>Tiene la diferencia para ganar el round esto aplica en el caso de los rounds de tipo réplica, si es null significa que no existe una diferencia, (es decir es 0)</p>"
           }
         ],
         "styles": [
